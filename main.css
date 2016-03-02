@@ -1,0 +1,13 @@
+html{
+  background-color: rgb(220,220,220);
+  /*box-shadow: 0 0 15px grey inset;*/
+}
+
+body {
+  margin: auto;
+}
+
+line{
+    /*shape-rendering:crispEdges*/
+    stroke: rgb(100,149,237);
+}
