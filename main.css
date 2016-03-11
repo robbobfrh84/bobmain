@@ -1,13 +1,50 @@
-html{
-  background-color: rgb(220,220,220);
-  /*box-shadow: 0 0 15px grey inset;*/
-}
-
 body {
+  background-color: rgb(220,220,220);
   margin: auto;
+  text-align: center;
+  font-family: verdana;
 }
 
-line{
-    /*shape-rendering:crispEdges*/
-    stroke: rgb(100,149,237);
+#mainSVG {
+  background-color: rgb(220,220,220);
+  box-shadow: 0 0 15px rgb(100,149,237,0) inset;
 }
+
+#bobMain, #bobMainS{
+  font-size: 40px;
+  opacity: 0;
+}
+
+
+#links {
+  display: inline-block;
+  font-size: 1.5vw;
+  width: 20vw;
+  margin: auto;
+  text-align: left;
+  margin-left: 5vw;
+  margin-right: 14.5vw;
+}
+
+#iconLinks{
+  padding-top: 25%;
+}
+
+#centerText {
+  padding-top: 0%;
+}
+
+
+/*----------------------------NOTES---------------------------------------------
+-
+-
+- to make the lines sharp pixels not anti-alus...
+line {
+  stroke: rgb(100,149,237);
+  /*shape-rendering: crispEdges;
+}
+-
+-
+-
+-
+*/

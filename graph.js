@@ -1,39 +1,27 @@
-var svgElement = "http://www.w3.org/2000/svg";
-
-var pW = window.innerWidth; //window's pixel width
-var xlines = 40;
-var ylines = 50;
-
-var xmargin = 5;//in percent
-var oL = 2; //percent of lines that overlap to create crossing at edges
-var ymargin = (pW*(xmargin/2))/100;//in pixels
-
-var boldBreak1 = 5;//bold lines every...
-var boldBreak2 = 10;//extra bold lines every...
-var thin = 0.25;
-var bold1 = 0.75;
-var bold2 = 1.5;
-
-var xgap = (100 - (xmargin*2)) / xlines;
-var ygap = (pW*((100-(xmargin*2))/100))/xlines;
-
-document.getElementById('mainSVG').style.height = (ygap*ylines)+(ymargin*2)+"px";
+var svgElement = 'http://www.w3.org/2000/svg';
+//----------FIXED Global Variables----------------------------------------------------
+var vertLines = 40;  var horizLines = 50; //# of horizontal and vertical lines.
+var marginLR = 0;    var marginTB = 0; //percent. LR: Left&right, TB: top-bottom.
+var vertOLap = 0;    var horizOLap = 0; //OverLap extents lines in percent
+//REMOVE if still 0
+//breaks and pixel widths of lines at breaks...
+var break1 = 5;      var break2 = 10; //number of lines every
+var bold1 = 0.75;    var bold2 = 1.5; //line widiths
+var thinLine = 0.25; // smallest line witdth.
+//----------ACTIVE Global Variables----------------------------------------------------
+var lineW; var vGap; var hGap; var pW; var blockSize; var windowHight;
 
 function drawLines(){
-  for (var i = 0; i <= xlines; i++){
-    if((i)%boldBreak1===0){ var lineW = bold1;} else { var lineW = thin;}
-    if((i)%boldBreak2===0){ var lineW = bold2;}
-    createEl("mainSVG","line",[["stroke-width",lineW],["id","hozi"+i]
-      ,["x1",i*xgap+xmargin+"%"],["y1",ymargin-(pW*(oL/2)/100)+"px"]
-      ,["x2",i*xgap+xmargin+"%"],["y2",(ygap*ylines)+ymargin+(pW*(oL/2)/100)+"px"]])
-
-  }
-  for (var i = 0; i <= ylines; i++){
-    if((i)%boldBreak1===0){ var lineW = bold1;} else { var lineW = thin;}
-    if((i)%boldBreak2===0){ var lineW = bold2;}
-    createEl("mainSVG","line",[["stroke-width",lineW],["id","vert"+i]
-      ,["x1",xmargin-oL+"%"],["y1",i*ygap+ymargin+"px"]
-      ,["x2",100-xmargin+oL+"%"],["y2",i*ygap+ymargin+"px"]])
+  for (var i = 0; i <= Math.max(vertLines,horizLines); i++){ lineW = thinLine;
+    if((i)%break1===0){ lineW = bold1;} if((i)%break2===0){ lineW = bold2;}
+    if(i<=vertLines){createEl('graphSVG','line'
+      ,[['stroke-width',lineW],['id','vert'+i]
+      ,['x1',i*vGap+marginLR+'%'],['y1',marginTB-horizOLap+'%']
+      ,['x2',i*vGap+marginLR+'%'],['y2',100-(marginTB-horizOLap)+'%']])}
+    if(i<=horizLines){createEl('graphSVG','line'
+      ,[['stroke-width',lineW],['id','horiz'+i]
+      ,['x1',marginLR-vertOLap+'%'],['y1',i*hGap+marginTB+'%']
+      ,['x2',100-(marginLR-vertOLap)+'%'],['y2',i*hGap+marginTB+'%']])}
   }
 }
 
@@ -44,29 +32,13 @@ function createEl(container,type,att){
   }
   document.getElementById(container).appendChild(newObj);
 }
-drawLines();
 
-window.onresize = function(event){
-  console.log("resize")
-  pW = window.innerWidth; //window's pixel width
-  ymargin = (pW*(xmargin/2))/100;//in pixels
-  xgap = (100 - (xmargin*2)) / xlines;
-  ygap = (pW*((100-(xmargin*2))/100))/xlines;
-  document.getElementById('mainSVG').style.height = (ygap*ylines)+(ymargin*2)+"px";
-  for (var i = 0; i <= xlines;i++){
-    if((i)%boldBreak1===0){ var lineW = bold1;} else { var lineW = thin;}
-    if((i)%boldBreak2===0){ var lineW = bold2;}
-    updateEl("hozi"+i,[["stroke-width",lineW],["id","hozi"+i]
-    ,["x1",i*xgap+xmargin+"%"],["y1",ymargin-(pW*(oL/2)/100)+"px"]
-    ,["x2",i*xgap+xmargin+"%"],["y2",(ygap*ylines)+ymargin+(pW*(oL/2)/100)+"px"]]);
-  }
-  for (var i = 0; i <= ylines; i++){
-    if((i)%boldBreak1===0){ var lineW = bold1;} else { var lineW = thin;}
-    if((i)%boldBreak2===0){ var lineW = bold2;}
-    updateEl("vert"+i,[["stroke-width",lineW],["id","vert"+i]
-      ,["x1",xmargin-oL+"%"],["y1",i*ygap+ymargin+"px"]
-      ,["x2",100-xmargin+oL+"%"],["y2",i*ygap+ymargin+"px"]])
-  }
+function updateLines(pW){
+  vGap = (100-(marginLR*2)) / vertLines;//in %
+  hGap = (100-(marginTB*2)) / horizLines;//in %
+  blockSize = (pW*((100-(marginLR*2))/100)) / vertLines;//in pixels
+  windowHeight = (blockSize*horizLines)+((100-(marginTB*2))/100)
+  document.getElementById('graphSVG').style.height = windowHeight+'px';
 }
 
 function updateEl(Id, att) { //function used to update any attributes with DOM.
@@ -74,12 +46,28 @@ function updateEl(Id, att) { //function used to update any attributes with DOM.
     document.getElementById(Id).setAttributeNS(null, att[i][0],att[i][1]);
 } }
 
-
-
-/*
-----------Workflow...-----------------------------------------------
-- change x/y to hor/vert
-
-----------Not important ideas...------------------------------------
--- gradient margins so they fad off the page....
-*/
+updateLines(window.innerWidth); drawLines();
+window.onresize = function(event){
+  // while (graphSVG.hasChildNodes()){
+  //   graphSVG.removeChild(graphSVG.lastChild);
+  // }
+  updateLines(window.innerWidth);
+  for (var i = 0; i <= Math.max(vertLines,horizLines); i++){ lineW = thinLine;
+    if((i)%break1===0){ lineW = bold1;} if((i)%break2===0){ lineW = bold2;}
+    if(i<=vertLines){updateEl('vert'+i,[['stroke-width',lineW],['id','vert'+i]
+      ,['x1',i*vGap+'%'],['y1',0],['x2',i*vGap+'%'],['y2',100+'%']])}
+    if(i<=horizLines){updateEl('horiz'+i,[['stroke-width',lineW],['id','horiz'+i]
+      ,['x1',0],['y1',i*hGap+'%'],['x2',100+'%'],['y2',i*hGap+'%']])}
+  }
+//////REMOVE/////ADD TO MAIN.JS////////
+//DON"T NEED TO REPLACE!!!!!!!!!!!!!!!
+  // updateEl("introUnder",[["stroke-width", "10"]]);
+  // var el = document.getElementById("introUnder");
+  // el.style.stroke = "rgb("+rgbR()+")";
+}
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+function rgbR(){
+  return [random(0,255), random(0,255), random(0,255)];
+}
