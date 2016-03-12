@@ -15,6 +15,10 @@ body {
   opacity: 0;
 }
 
+#circle:hover{
+  fill: cornflowerblue;
+}
+
 
 #links {
   display: inline-block;
@@ -36,15 +40,10 @@ body {
 
 
 /*----------------------------NOTES---------------------------------------------
--
--
 - to make the lines sharp pixels not anti-alus...
 line {
   stroke: rgb(100,149,237);
   /*shape-rendering: crispEdges;
 }
--
--
--
--
+
 */

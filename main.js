@@ -2,18 +2,19 @@ var fullpage = document.getElementById('mainSVG');
 
 //--------------------------------------------------------Fadein main background
 fadeIn(fullpage, 'opacity', 0.02,0,1);
-//----------------------------------------------------Place main background grid
+//---------------------------------------------------------Place background grid
 drawGrid(40,0.25,0.75,1.5,'cornflowerblue');
-//-------------------------------------------------------------FadeIn intro text
-var introBlock=[]; var introText = '  A Journal & Presentation of Projects  ';
+//-----------------------------------------------FadeIn intro and Copyright text
+function placetextBoxes(x,y,size,text,block){
+  for (var i = 0; i < text.length; i++){
+    block[i] = createBlockText((i*x)+0.6,y,size,0,'rgba(0,0,0,0.5)'
+    ,'inBk'+i, 'allIntro', text[i]); }
+  setTimeout(function(){arreyFade(block, 0.01, 0, 1);},750);}
+var introBlock=[];
+placetextBoxes(2.5,1.8,16,'  A Journal & Presentation of Projects  ',introBlock);
+var copyBlock=[];
+placetextBoxes(2.5,99.3,12,'            © 2016 Bob Main',copyBlock);
 
-function placeIntroBoxes(){
-  for (var i = 0; i < introText.length; i++){
-    introBlock[i] = createBlockText((i*2.5)+0.6,1.8,16,0,'rgba(0,0,0,0.5)'
-    ,'inBk'+i, 'allIntro', introText[i]); }
-  setTimeout(function(){arreyFade(introBlock, 0.01, 0, 1);},750);}
-
-placeIntroBoxes();
 //----------------------------------------------------------Draw intro underline
 setTimeout(function(){lineGrow(50,2.5,2.5,2.5,2
   ,'rgb(150,150,150)','leftLine',0.2,1.03);},1500);
@@ -41,7 +42,10 @@ mainSVG.appendChild(bobMain);
 //-------------------------------------------------------------FadeIn DropShadow
 setTimeout(function(){fadeIn(fullpage, 'box-shadow', 0.03, 0, 1);},3500);
 
-//--------------------------------------------------------------FadeIn testBoxes
+//------------------------------------------------------------------FadeIn icons
+var contact = document.getElementById('contact'); mainSVG.appendChild(contact);
+
+
 //--------------------------------------------------------------FadeIn testBoxes
 //--------------------------------------------------------------FadeIn testBoxes
 //--------------------------------------------------------------FadeIn testBoxes
