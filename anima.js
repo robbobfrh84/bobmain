@@ -1,6 +1,12 @@
 var svgElement = 'http://www.w3.org/2000/svg';
 
 //////////CREATE SVG ELEMENTS///////////////////////////////////////////////////
+function drawGrid(numOfLines,thin,fifth,tenth,color){ lines = (100/numOfLines);
+  for (var i = 0; i <= numOfLines; i++){ fat = thin;
+    if(i%5===0){fat=fifth;} if(i%10===0||i===0){fat=tenth;}
+    createLine(0,lines*i,100,lines*i,fat,color,'vert'+i);
+    createLine(lines*i,0,lines*i,100,fat,color,'horiz'+i); } }
+
 function createBlockText(x,y,size,opacity,color,txID,elClass,text){
   var txID = createEl('mainSVG','text',[['x',x+'%'],['y',y+'%'],['font-size',size]
   ,['opacity',opacity],['fill',color],['class',elClass],['id',txID]]);
@@ -24,12 +30,14 @@ function createEl(container,type,att){
   for (var i=0; i<att.length; i++){ newObj.setAttributeNS(null, att[i][0],att[i][1]); }
   document.getElementById(container).appendChild(newObj); return newObj; }
 
-function drawGrid(numOfLines,thin,fifth,tenth,color){ lines = (100/numOfLines);
-  for (var i = 0; i <= numOfLines; i++){ fat = thin;
-    if(i%5===0){fat=fifth;} if(i%10===0||i===0){fat=tenth;}
-    createLine(0,lines*i,100,lines*i,fat,color,'vert'+i);
-    createLine(lines*i,0,lines*i,100,fat,color,'horiz'+i);}
-}
+function createButtons(btn, cir){
+  var btn = document.getElementById(btn); mainSVG.appendChild(btn);
+  var cir = document.getElementById(cir);
+  btn.onmouseover = function(){
+     cir.style.fill = 'rgb(210,210,210)'; cir.style.r = '2.2%'};
+  btn.onmouseout = function(){
+     cir.style.fill = 'rgb(230,230,230)';cir.style.r = '2%'};}
+
 ////////////////////////////////////////////////////////////////////////////////
 //////////          ANIMATION STATION          /////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -39,6 +47,16 @@ function fadeIn(varName, element, speed, start, end){
     if (element === 'box-shadow'){
       varName.style.boxShadow = '0px 0px 25px rgba(80,80,80,'+start+') inset';
     } else { varName.style.opacity = start;} start+=speed;
+    if (start <= end){ requestAnimationFrame(go); } } go(); }
+
+
+function blowUp(varName, cir, speed, ramp, start, end){ var x; var y;
+  var cx = parseFloat(cir.getAttribute('cx'));
+  var cy = parseFloat(cir.getAttribute('cy'));
+  function go(){ start+=speed*ramp;
+    x = cx*((end-start)/100); y = cy*((end-start)/100);
+    varName.setAttribute('width',start+'%'); varName.setAttribute('y',y+'%');
+    varName.setAttribute('height',start+'%'); varName.setAttribute('x',x+'%');
     if (start <= end){ requestAnimationFrame(go); } } go(); }
 
 function arreyFade(arrEL, speed, start, end){
