@@ -34,14 +34,14 @@ function createButtons(btn, cir){
   var btn = document.getElementById(btn); mainSVG.appendChild(btn);
   var cir = document.getElementById(cir);
   btn.onmouseover = function(){
-     cir.style.fill = 'rgb(210,210,210)'; cir.style.r = '2.2%'};
+     cir.style.fill = 'rgb(210,210,210)'; cir.style.r = '2.2%';}
   btn.onmouseout = function(){
      cir.style.fill = 'rgb(230,230,230)';cir.style.r = '2%'};}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 //////////          ANIMATION STATION          /////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
 function fadeIn(varName, element, speed, start, end){
   function go(){
     if (element === 'box-shadow'){
@@ -78,9 +78,33 @@ function lineGrow(startX,startY,endX,endY,width,color,lineID,speed,ramp){
     if (startY > endY && y > 0) { end = false; placeY = endY+y; }
     if (startY < endY && y > 0) { end = false; placeY = endY-y; }
     if (end === true) { lineID.setAttributeNS(null,'x2',endX+'%');
-      lineID.setAttributeNS(null,'y2',endY+'%'); return; }
+    lineID.setAttributeNS(null,'y2',endY+'%'); return; }
     lineID.setAttributeNS(null,'x2',placeX+'%');
     lineID.setAttributeNS(null,'y2',placeY+'%');
     end = true; requestAnimationFrame(goxxx);
   } goxxx();
 }
+
+////////////////////////////////////////////////////////////////////////////////
+//////////          Random Functions         ///////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+function rgbR(){
+  return [random(0,255), random(0,255), random(0,255)];
+}
+
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//////////          EASTER EGGS              ///////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+function crazyLine(){
+  var dir = 1; var back = 2; var sx = 25; var sy = 25; var ex = 25; var ey = 25;
+  setInterval(function(){
+    dir=back;
+    while (dir === back){ dir = random(1,4);} sx=ex; sy=ey;
+    if (dir === 1){ ex += 2.5; back = 2;} if (dir === 2){ ex -= 2.5; back = 1;}
+    if (dir === 3){ ey += 2.5; back = 4;} if (dir === 4){ ey -= 2.5; back = 3;}
+    lineGrow(sx,sy,ex,ey,2,'firebrick','testLine',0.1,1.05);},100);}

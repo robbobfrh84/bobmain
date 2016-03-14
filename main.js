@@ -7,7 +7,7 @@ fadeIn(fullpage, 'opacity', 0.02,0,1);
 drawGrid(40,0.25,0.75,1.5,'cornflowerblue');
 
 //-------------------------------------------------declare main object variables
-var introBlock=[]; var copyBlock=[];
+var introBlock=[]; var copyBlock=[]; var proBlock=[];
 var bobMain=document.getElementById('bobMain');
 var bobMainS=document.getElementById('bobMainS');
 
@@ -62,12 +62,33 @@ setTimeout(function(){blowUp(angel,angelCir,2,3,0,100);},3600);
 setTimeout(function(){blowUp(git,gitCir,2,2,0,100);},3500);
 setTimeout(function(){blowUp(insta,instaCir,2,3,0,100);},3800);
 
+//------------------------------------------------------animate main skill boxes
+
+var webBox = createRect(7.6,12.6,17.3,4.8,'rgba(220,220,220,0.75)',0,'none',0,'nameBox');
+setTimeout(function(){fadeIn(webBox, 'opacity', 0.02, 0, 1);},100);
+
+var micBox = createRect(27.6,12.6,17.3,4.8,'rgba(210,210,210,1)',0,'none',0,'nameBox');
+setTimeout(function(){fadeIn(micBox, 'opacity', 0.02, 0, 1);},100);
+
+var desBox = createRect(55.1,12.6,17.3,4.8,'rgba(210,210,210,1)',0,'none',0,'nameBox');
+setTimeout(function(){fadeIn(desBox, 'opacity', 0.02, 0, 1);},100);
+
+var wooBox = createRect(77.6,12.6,17.3,4.8,'rgba(210,210,210,1)',0,'none',0,'nameBox');
+setTimeout(function(){fadeIn(wooBox, 'opacity', 0.02, 0, 1);},100);
+
+//------------------------------------------------------animate programming bind
+
+placetextBoxes(2.5,11.5,12,'     Programming                        ',proBlock);
+
+setTimeout(function(){lineGrow(50,7.5,50,11.25,3,'rgb(150,150,150)'
+  ,'underBob',0.2,1.05);},4200);
+setTimeout(function(){lineGrow(50,11.25,6.25,11.25,2,'rgb(150,150,150)'
+  ,'underBob',0.5,1.05);},4400);
+setTimeout(function(){lineGrow(6.25,11.25,6.25,18.75,2,'rgb(150,150,150)'
+  ,'underBob',0.2,1.05);},4700);
 
 
 
-
-
-//--------------------------------------------------------------FadeIn testBoxes
 // var redBox = createRect(0,12.5,25,37.5,'firebrick',0,'none',0,'nameBox');
 // setTimeout(function(){fadeIn(redBox, 'opacity', 0.02, 0, 1);},4000);
 //
@@ -78,14 +99,13 @@ setTimeout(function(){blowUp(insta,instaCir,2,3,0,100);},3800);
 // setTimeout(function(){fadeIn(yellowBox, 'opacity', 0.02, 0, 1);},5000);
 
 
-
-
 ////////// TEST ZONE ///////////////////////////////////////////////////////////
+
 
 // lineGrow(5,5,5,25,3,'cornflowerblue','testLine',0.1,1.05);
 // lineGrow(5,25,25,25,3,'cornflowerblue','testLine',0.1,1.05);
 // lineGrow(25,25,25,5,3,'cornflowerblue','testLine',0.1,1.05);
-// lineGrow(5,45,25,25,3,'cornflowerblue','testLine',0.1,1.05);
+// lineGrow(25,45,5,25,3,'cornflowerblue','testLine',0.1,1.05);
 
 /*
 ////////// CHECKLIST NOTES ///////////////////////////////////////////////////
