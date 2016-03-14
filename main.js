@@ -63,7 +63,6 @@ setTimeout(function(){blowUp(git,gitCir,2,2,0,100);},3500);
 setTimeout(function(){blowUp(insta,instaCir,2,3,0,100);},3800);
 
 //------------------------------------------------------animate main skill boxes
-
 var webBox = createRect(7.6,12.6,17.3,4.8,'rgba(220,220,220,0.75)',0,'none',0,'nameBox');
 setTimeout(function(){fadeIn(webBox, 'opacity', 0.02, 0, 1);},100);
 
@@ -89,14 +88,14 @@ setTimeout(function(){lineGrow(6.25,11.25,6.25,18.75,2,'rgb(150,150,150)'
 
 
 
-// var redBox = createRect(0,12.5,25,37.5,'firebrick',0,'none',0,'nameBox');
-// setTimeout(function(){fadeIn(redBox, 'opacity', 0.02, 0, 1);},4000);
-//
-// var greenBox = createRect(25,12.5,50,37.5,'rgb(93,180,98)',0,'none',0,'nameBox');
-// setTimeout(function(){fadeIn(greenBox, 'opacity', 0.02, 0, 1);},4500);
-//
-// var yellowBox = createRect(75,12.5,25,37.5,'goldenrod',0,'none',0,'nameBox');
-// setTimeout(function(){fadeIn(yellowBox, 'opacity', 0.02, 0, 1);},5000);
+var redBox = createRect(0,12.5,25,37.5,'firebrick',0,'none',0,'nameBox');
+setTimeout(function(){fadeIn(redBox, 'opacity', 0.02, 0, 0.8);},4000);
+
+var greenBox = createRect(25,12.5,50,37.5,'rgb(93,180,98)',0,'none',0,'nameBox');
+setTimeout(function(){fadeIn(greenBox, 'opacity', 0.02, 0, 0.8);},4500);
+
+var yellowBox = createRect(75,12.5,25,37.5,'goldenrod',0,'none',0,'nameBox');
+setTimeout(function(){fadeIn(yellowBox, 'opacity', 0.02, 0, 0.8);},5000);
 
 
 ////////// TEST ZONE ///////////////////////////////////////////////////////////
