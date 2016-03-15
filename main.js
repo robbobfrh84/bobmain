@@ -6,10 +6,18 @@ fadeIn(fullpage, 'opacity', 0.02,0,1);
 //---------------------------------------------------------Place background grid
 drawGrid(40,0.25,0.75,1.5,'cornflowerblue');
 
-//-------------------------------------------------declare main object variables
+//---------------------------------declare main object variables created in HTML
 var introBlock=[]; var copyBlock=[]; var proBlock=[];
-var bobMain=document.getElementById('bobMain');
-var bobMainS=document.getElementById('bobMainS');
+var bobMain = document.getElementById('bobMain');
+var bobMainS = document.getElementById('bobMainS');
+var infoBox = document.getElementById('infoBox');
+var bulletBox = document.getElementById('bulletBox');
+var mediaSLeft = document.getElementById('mediaSLeft')
+var mediaSRight = document.getElementById('mediaSRight')
+var mediaBox = document.getElementById('mediaBox');
+
+
+
 
 //-----------------------------------------------FadeIn intro and Copyright text
 function placetextBoxes(x,y,size,text,block){
@@ -88,14 +96,12 @@ setTimeout(function(){lineGrow(6.25,11.25,6.25,18.75,2,'rgb(150,150,150)'
 
 
 
-var redBox = createRect(0,12.5,25,37.5,'firebrick',0,'none',0,'nameBox');
-setTimeout(function(){fadeIn(redBox, 'opacity', 0.02, 0, 0.8);},4000);
 
-var greenBox = createRect(25,12.5,50,37.5,'rgb(93,180,98)',0,'none',0,'nameBox');
-setTimeout(function(){fadeIn(greenBox, 'opacity', 0.02, 0, 0.8);},4500);
+mainSVG.appendChild(infoBox);
 
-var yellowBox = createRect(75,12.5,25,37.5,'goldenrod',0,'none',0,'nameBox');
-setTimeout(function(){fadeIn(yellowBox, 'opacity', 0.02, 0, 0.8);},5000);
+mainSVG.appendChild(mediaSLeft);
+mainSVG.appendChild(mediaBox);
+
 
 
 ////////// TEST ZONE ///////////////////////////////////////////////////////////

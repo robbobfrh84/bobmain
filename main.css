@@ -15,8 +15,9 @@ body {
   opacity: 0;
 }
 
-#centerText {
-  padding-top: 0%;
+#mediaBox {
+  box-shadow: 0 0 15px rgba(100,149,237,1) inset;
+
 }
 
 
