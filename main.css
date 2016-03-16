@@ -1,12 +1,13 @@
 body {
   background-color: rgb(220,220,220);
+  height: 100%;
   margin: auto;
   text-align: center;
   font-family: verdana;
 }
 
 #mainSVG {
-  background-color: rgb(220,220,220);
+  background-color: rgba(220,220,220,1);
   box-shadow: 0 0 15px rgb(100,149,237,0) inset;
 }
 
@@ -15,8 +16,48 @@ body {
   opacity: 0;
 }
 
-#mediaBox {
-  box-shadow: 0 0 15px rgba(100,149,237,1) inset;
+#dropbar {
+  background-color: rgba(180,180,180,0.9);
+  position: relative;
+  width: 75vw;
+  height: 5vw;
+  border-bottom-left-radius: 0.5vw;
+  border-bottom-right-radius: 0.5vw;
+  margin: auto;
+  margin-top: -87.70vw;
+  box-shadow: 0 2px 3px 0 #888;
+  -webkit-transition:height 200ms ease-in;
+  -moz-transition:height 200ms ease-in;
+  -o-transition:height 200ms ease-in;
+  transition:height 200ms ease-in;
+
+}
+
+/*#dropbar:hover {
+  height: 5vw;
+
+  "THINK" we need these for other browsers!!!
+  -webkit-transition:height 200ms ease-in;
+  -moz-transition:height 200ms ease-in;
+  -o-transition:height 200ms ease-in;
+  transition:height 200ms ease-in;
+}*/
+
+.skillBtn, .dividers{
+  color: rgba(50,50,50,1);
+  display: inline-block;
+  margin: auto;
+  vertical-align: middle;
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+.dividers{
+  margin: 0;
+}
+
+#woodTab {
+  color: red;
 
 }
 

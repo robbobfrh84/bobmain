@@ -8,16 +8,20 @@ drawGrid(40,0.25,0.75,1.5,'cornflowerblue');
 
 //---------------------------------declare main object variables created in HTML
 var introBlock=[]; var copyBlock=[]; var proBlock=[];
+
+//SEEMS TO BE MORE TROUBLE BOUNCING UP HERE TO GET IDS...
+//....prob just move back where they're appended.
 var bobMain = document.getElementById('bobMain');
 var bobMainS = document.getElementById('bobMainS');
+
 var infoBox = document.getElementById('infoBox');
 var bulletBox = document.getElementById('bulletBox');
-var mediaSLeft = document.getElementById('mediaSLeft')
-var mediaSRight = document.getElementById('mediaSRight')
 var mediaBox = document.getElementById('mediaBox');
 
-
-
+var mediaSLeft = document.getElementById('mediaSLeft');
+var mediaSRight = document.getElementById('mediaSRight');
+var allBoxShadeTop = document.getElementById('allBoxShadeTop');
+var allBoxShadeBot = document.getElementById('allBoxShadeBot');
 
 //-----------------------------------------------FadeIn intro and Copyright text
 function placetextBoxes(x,y,size,text,block){
@@ -71,36 +75,40 @@ setTimeout(function(){blowUp(git,gitCir,2,2,0,100);},3500);
 setTimeout(function(){blowUp(insta,instaCir,2,3,0,100);},3800);
 
 //------------------------------------------------------animate main skill boxes
-var webBox = createRect(7.6,12.6,17.3,4.8,'rgba(220,220,220,0.75)',0,'none',0,'nameBox');
-setTimeout(function(){fadeIn(webBox, 'opacity', 0.02, 0, 1);},100);
-
-var micBox = createRect(27.6,12.6,17.3,4.8,'rgba(210,210,210,1)',0,'none',0,'nameBox');
-setTimeout(function(){fadeIn(micBox, 'opacity', 0.02, 0, 1);},100);
-
-var desBox = createRect(55.1,12.6,17.3,4.8,'rgba(210,210,210,1)',0,'none',0,'nameBox');
-setTimeout(function(){fadeIn(desBox, 'opacity', 0.02, 0, 1);},100);
-
-var wooBox = createRect(77.6,12.6,17.3,4.8,'rgba(210,210,210,1)',0,'none',0,'nameBox');
-setTimeout(function(){fadeIn(wooBox, 'opacity', 0.02, 0, 1);},100);
+// var webBox = createRect(7.6,12.6,17.3,4.8,'rgba(220,220,220,0.75)',0,'none',0,'nameBox');
+// setTimeout(function(){fadeIn(webBox, 'opacity', 0.02, 0, 1);},100);
+//
+// var micBox = createRect(27.6,12.6,17.3,4.8,'rgba(210,210,210,1)',0,'none',0,'nameBox');
+// setTimeout(function(){fadeIn(micBox, 'opacity', 0.02, 0, 1);},100);
+//
+// var desBox = createRect(55.1,12.6,17.3,4.8,'rgba(210,210,210,1)',0,'none',0,'nameBox');
+// setTimeout(function(){fadeIn(desBox, 'opacity', 0.02, 0, 1);},100);
+//
+// var wooBox = createRect(77.6,12.6,17.3,4.8,'rgba(210,210,210,1)',0,'none',0,'nameBox');
+// setTimeout(function(){fadeIn(wooBox, 'opacity', 0.02, 0, 1);},100);
 
 //------------------------------------------------------animate programming bind
 
-placetextBoxes(2.5,11.5,12,'     Programming                        ',proBlock);
+// placetextBoxes(2.5,11.5,12,'      Programming       Hands - on                ',proBlock);
 
-setTimeout(function(){lineGrow(50,7.5,50,11.25,3,'rgb(150,150,150)'
-  ,'underBob',0.2,1.05);},4200);
-setTimeout(function(){lineGrow(50,11.25,6.25,11.25,2,'rgb(150,150,150)'
-  ,'underBob',0.5,1.05);},4400);
-setTimeout(function(){lineGrow(6.25,11.25,6.25,18.75,2,'rgb(150,150,150)'
-  ,'underBob',0.2,1.05);},4700);
+// setTimeout(function(){lineGrow(50,7.5,50,12.5,2,'rgb(150,150,150)'
+//   ,'underBob',0.2,1.05);},4200);
 
+// setTimeout(function(){lineGrow(50,12.5,0,12.5,3,'rgb(100,100,100)'
+//   ,'underBob',0.5,1.05);},4200);
+//
+// setTimeout(function(){lineGrow(50,12.5,100,12.5,3,'rgb(100,100,100)'
+//   ,'underBob',0.5,1.05);},4200);
 
+mainSVG.appendChild(infoBox); mainSVG.appendChild(mediaSLeft);
+mainSVG.appendChild(bulletBox); mainSVG.appendChild(mediaSRight);
 
-
-mainSVG.appendChild(infoBox);
-
-mainSVG.appendChild(mediaSLeft);
+mainSVG.appendChild(allBoxShadeTop);
+mainSVG.appendChild(allBoxShadeBot);
 mainSVG.appendChild(mediaBox);
+
+
+
 
 
 
