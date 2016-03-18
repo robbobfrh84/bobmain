@@ -30,27 +30,27 @@ function placetextBoxes(x,y,size,text,block){
     ,'inBk'+i, 'allIntro', text[i]); }
   setTimeout(function(){arreyFade(block, 0.01, 0, 1);},750);}
 placetextBoxes(2.5,1.8,16,'  A Journal & Presentation of Projects  ',introBlock);
-placetextBoxes(2.5,99.3,12,'            © 2016 Bob Main',copyBlock);
+placetextBoxes(2.505,62.1,12,'            © 2016 Bob Main',copyBlock);
 
 //----------------------------------------------------------Draw intro underline
-setTimeout(function(){lineGrow(50,2.5,2.5,2.5,2
-  ,'rgb(150,150,150)','leftLine',0.2,1.03);},1500);
-setTimeout(function(){lineGrow(50,2.5,97.5,2.5,2
-  ,'rgb(150,150,150)','rightLine',0.2,1.03);},1500);
+var introL=createLine(50,2.5,2.5,2.5,2,'rgb(150,150,150)','introL',0);
+setTimeout(function(){linePulse(50,2.5,2.5,2.5,introL,true,0.2,1.03);},1500);
+var introR=createLine(50,2.5,97.5,2.5,2,'rgb(150,150,150)','introR',0);
+setTimeout(function(){linePulse(50,2.5,97.5,2.5,introR,true,0.2,1.03);},1500);
 
 //-----------------------------------------------------------fadeIn Bob Main box
 var nameBox = createRect(40,2.5,20,5,'rgb(220,220,220)',0,'none',0,'nameBox');
 setTimeout(function(){fadeIn(nameBox, 'opacity', 0.02, 0, 1);},1750);
 
 //------------------------------------------------------FadeIn By Bob Main Lines
-setTimeout(function(){lineGrow(50,7.5,40,7.5,2,'rgb(150,150,150)'
-  ,'underBob',0.1,1.05);},2500);
-setTimeout(function(){lineGrow(50,7.5,60,7.5,2,'rgb(150,150,150)'
-  ,'underMain',0.1,1.05);},2500);
-setTimeout(function(){lineGrow(40,7.5,40,2.5,2,'rgb(150,150,150)'
-  ,'leftBob',0.1,1.05);},2500);
-setTimeout(function(){lineGrow(60,7.5,60,2.5,2,'rgb(150,150,150)'
-  ,'rightBob',0.1,1.05);},2500);
+var undBob = createLine(50,7.5,40,7.5,2,'rgb(150,150,150)','undBob',0);
+setTimeout(function(){linePulse(50,7.5,40,7.5,undBob,true,0.1,1.05);},2500);
+var undMain = createLine(50,7.5,40,7.5,2,'rgb(150,150,150)','undMain',0);
+setTimeout(function(){linePulse(50,7.5,60,7.5,undMain,true,0.1,1.05);},2500);
+var lBob = createLine(40,7.5,40,2.5,2,'rgb(150,150,150)','lBob',0);
+setTimeout(function(){linePulse(40,7.5,40,2.5,lBob,true,0.1,1.05);},2500);
+var rBob = createLine(60,7.5,60,2.5,2,'rgb(150,150,150)','rBob',0);
+setTimeout(function(){linePulse(60,7.5,60,2.5,rBob,true,0.1,1.05);},2500);
 
 //------------------------------------------------------------FadeIn By Bob Main
 setTimeout(function(){fadeIn(bobMain, 'opacity', 0.01, 0, 1);},3000);
@@ -60,68 +60,70 @@ mainSVG.appendChild(bobMainS); mainSVG.appendChild(bobMain);
 //-------------------------------------------------------------FadeIn DropShadow
 setTimeout(function(){fadeIn(fullpage, 'box-shadow', 0.03, 0, 1);},3500);
 
-//--------------------------------------------------------blowup buttons & icons
-createButtons('contact', 'contactCir');
-createButtons('about', 'aboutCir');
-createButtons('twit', 'twitCir');
-createButtons('git', 'gitCir');
-createButtons('insta', 'instaCir');
-createButtons('angel', 'angelCir');
+//--------------------------------Create Link buttons & icons with blowup effect
+createBtn('contact', 'contactCir');
+createBtn('about', 'aboutCir');
+createBtn('twit', 'twitCir');
+createBtn('git', 'gitCir');
+createBtn('insta', 'instaCir');
+createBtn('angel', 'angelCir');
 setTimeout(function(){blowUp(contact,contactCir,2,3,0,100);},4000);
-setTimeout(function(){blowUp(about,aboutCir,2,2,0,100);},3200);
+setTimeout(function(){blowUp(about,aboutCir,2,3,0,100);},3200);
 setTimeout(function(){blowUp(twit,twitCir,2,3,0,100);},3400);
 setTimeout(function(){blowUp(angel,angelCir,2,3,0,100);},3600);
 setTimeout(function(){blowUp(git,gitCir,2,2,0,100);},3500);
 setTimeout(function(){blowUp(insta,instaCir,2,3,0,100);},3800);
 
-//------------------------------------------------------animate main skill boxes
-// var webBox = createRect(7.6,12.6,17.3,4.8,'rgba(220,220,220,0.75)',0,'none',0,'nameBox');
-// setTimeout(function(){fadeIn(webBox, 'opacity', 0.02, 0, 1);},100);
-//
-// var micBox = createRect(27.6,12.6,17.3,4.8,'rgba(210,210,210,1)',0,'none',0,'nameBox');
-// setTimeout(function(){fadeIn(micBox, 'opacity', 0.02, 0, 1);},100);
-//
-// var desBox = createRect(55.1,12.6,17.3,4.8,'rgba(210,210,210,1)',0,'none',0,'nameBox');
-// setTimeout(function(){fadeIn(desBox, 'opacity', 0.02, 0, 1);},100);
-//
-// var wooBox = createRect(77.6,12.6,17.3,4.8,'rgba(210,210,210,1)',0,'none',0,'nameBox');
-// setTimeout(function(){fadeIn(wooBox, 'opacity', 0.02, 0, 1);},100);
-
-//------------------------------------------------------animate programming bind
-
-// placetextBoxes(2.5,11.5,12,'      Programming       Hands - on                ',proBlock);
-
-// setTimeout(function(){lineGrow(50,7.5,50,12.5,2,'rgb(150,150,150)'
-//   ,'underBob',0.2,1.05);},4200);
-
-// setTimeout(function(){lineGrow(50,12.5,0,12.5,3,'rgb(100,100,100)'
-//   ,'underBob',0.5,1.05);},4200);
-//
-// setTimeout(function(){lineGrow(50,12.5,100,12.5,3,'rgb(100,100,100)'
-//   ,'underBob',0.5,1.05);},4200);
-
+//-----------------------------------Create background areas for rolling content
 mainSVG.appendChild(infoBox); mainSVG.appendChild(mediaSLeft);
 mainSVG.appendChild(bulletBox); mainSVG.appendChild(mediaSRight);
-
-mainSVG.appendChild(allBoxShadeTop);
 mainSVG.appendChild(allBoxShadeBot);
 mainSVG.appendChild(mediaBox);
+mainSVG.appendChild(allBoxShadeTop);
 
+//------------------------------------Create Main Skill buttons with line effect
+var dropL = createLine(25,12.4,25,50,3,'rgb(220,220,220)','dropL',0);
+var dropR = createLine(75,12.4,75,50,3,'rgb(220,220,220)','dropL',0);
 
+var webText = document.getElementById('webText'); mainSVG.appendChild(webText);
+var webWin = createRect(0,10,25,2.6,'rgb(220,220,220)',0,'none',0,'webWin');
+var webBox = document.getElementById('webBox');
+var webLine = createLine(0,12.5,25,12.5,3,'rgb(220,220,220)','webLine',0);
+createBarBtn(webWin,webLine,webBox,'l',0.75,1.15,0.75,1.15);
 
+var micText = document.getElementById('micText'); mainSVG.appendChild(micText);
+var micWin = createRect(25,10,25,2.6,'rgb(220,220,220)',0,'none',0,'micWin');
+var micBox = document.getElementById('micBox');
+var micLine = createLine(25,12.5,50,12.5,3,'rgb(220,220,220)','micLine',0);
+createBarBtn(micWin,micLine,micBox,'l',0.75,1.15,0.75,1.15);
 
+var desText = document.getElementById('desText'); mainSVG.appendChild(desText);
+var desWin = createRect(50,10,25,2.6,'rgb(220,220,220)',0,'none',0,'desWin');
+var desBox = document.getElementById('desBox');
+var desLine = createLine(50,12.5,75,12.5,3,'rgb(220,220,220)','desLine',0);
+createBarBtn(desWin,desLine,desBox,'r',0.75,1.15,0.75,1.15);
+
+var wooText = document.getElementById('wooText'); mainSVG.appendChild(wooText);
+var wooWin = createRect(75,10,25,2.6,'rgb(220,220,220)',0,'none',0,'wooWin');
+var wooBox = document.getElementById('wooBox');
+var wooLine = createLine(75,12.5,100,12.5,3,'rgb(220,220,220)','wooLine',0);
+createBarBtn(wooWin,wooLine,wooBox,'r',0.75,1.15,0.75,1.15);
+
+//------------------------------------------------------animate programming bind
 
 
 ////////// TEST ZONE ///////////////////////////////////////////////////////////
 
+var leftArrow = document.getElementById('leftArrow');
+mainSVG.appendChild(leftArrow);
+var rightArrow = document.getElementById('rightArrow');
+mainSVG.appendChild(rightArrow);
 
-// lineGrow(5,5,5,25,3,'cornflowerblue','testLine',0.1,1.05);
-// lineGrow(5,25,25,25,3,'cornflowerblue','testLine',0.1,1.05);
-// lineGrow(25,25,25,5,3,'cornflowerblue','testLine',0.1,1.05);
-// lineGrow(25,45,5,25,3,'cornflowerblue','testLine',0.1,1.05);
+var projln = createLine(6.2,55,93.8,55,3,'rgba(0,0,0,0.5)','proln',1);
 
-/*
-////////// CHECKLIST NOTES ///////////////////////////////////////////////////
+
+
+/*////////// CHECKLIST NOTES ///////////////////////////////////////////////////
 -
 -
 -

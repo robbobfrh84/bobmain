@@ -12,9 +12,9 @@ function createBlockText(x,y,size,opacity,color,txID,elClass,text){
   ,['opacity',opacity],['fill',color],['class',elClass],['id',txID]]);
   txID.appendChild(document.createTextNode(text)); return txID; }
 
-function createLine(x1,y1,x2,y2,width,color,lnID){
+function createLine(x1,y1,x2,y2,width,color,lnID,opacity){
   var newEl = createEl('mainSVG','line',[['id',lnID],['stroke-width',width],['stroke',color]
-    ,['x1',x1+'%'],['y1',y1+'%'],['x2',x2+'%'],['y2',y2+'%']]); return newEl;}
+    ,['x1',x1+'%'],['y1',y1+'%'],['x2',x2+'%'],['y2',y2+'%'],['opacity',opacity]]); return newEl;}
 
 function createPath(path, width, color, arcID){
   createEl('mainSVG','path',[['id', arcID],['stroke-width',width],['stroke',color]
@@ -30,25 +30,67 @@ function createEl(container,type,att){
   for (var i=0; i<att.length; i++){ newObj.setAttributeNS(null, att[i][0],att[i][1]); }
   document.getElementById(container).appendChild(newObj); return newObj; }
 
-function createButtons(btn, cir){
+//////////CREATE BUTTONS////////////////////////////////////////////////////////
+function createBtn(btn, cir){ var on = false;
   var btn = document.getElementById(btn); mainSVG.appendChild(btn);
   var cir = document.getElementById(cir);
   btn.onmouseover = function(){
-     cir.style.fill = 'rgb(210,210,210)'; cir.style.r = '2.2%';}
-  btn.onmouseout = function(){
-     cir.style.fill = 'rgb(230,230,230)';cir.style.r = '2%'};}
+    if (on === false){
+      cir.style.fill = 'rgb(210,210,210)'; cir.style.r = '2.3%';
+      blowUp(btn,cir,1,2,75,100); on = true;}}
+  btn.onmouseleave = function(){
+     cir.style.fill = 'rgb(230,230,230)';cir.style.r = '2%'; on = false;}}
 
+function createBarBtn(btn,lnID,box,drop,speed1,ramp1,speed2,ramp2){
+  var sX = parseFloat(lnID.getAttribute('x1'));
+  var sY = parseFloat(lnID.getAttribute('y1'));
+  var eX = parseFloat(lnID.getAttribute('x2'));
+  var eY = parseFloat(lnID.getAttribute('y2'));
+  btn.onmouseover = function(){
+    linePulse(sX,sY,eX,eY,lnID,true,speed1,ramp1);
+    box.style.fill = 'rgb(200,200,210)';
+  }
+  btn.onmouseleave = function(){
+    linePulse(sX,sY,eX,eY,lnID,false,speed2,ramp2);
+    box.style.fill = 'url(#grad1)';
+    if(drop==='l'){linePulse(25,12.5,25,50,dropL,false,0.5,1.15);}
+    if(drop==='r'){linePulse(75,12.5,75,50,dropR,false,0.5,1.15);}
+  }
+  btn.onmousedown = function(){ webDevClick();
+    if(drop==='l'){linePulse(25,12.5,25,50,dropL,true,0.5,1.15);}
+    if(drop==='r'){linePulse(75,12.5,75,50,dropR,true,0.5,1.15);}}}
+
+function webDevClick(){
+  console.log('example for later');
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //////////          ANIMATION STATION          /////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+function linePulse(sX,sY,eX,eY,lnID,grow,speed,ramp){ var end = false;
+  var x = Math.abs(sX-eX); var y = Math.abs(sY-eY); var newX=sX; var newY=sY;
+  if (grow){ lnID.setAttributeNS(null, 'opacity', 1); }
+  function go(){ x -= speed; y-= speed; speed*=ramp;
+    if(sX > eX && x > 0){end=false; if(grow){newX=eX+x;} else {newX=sX-x;}}
+    if(sX < eX && x > 0){end=false; if(grow){newX=eX-x;} else {newX=sX+x;}}
+    if(sY > eY && y > 0){end=false; if(grow){newY=eY+y;} else {newY=sY-y;}}
+    if(sY < eY && y > 0){end=false; if(grow){newY=eY-y;} else {newY=sY+y;}}
+    if(end === true){
+      if (!grow){lnID.setAttributeNS(null, 'opacity', 0);}
+      lnID.setAttributeNS(null,'x2',eX+'%');
+      lnID.setAttributeNS(null,'y2',eY+'%');
+      return; }
+    lnID.setAttributeNS(null, 'x2',newX+'%');
+    lnID.setAttributeNS(null, 'y2',newY+'%');
+    end = true;
+    requestAnimationFrame(go);} go();}
+
 function fadeIn(varName, element, speed, start, end){
   function go(){
     if (element === 'box-shadow'){
       varName.style.boxShadow = '0px 0px 25px rgba(80,80,80,'+start+') inset';
     } else { varName.style.opacity = start;} start+=speed;
     if (start <= end){ requestAnimationFrame(go); } } go(); }
-
 
 function blowUp(varName, cir, speed, ramp, start, end){ var x; var y;
   var cx = parseFloat(cir.getAttribute('cx'));
@@ -68,23 +110,6 @@ function arreyFade(arrEL, speed, start, end){
     start+=speed;
     if (start <= end){ requestAnimationFrame(go); }  } go(); }
 
-function lineGrow(startX,startY,endX,endY,width,color,lineID,speed,ramp){
-  var lineID = createLine(startX,startY,startX,startY,width,color,lineID);
-  var x = Math.abs(startX-endX); var y = Math.abs(startY-endY);
-  var placeX = startX; var placeY = startY; var end = false;
-  function goxxx(){ x -= speed; y -= speed; speed*=ramp;
-    if (startX > endX && x > 0) { end = false; placeX = endX+x; }
-    if (startX < endX && x > 0) { end = false; placeX = endX-x; }
-    if (startY > endY && y > 0) { end = false; placeY = endY+y; }
-    if (startY < endY && y > 0) { end = false; placeY = endY-y; }
-    if (end === true) { lineID.setAttributeNS(null,'x2',endX+'%');
-    lineID.setAttributeNS(null,'y2',endY+'%'); return; }
-    lineID.setAttributeNS(null,'x2',placeX+'%');
-    lineID.setAttributeNS(null,'y2',placeY+'%');
-    end = true; requestAnimationFrame(goxxx);
-  } goxxx();
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 //////////          Random Functions         ///////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -95,6 +120,8 @@ function rgbR(){
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+//example: lnID.setAttributeNS(null, 'stroke', 'rgb('+rgbR()+')');
+
 
 ////////////////////////////////////////////////////////////////////////////////
 //////////          EASTER EGGS              ///////////////////////////////////

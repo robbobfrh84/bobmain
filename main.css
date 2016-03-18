@@ -4,6 +4,11 @@ body {
   margin: auto;
   text-align: center;
   font-family: verdana;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #mainSVG {
@@ -16,7 +21,62 @@ body {
   opacity: 0;
 }
 
-#dropbar {
+.txt1 {
+  fill: rgba(0,0,0,0.8);
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-shadow:0 0 8px white, 0 0 8px white;
+}
+
+#projectBar {
+  background-color: rgba(180,180,180,0);
+  /*background: linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0.3) 10%
+    , rgba(255,255,255,0.3) 90%, rgba(0,0,0,0.2));*/
+  /*background-color: #F07575; fallback color if gradients are not supported
+  background-image: -webkit-linear-gradient(top, hsl(0, 80%, 70%), #bada55); For Chrome 25 and Safari 6, iOS 6.1, Android 4.3
+  background-image:    -moz-linear-gradient(top, hsl(0, 80%, 70%), #bada55);  For Firefox (3.6 to 15)
+  background-image:      -o-linear-gradient(top, hsl(0, 80%, 70%), #bada55); For old Opera (11.1 to 12.0)
+  background-image:         linear-gradient(to bottom, hsl(0, 80%, 70%), #bada55); Standard syntax; must be last */
+  position: relative;
+  width: 90vw;
+  height: 3.75vw;
+  border-radius: 3vw;
+  margin: auto;
+  margin-top: -48.95vw;
+}
+
+.webProjs {
+  font-size: 1.6vw;
+  color: rgba(0,0,0,0.65);
+  background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2) 8%
+    ,rgba(255,255,255,0.5) 10%, rgba(0,0,0,0) 60%);
+  width: 16%;
+  height: 55%;
+  display: inline-block;
+  margin: auto;
+  margin-top: 0%;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding-top: 1.8%;
+}
+
+/*#projBarArrowL, #projBarArrowR{
+  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 20%
+    , rgba(0,0,0,0) 80%, rgba(0,0,0,0.2));
+  margin-top: .5%;
+  width: 3%;
+  border-radius: 100%;
+}
+#projBarArrowL{
+  float: left;
+  margin-left: 1%
+}
+#projBarArrowR{
+  float: right;
+  margin-right: 1%
+}*/
+
+/*#dropbar {
   background-color: rgba(180,180,180,0.9);
   position: relative;
   width: 75vw;
@@ -31,7 +91,7 @@ body {
   -o-transition:height 200ms ease-in;
   transition:height 200ms ease-in;
 
-}
+}*/
 
 /*#dropbar:hover {
   height: 5vw;
@@ -42,24 +102,6 @@ body {
   -o-transition:height 200ms ease-in;
   transition:height 200ms ease-in;
 }*/
-
-.skillBtn, .dividers{
-  color: rgba(50,50,50,1);
-  display: inline-block;
-  margin: auto;
-  vertical-align: middle;
-  margin-left: 4vw;
-  margin-right: 4vw;
-}
-
-.dividers{
-  margin: 0;
-}
-
-#woodTab {
-  color: red;
-
-}
 
 
 /*----------------------------NOTES---------------------------------------------
