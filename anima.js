@@ -1,11 +1,14 @@
 var svgElement = 'http://www.w3.org/2000/svg';
 
 //////////CREATE SVG ELEMENTS///////////////////////////////////////////////////
-function drawGrid(numOfLines,thin,fifth,tenth,color){ lines = (100/numOfLines);
-  for (var i = 0; i <= numOfLines; i++){ fat = thin;
+function drawGrid(numVLines,numHLines,thin,fifth,tenth,color){
+  lines = (100/numVLines); hlines = (100/numHLines);
+  for (var i = 0; i <= numVLines; i++){ fat = thin;
     if(i%5===0){fat=fifth;} if(i%10===0||i===0){fat=tenth;}
-    createLine(0,lines*i,100,lines*i,fat,color,'vert'+i);
-    createLine(lines*i,0,lines*i,100,fat,color,'horiz'+i); } }
+    createLine(lines*i,0,lines*i,100,fat,color,'vert'+i); }
+  for (var i = 0; i <= numHLines; i++){ fat = thin;
+    if(i%5===0){fat=fifth;} if(i%10===0||i===0){fat=tenth;}
+    createLine(0,hlines*i,100,hlines*i,fat,color,'horiz'+i);}}
 
 function createBlockText(x,y,size,opacity,color,txID,elClass,text){
   var txID = createEl('mainSVG','text',[['x',x+'%'],['y',y+'%'],['font-size',size]
@@ -29,6 +32,14 @@ function createEl(container,type,att){
   var newObj = document.createElementNS(svgElement, type);
   for (var i=0; i<att.length; i++){ newObj.setAttributeNS(null, att[i][0],att[i][1]); }
   document.getElementById(container).appendChild(newObj); return newObj; }
+
+  function updateEl(Id, att) {
+      for (var i=0; i<att.length; i++){
+        document.getElementById(Id).setAttribute(att[i][0],att[i][1]);
+        //NEED TO UPDATE FOR SVG!!!
+        //document.getElementById(Id).setAttributeNS(att[i][0],att[i][1]);
+    }
+  }
 
 //////////CREATE BUTTONS////////////////////////////////////////////////////////
 function createBtn(btn, cir){ var on = false;
@@ -113,6 +124,7 @@ function arreyFade(arrEL, speed, start, end){
 ////////////////////////////////////////////////////////////////////////////////
 //////////          Random Functions         ///////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+
 function rgbR(){
   return [random(0,255), random(0,255), random(0,255)];
 }
@@ -127,11 +139,18 @@ function random(min, max) {
 //////////          EASTER EGGS              ///////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function crazyLine(){
-  var dir = 1; var back = 2; var sx = 25; var sy = 25; var ex = 25; var ey = 25;
-  setInterval(function(){
-    dir=back;
-    while (dir === back){ dir = random(1,4);} sx=ex; sy=ey;
-    if (dir === 1){ ex += 2.5; back = 2;} if (dir === 2){ ex -= 2.5; back = 1;}
-    if (dir === 3){ ey += 2.5; back = 4;} if (dir === 4){ ey -= 2.5; back = 3;}
-    lineGrow(sx,sy,ex,ey,2,'firebrick','testLine',0.1,1.05);},100);}
+// function crazyLine(){
+//   var dir = 1; var back = 2; var sx = 25; var sy = 25; var ex = 25; var ey = 25;
+//   setInterval(function(){
+//     dir=back;
+//     while (dir === back){ dir = random(1,4);} sx=ex; sy=ey;
+//     if (dir === 1){ ex += 2.5; back = 2;} if (dir === 2){ ex -= 2.5; back = 1;}
+//     if (dir === 3){ ey += 2.5; back = 4;} if (dir === 4){ ey -= 2.5; back = 3;}
+//     linePulse(sx,sy,ex,ey,2,'firebrick','testLine',0.1,1.05);},100);}
+//
+//
+// function egg1(){
+//   createLine(15,72.4,15,95,3,'red','cra',1);
+//   console.log('Egg Clicked');
+//   crazyLine();
+// }

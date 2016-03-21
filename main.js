@@ -4,7 +4,7 @@ var fullpage = document.getElementById('mainSVG');
 fadeIn(fullpage, 'opacity', 0.02,0,1);
 
 //---------------------------------------------------------Place background grid
-drawGrid(40,0.25,0.75,1.5,'cornflowerblue');
+drawGrid(40,40,0.25,0.75,1.5,'cornflowerblue');
 
 //---------------------------------declare main object variables created in HTML
 var introBlock=[]; var copyBlock=[]; var proBlock=[];
@@ -13,11 +13,9 @@ var introBlock=[]; var copyBlock=[]; var proBlock=[];
 //....prob just move back where they're appended.
 var bobMain = document.getElementById('bobMain');
 var bobMainS = document.getElementById('bobMainS');
-
 var infoBox = document.getElementById('infoBox');
 var bulletBox = document.getElementById('bulletBox');
 var mediaBox = document.getElementById('mediaBox');
-
 var mediaSLeft = document.getElementById('mediaSLeft');
 var mediaSRight = document.getElementById('mediaSRight');
 var allBoxShadeTop = document.getElementById('allBoxShadeTop');
@@ -73,6 +71,9 @@ setTimeout(function(){blowUp(twit,twitCir,2,3,0,100);},3400);
 setTimeout(function(){blowUp(angel,angelCir,2,3,0,100);},3600);
 setTimeout(function(){blowUp(git,gitCir,2,2,0,100);},3500);
 setTimeout(function(){blowUp(insta,instaCir,2,3,0,100);},3800);
+// createBtn('egg', 'eggCir');
+// setTimeout(function(){blowUp(egg,eggCir,2,3,0,100);},1000);
+
 
 //-----------------------------------Create background areas for rolling content
 mainSVG.appendChild(infoBox); mainSVG.appendChild(mediaSLeft);
@@ -108,6 +109,44 @@ var wooWin = createRect(75,10,25,2.6,'rgb(220,220,220)',0,'none',0,'wooWin');
 var wooBox = document.getElementById('wooBox');
 var wooLine = createLine(75,12.5,100,12.5,3,'rgb(220,220,220)','wooLine',0);
 createBarBtn(wooWin,wooLine,wooBox,'r',0.75,1.15,0.75,1.15);
+//------------------------------------------------------------------------------
+//----------                PROJECTS            --------------------------------
+//------------------------------------------------------------------------------
+
+var webProjs = ['Sudoku','riiple','Profile','Tic-tac-toe'];
+var micProjs = ['CNC','Controller','Gcode Editor','LCD'];
+var desProjs = ['Airbush Cups','Woodshop','Cogs','hotplate'];
+var wooProjs = ['Shed','Folding Chair','Squirrel Guard','Wood Mugs'];
+
+//AWSOME OPERTUNITY TO US OBJECTS
+
+function placeProjs(project){
+  for(var i = 0; i < 5; i++){
+  if (typeof project[i] === 'undefined'){
+    document.getElementById('proj'+i).style.display = 'none';
+  } else {
+    document.getElementById('proj'+i).style.display = 'inline-block';
+    document.getElementById('proj'+i).innerHTML = project[i];}
+  }
+}
+
+placeProjs(webProjs);
+placeProjs(micProjs);
+placeProjs(desProjs);
+placeProjs(wooProjs);
+
+function leftArrowClick(){
+  console.log('clicked Left');
+  placeProjs(webProjs);
+}
+
+function rightArrowClick(){
+  console.log('clicked Right');
+  placeProjs(desProjs);
+
+}
+
+
 
 //------------------------------------------------------animate programming bind
 
