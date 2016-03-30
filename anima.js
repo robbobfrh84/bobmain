@@ -1,6 +1,8 @@
 var svgElement = 'http://www.w3.org/2000/svg';
 
-//////////CREATE SVG ELEMENTS///////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////          CREATE SVG ELEMENTS          ////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 function drawGrid(numVLines,numHLines,thin,fifth,tenth,color){
   lines = (100/numVLines); hlines = (100/numHLines);
   for (var i = 0; i <= numVLines; i++){ fat = thin;
@@ -28,20 +30,25 @@ function createRect(x,y,width,height,fill,bordWidth,bordColor,opacity, recID){
   ,['stroke',bordColor],['x',x+'%'],['y', y+'%'],['width',width+'%'],['height',height+'%']
   ,['opacity', opacity],['fill',fill]]); return newEl;}
 
+function createCir(cx,cy,r,fill,bordWidth,bordColor,opacity, cirID){
+  var newEl = createEl('mainSVG','circle',[['id',cirID],['stroke-width',bordWidth+'%']
+  ,['stroke',bordColor],['cx',cx+'%'],['cy', cy+'%'],['r',r+'%']
+  ,['opacity', opacity],['fill',fill]]); return newEl;}
+
 function createEl(container,type,att){
   var newObj = document.createElementNS(svgElement, type);
   for (var i=0; i<att.length; i++){ newObj.setAttributeNS(null, att[i][0],att[i][1]); }
   document.getElementById(container).appendChild(newObj); return newObj; }
 
-  function updateEl(Id, att) {
-      for (var i=0; i<att.length; i++){
-        document.getElementById(Id).setAttribute(att[i][0],att[i][1]);
-        //NEED TO UPDATE FOR SVG!!!
-        //document.getElementById(Id).setAttributeNS(att[i][0],att[i][1]);
-    }
+function updateSVG(elm, att) {
+  for (var i=0; i<att.length; i++){
+    elm.setAttributeNS(null, att[i][0],att[i][1]);
   }
+}
 
-//////////CREATE BUTTONS////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////          CREATE BUTTONS & HOVERS        //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 function createBtn(btn, cir){ var on = false;
   var btn = document.getElementById(btn); mainSVG.appendChild(btn);
   var cir = document.getElementById(cir);
@@ -52,33 +59,74 @@ function createBtn(btn, cir){ var on = false;
   btn.onmouseleave = function(){
      cir.style.fill = 'rgb(230,230,230)';cir.style.r = '2%'; on = false;}}
 
-function createBarBtn(btn,lnID,box,drop,speed1,ramp1,speed2,ramp2){
+function createBarBtn(position,btn,lnID,box,drop,speed1,ramp1,speed2,ramp2){
   var sX = parseFloat(lnID.getAttribute('x1'));
   var sY = parseFloat(lnID.getAttribute('y1'));
   var eX = parseFloat(lnID.getAttribute('x2'));
   var eY = parseFloat(lnID.getAttribute('y2'));
   btn.onmouseover = function(){
-    linePulse(sX,sY,eX,eY,lnID,true,speed1,ramp1);
-    box.style.fill = 'rgb(200,200,210)';
-  }
+    linePulse(sX,sY,eX,eY,lnID,true,speed1,ramp1,'none');
+    box.style.fill = 'rgb(200,200,210)';}
   btn.onmouseleave = function(){
-    linePulse(sX,sY,eX,eY,lnID,false,speed2,ramp2);
+    lnID.setAttributeNS(null, 'opacity', 0);
+    var offLine = createLine(sX,sY,eX,eY,3,'rgb(220,220,220)','offLine',1);
+    linePulse(sX,sY,eX,eY,offLine,false,speed2,ramp2,'none');
     box.style.fill = 'url(#grad1)';
-    if(drop==='l'){linePulse(25,12.5,25,50,dropL,false,0.5,1.15);}
-    if(drop==='r'){linePulse(75,12.5,75,50,dropR,false,0.5,1.15);}
-  }
-  btn.onmousedown = function(){ webDevClick();
-    if(drop==='l'){linePulse(25,12.5,25,50,dropL,true,0.5,1.15);}
-    if(drop==='r'){linePulse(75,12.5,75,50,dropR,true,0.5,1.15);}}}
+    if(drop==='l'){linePulse(25,12.5,25,50,dropL,false,0.5,1.15,'none');}
+    if(drop==='r'){linePulse(75,12.5,75,50,dropR,false,0.5,1.15,'none');}}
+  btn.onmousedown = function(){ swapProjs(1,true,position);
+    if(drop==='l'){linePulse(25,12.5,25,50,dropL,true,0.5,1.15,'none');}
+    if(drop==='r'){linePulse(75,12.5,75,50,dropR,true,0.5,1.15,'none');}}}
 
-function webDevClick(){
-  console.log('example for later');
-}
+leftArrowSVG.onmouseover = function(){
+  if(sCnt===0){var x=projs.length-1}else{var x=sCnt-1;}
+  skillsArr[x].onmouseover();
+  elmAnimate(leftArrow, 'opacity', 0.04, 1, '', 0.5, 0.8,'none')
+  elmAnimate(polarGradL, 'x2',1.01,1.4,'%',0,100,'none');}
+leftArrowSVG.onmouseleave = function(){
+  if(sCnt===0){var x=projs.length-1}else{var x=sCnt-1;}
+  skillsArr[x].onmouseleave();
+  elmAnimate(leftArrow, 'opacity', 0.01, 1, '', 0.8, 0.5,'none')
+  elmAnimate(polarGradL, 'x2',1.01,1.4,'%',100,20,'none');}
+leftArrowSVG.onmousedown = function(){
+  if(sCnt===0){var x=projs.length-1}else{var x=sCnt-1;}
+  skillsArr[x].onmouseleave(); swapProjs(-1,true,'n'); leftArrowSVG.onmouseover();}
 
+rightArrowSVG.onmouseover = function(){
+  if(sCnt===projs.length-1){var x=0}else{var x=sCnt+1;}
+  skillsArr[x].onmouseover();
+  elmAnimate(rightArrow, 'opacity', 0.04, 1, '', 0.5, 0.8,'none')
+  elmAnimate(polarGradR, 'x2',1.01,1.4,'%',0,100,'none');}
+rightArrowSVG.onmouseleave = function(){
+  if(sCnt===projs.length-1){var x=0}else{var x=sCnt+1;}
+  skillsArr[x].onmouseleave();
+  elmAnimate(rightArrow, 'opacity', 0.01, 1, '', 0.8, 0.5,'none')
+  elmAnimate(polarGradR, 'x2',1.01,1.4,'%',100,20,'none');}
+rightArrowSVG.onmousedown = function(){
+  if(sCnt===projs.length-1){var x=0}else{var x=sCnt+1;}
+  skillsArr[x].onmouseleave(); swapProjs(1,true,'n'); rightArrowSVG.onmouseover();}
+  
 ////////////////////////////////////////////////////////////////////////////////
 //////////          ANIMATION STATION          /////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-function linePulse(sX,sY,eX,eY,lnID,grow,speed,ramp){ var end = false;
+function elmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = start;
+  function go(){ speed*=ramp;
+    if (start < end){ loc+=speed; } else { loc-=speed; }
+    elID.setAttributeNS(null, elm, loc+unit);
+    if (start < end && loc <= end){ requestAnimationFrame(go); }
+    else if (start > end && loc >= end){ requestAnimationFrame(go); }
+    else { if (func !== 'none') { func(); return; }}} go();}
+//^This function was created late and could be turned into a universal animation function.
+//...And, could eliminate many of the functions below...
+function regElmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = start;
+  function go(){ speed*=ramp;
+    if (start < end){ loc+=speed; } else { loc-=speed; }
+    elID.setAttribute('style', elm+': '+loc+unit+';');
+    if (start < end && loc <= end){ requestAnimationFrame(go); }
+    else if (start > end && loc >= end){ requestAnimationFrame(go); }
+    else { if (func !== 'none') { func(); return; }}} go();}
+
+function linePulse(sX,sY,eX,eY,lnID,grow,speed,ramp,func,xx){ var end = false;
   var x = Math.abs(sX-eX); var y = Math.abs(sY-eY); var newX=sX; var newY=sY;
   if (grow){ lnID.setAttributeNS(null, 'opacity', 1); }
   function go(){ x -= speed; y-= speed; speed*=ramp;
@@ -90,6 +138,7 @@ function linePulse(sX,sY,eX,eY,lnID,grow,speed,ramp){ var end = false;
       if (!grow){lnID.setAttributeNS(null, 'opacity', 0);}
       lnID.setAttributeNS(null,'x2',eX+'%');
       lnID.setAttributeNS(null,'y2',eY+'%');
+      if (func !== 'none'){ func(xx);}
       return; }
     lnID.setAttributeNS(null, 'x2',newX+'%');
     lnID.setAttributeNS(null, 'y2',newY+'%');
@@ -121,10 +170,31 @@ function arreyFade(arrEL, speed, start, end){
     start+=speed;
     if (start <= end){ requestAnimationFrame(go); }  } go(); }
 
+function swapProjs(dir,fade,position){
+  if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
+  } else {skillsBox[sCnt].style.fill = 'url(#grad2)';}
+  skillsBox[sCnt].style.opacity = 1; skillsBox[sCnt].style.filter = 'none';
+  mainSVG.insertBefore(skillsBox[sCnt],vert0);
+  if (position === 'n'){ sCnt+=dir; }else{sCnt=position;}
+  if (sCnt >= projs.length){ sCnt=0;} if (sCnt <= -1){ sCnt=projs.length-1;}
+  if (fade) {regElmAnimate(projBar, 'opacity', 0.02, 1.1, '', 1, 0,reSetProj);
+  }else{reSetProj();}}
+
+function reSetProj(){
+  for(var i = 0; i < 5; i++){
+    if (typeof projs[sCnt].projects[i] === 'undefined'){
+      document.getElementById('proj'+i).style.display = 'none';
+    } else {
+      document.getElementById('proj'+i).style.display = 'inline-block';
+      document.getElementById('proj'+i).innerHTML = projs[sCnt].projects[i];}}
+  skillsBox[sCnt].style.filter = 'url(#dropShad)';
+  skillsBox[sCnt].style.opacity = 0.5;
+  mainSVG.appendChild(skillsBox[sCnt]); mainSVG.appendChild(skillsTxt[sCnt]);
+  mainSVG.appendChild(skillsArr[sCnt]);
+  regElmAnimate(projBar, 'opacity', 0.01, 1.1, '', 0, 1,'none');}
 ////////////////////////////////////////////////////////////////////////////////
 //////////          Random Functions         ///////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
 function rgbR(){
   return [random(0,255), random(0,255), random(0,255)];
 }
@@ -133,24 +203,3 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 //example: lnID.setAttributeNS(null, 'stroke', 'rgb('+rgbR()+')');
-
-
-////////////////////////////////////////////////////////////////////////////////
-//////////          EASTER EGGS              ///////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-
-// function crazyLine(){
-//   var dir = 1; var back = 2; var sx = 25; var sy = 25; var ex = 25; var ey = 25;
-//   setInterval(function(){
-//     dir=back;
-//     while (dir === back){ dir = random(1,4);} sx=ex; sy=ey;
-//     if (dir === 1){ ex += 2.5; back = 2;} if (dir === 2){ ex -= 2.5; back = 1;}
-//     if (dir === 3){ ey += 2.5; back = 4;} if (dir === 4){ ey -= 2.5; back = 3;}
-//     linePulse(sx,sy,ex,ey,2,'firebrick','testLine',0.1,1.05);},100);}
-//
-//
-// function egg1(){
-//   createLine(15,72.4,15,95,3,'red','cra',1);
-//   console.log('Egg Clicked');
-//   crazyLine();
-// }
