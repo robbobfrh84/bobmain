@@ -73,10 +73,12 @@ setTimeout(function(){blowUp(git,gitCir,2,2,0,100);},3500);
 setTimeout(function(){blowUp(insta,instaCir,2,3,0,100);},3800);
 
 //-----------------------------------Create background areas for rolling content--------------------
-mainSVG.appendChild(infoBox); mainSVG.appendChild(mediaSLeft);
-mainSVG.appendChild(bulletBox); mainSVG.appendChild(mediaSRight);
+mainSVG.appendChild(infoBox);
+//mainSVG.appendChild(mediaSLeft);
+//mainSVG.appendChild(bulletBox);
+//mainSVG.appendChild(mediaSRight);
 mainSVG.appendChild(allBoxShadeBot);
-mainSVG.appendChild(mediaBox);
+//mainSVG.appendChild(mediaBox);
 mainSVG.appendChild(allBoxShadeTop);
 
 //------------------------------------Create Main Skill buttons with line effect--------------------
@@ -103,7 +105,7 @@ var wooWin = createRect(75,10,25,2.6,'rgb(220,220,220)',0,'none',0,'wooWin');
 var wooLine = createLine(75,12.5,100,12.5,3,'rgb(220,220,220)','wooLine',0);
 createBarBtn(3,wooWin,wooLine,wooBox,'r',0.75,1.15,0.75,1.15);
 
-//------------------------------------Create projects bar and arrow/line effects--------------------
+//------------------------------------Create projects bar line--------------------------------------
 var skillsArr = [webWin,micWin,desWin,wooWin];
 var projln = createLine(6.2,55,93.8,55,3,'rgba(0,0,0,0.5)','proln',1);
 mainSVG.appendChild(projln);
@@ -112,18 +114,21 @@ mainSVG.appendChild(projln);
 //----------                PROJECTS            ----------------------------------------------------
 //--------------------------------------------------------------------------------------------------
 
-function Skill(type,projects){ //using Object Method here mostly for practice.
-	this.type = type;            //...2D array may be simpler. But, I like the
-	this.projects = projects; }   //...clarity of objects after doing it.
 var web = new Skill('Web Development', ['Sudoku','riiple','Profile','Tic-tac-toe','Maps']);
 var mic = new Skill('Microcontroller & CNC', ['CNC','Controller','Gcode Editor','LCD']);
 var des = new Skill('Design', ['Airbush Cups','Woodshop','Cogs','hotplate']);
 var woo = new Skill('Woodworking', ['Shed','Folding Chair','Squirrel Guard','Wood Mugs']);
+
+swapProjs(0,false,'n');
+
+function Skill(type,projects){ //using Object Method here mostly for practice.
+	this.type = type;            //...2D array may be simpler. But, I like the
+	this.projects = projects; }   //...clarity of objects after doing it.
 var sCnt = 0; var projs = [web,mic,des,woo];
 var skillsBox = [webBox,micBox,desBox,wooBox];
 var skillsTxt = [webText,micText,desText,wooText];
 
-swapProjs(0,false,'n');
+
 
 //check to see if you can delete document.getElmentByID with proj+i^^^
 
