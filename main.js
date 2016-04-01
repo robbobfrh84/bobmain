@@ -108,7 +108,7 @@ createBarBtn(3,wooWin,wooLine,wooBox,'r',0.75,1.15,0.75,1.15);
 
 //------------------------------------Create projects bar line--------------------------------------
 var skillsArr = [webWin,micWin,desWin,wooWin];
-var projln = createLine(6.2,55,93.8,55,3,'rgba(0,0,0,0.5)','proln',1);
+var projln = createLine(5,55,95,55,3,'rgba(0,0,0,0.5)','proln',1);
 mainSVG.appendChild(projln);
 
 //--------------------------------------------------------------------------------------------------

@@ -30,8 +30,8 @@ body {
 
 .txt1 {
   fill: rgba(0,0,0,0.7);
-  font-size: 15px;
-  letter-spacing: 0.1vw;
+  font-size: 17px;
+  letter-spacing: 0.05vw;
   text-shadow:0 0 8px white, 0 0 8px white;
 }
 
@@ -47,63 +47,90 @@ body {
   margin: auto;
   width: 100vw;
   height: 37.5vw;
-  margin-top: 12.6%;
+  margin-top: 12.6vw;
 }
 
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    width: 56.25vw;
-    height: 34.3vw;
+.carousel-inner > .item > img, video
+.carousel-inner > .item > a > img, video {
+    width: 51vw;
+    height: 31vw;
     margin: auto;
-    margin-top: 2vw;
-    margin-bottom: 1vw;
+    margin-top: 3vw; /*margin-bottom: 0.25vw;*/
 }
 
-.pic {
-  border-radius: 0.3vw;
+.pic, .vid {
+  border-radius: 0.4vw;
   box-shadow: 0 0 2px 2px rgba(0,0,0,0.2);
 }
 
-.vid {
-  width: 45vw;
-  height: 24.3vw;
-  margin: auto;
-  margin-top: 2vw;
-  margin-bottom: 11vw;
-  border-radius: 0.3vw;
-  box-shadow: 0 0 2px 2px rgba(0,0,0,0.2);
+.vid { /*width: 46.25vw; height: 24.3vw; margin-top: 2vw; margin-bottom: 1vw;*/
   object-fit: cover;
 }
 
-h3 {
-  border-radius: 0.5vw;
-  margin: auto;
-  width: 30vw;
-  /*background: rgba(0,0,0,0.2);*/
+.carousel-indicators li {
+    display: inline-block;
+    width: 1.2vw;
+    height: 1.2vw;
+    margin: 2vw;
+    margin-bottom: -5vw;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0,0,255,0.3);
+    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.3);
 }
-
-
-
-#infoText {
-  font-size: 14px;
-  color: rgba(0,0,0,0.9);
-  background-color: rgba(0,0,0,0.03);
-  /*width: 20vw;*/
-  /*height: 32.5vw;*/
-  margin-top: -25vw;
-  /*margin-left: 2.5%;*/
-  text-align: left;
-  overflow: auto;
+.carousel-indicators .active {
+    width: 1.5vw;
+    height: 1.5vw;
+    margin: 2vw;
+    margin-bottom: -5vw;
+    background-color: darkblue;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
 }
 
 .mediaGraph {
   font-size: 14px;
-  width: 50vw;
+  width: 48vw;
+  height: 6vw;
   margin: auto;
-  margin-bottom: -5vw;
-  padding-bottom: 5vw;
+  margin-bottom: -4vw;
+  padding-top: 0.5vw;
   border-radius: 0.5vw;
-  background: rgba(0,0,0,0.2);
+  box-shadow: 0 0 2px 2px rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.4);
+  overflow: auto;
+
+}
+
+#infoText {
+  color: rgba(255,255,255,0.9);
+  background-color: rgba(0,0,0,0.3);
+  height: 30vw;
+  margin-bottom: -3vw;
+  text-align: left;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none;
+  height: 28vw;
+  width: 25vw;
+}
+#prevAP:hover > #prevA{
+  opacity: 1;
+}
+#nextAP:hover > #nextA{
+  opacity: 1;
+}
+#prevA {
+  margin-top: 3vw;
+  margin-left: 5vw;
+  opacity: 0.3;
+}
+#nextA {
+  margin-top: 3vw;
+  margin-right: 5vw;
+  opacity: 0.3;
 }
 
 #projBar {
@@ -114,26 +141,8 @@ h3 {
   margin-top: 52.5%;
 }
 
-.carousel-control {
-  width: 22.5vw;
-}
-#prevAP:hover > #prevA{
-  opacity: 1;
-}
-#nextAP:hover > #nextA{
-  opacity: 1;
-}
-#prevA {
-  margin-left: 5vw;
-  opacity: 0.3;
-}
-#nextA {
-  margin-right: 5vw;
-  opacity: 0.3;
-}
-
 .projs {
-  font-size: 1.6vw;
+  font-size: 16px;
   color: rgba(0,0,0,0.65);
   background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2) 10%
     ,rgba(150,150,150,0.4) 10%, rgba(0,0,0,0) 80%);
@@ -154,25 +163,20 @@ h3 {
 /*----------          TOP LAYER SVGs          --------------------------------*/
 /*----------------------------------------------------------------------------*/
 
-#infoIcon {
+#infoIcon, #toolsIcon {
   position: absolute;
   top:0;bottom:0;left:0;right:0;
   opacity: 0.5;
-  width: 6.5vw;
-  margin-top: 42vw;
-  margin-left: 10vw;
+  width: 5vw;
+  margin-top: 40vw;
+  margin-left: 17.5vw;
 }
 #infoIcon:hover {
   opacity: 1;
 }
 
 #toolsIcon {
-  position: absolute;
-  top:0;bottom:0;left:0;right:0;
-  opacity: 0.5;
-  width: 6.5vw;
-  margin-top: 42vw;
-  margin-left: 83.5vw;
+  margin-left: 77.5vw;
 }
 #toolsIcon:hover {
   opacity: 1;

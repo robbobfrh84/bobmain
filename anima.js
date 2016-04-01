@@ -92,8 +92,8 @@ function createBarBtn(position,btn,lnID,box,drop,speed1,ramp1,speed2,ramp2){
 
     }
     if(drop==='l'){
-      createRect(5,15,0.3,32.5,'url(#linGrad)',0,'none',1,'dropL');
-      elmAnimate(dropL,'height',1.001,1.03,'%',0,32.5,'none');
+      createRect(5,15,0.3,40,'url(#linGrad)',0,'none',1,'dropL');
+      elmAnimate(dropL,'height',1.001,1.03,'%',0,40,'none');
 
       // linePulse(5,15,5,55,dropL,true,0.5,1.15,'none');
     }
