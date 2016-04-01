@@ -82,8 +82,9 @@ mainSVG.appendChild(allBoxShadeBot);
 mainSVG.appendChild(allBoxShadeTop);
 
 //------------------------------------Create Main Skill buttons with line effect--------------------
-var dropL = createLine(25,12.4,25,50,3,'rgb(220,220,220)','dropL',0);
-var dropR = createLine(75,12.4,75,50,3,'rgb(220,220,220)','dropL',0);
+
+//var dropL = createLine(5,15,5,55,3,'rgb(100,100,100)','dropL',0);
+var dropR = createLine(75,12.4,75,50,3,'rgb(220,220,220)','dropR',0);
 
 mainSVG.appendChild(webText);
 var webWin = createRect(0,10,25,2.6,'rgb(220,220,220)',0,'none',0,'webWin');
@@ -114,21 +115,18 @@ mainSVG.appendChild(projln);
 //----------                PROJECTS            ----------------------------------------------------
 //--------------------------------------------------------------------------------------------------
 
+function Skill(type,projects){ //using Object Method here mostly for practice.
+	this.type = type;            //...2D array may be simpler. But, I like the
+	this.projects = projects; }   //...clarity of objects after doing it.
 var web = new Skill('Web Development', ['Sudoku','riiple','Profile','Tic-tac-toe','Maps']);
 var mic = new Skill('Microcontroller & CNC', ['CNC','Controller','Gcode Editor','LCD']);
 var des = new Skill('Design', ['Airbush Cups','Woodshop','Cogs','hotplate']);
 var woo = new Skill('Woodworking', ['Shed','Folding Chair','Squirrel Guard','Wood Mugs']);
-
-swapProjs(0,false,'n');
-
-function Skill(type,projects){ //using Object Method here mostly for practice.
-	this.type = type;            //...2D array may be simpler. But, I like the
-	this.projects = projects; }   //...clarity of objects after doing it.
 var sCnt = 0; var projs = [web,mic,des,woo];
 var skillsBox = [webBox,micBox,desBox,wooBox];
 var skillsTxt = [webText,micText,desText,wooText];
 
-
+swapProjs(0,false,'n');
 
 //check to see if you can delete document.getElmentByID with proj+i^^^
 

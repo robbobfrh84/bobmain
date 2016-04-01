@@ -72,11 +72,38 @@ function createBarBtn(position,btn,lnID,box,drop,speed1,ramp1,speed2,ramp2){
     var offLine = createLine(sX,sY,eX,eY,3,'rgb(220,220,220)','offLine',1);
     linePulse(sX,sY,eX,eY,offLine,false,speed2,ramp2,'none');
     box.style.fill = 'url(#grad1)';
-    if(drop==='l'){linePulse(25,12.5,25,50,dropL,false,0.5,1.15,'none');}
-    if(drop==='r'){linePulse(75,12.5,75,50,dropR,false,0.5,1.15,'none');}}
+
+    // if(drop==='l'){
+    //   linePulse(25,12.5,25,50,dropL,false,0.5,1.15,'none');}
+    // if(drop==='r'){
+    //   linePulse(75,12.5,75,50,dropR,false,0.5,1.15,'none');}
+  }
+
   btn.onmousedown = function(){ swapProjs(1,true,position);
-    if(drop==='l'){linePulse(25,12.5,25,50,dropL,true,0.5,1.15,'none');}
-    if(drop==='r'){linePulse(75,12.5,75,50,dropR,true,0.5,1.15,'none');}}}
+
+    if(position===0){
+      createLine(0,12.4,25,12.4,5,'rgb(184,134,11)','under'+position,1);
+
+      createLine(12.5,12.7,12.5,15,3,'rgb(220,220,220)','dropL0',0);
+      linePulse(12.5,12.7,12.5,15,dropL0,true,0.5,1.15,'none');
+
+      createLine(12.5,15,5,15,3,'rgb(220,220,220)','dropL1',0);
+      linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');
+
+    }
+    if(drop==='l'){
+      createRect(5,15,0.3,32.5,'url(#linGrad)',0,'none',1,'dropL');
+      elmAnimate(dropL,'height',1.001,1.03,'%',0,32.5,'none');
+
+      // linePulse(5,15,5,55,dropL,true,0.5,1.15,'none');
+    }
+
+    if(drop==='r'){
+      linePulse(75,12.5,75,50,dropR,true,0.5,1.15,'none');}}}
+
+
+
+
 
 leftArrowSVG.onmouseover = function(){
   if(sCnt===0){var x=projs.length-1}else{var x=sCnt-1;}
@@ -105,7 +132,7 @@ rightArrowSVG.onmouseleave = function(){
 rightArrowSVG.onmousedown = function(){
   if(sCnt===projs.length-1){var x=0}else{var x=sCnt+1;}
   skillsArr[x].onmouseleave(); swapProjs(1,true,'n'); rightArrowSVG.onmouseover();}
-  
+
 ////////////////////////////////////////////////////////////////////////////////
 //////////          ANIMATION STATION          /////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -115,7 +142,8 @@ function elmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = s
     elID.setAttributeNS(null, elm, loc+unit);
     if (start < end && loc <= end){ requestAnimationFrame(go); }
     else if (start > end && loc >= end){ requestAnimationFrame(go); }
-    else { if (func !== 'none') { func(); return; }}} go();}
+    else { if (func !== 'none') { func(); } elID.setAttributeNS(null, elm, end+unit);
+    return; }} go();}
 //^This function was created late and could be turned into a universal animation function.
 //...And, could eliminate many of the functions below...
 function regElmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = start;
