@@ -102,36 +102,24 @@ function createBarBtn(position,btn,lnID,box,drop,speed1,ramp1,speed2,ramp2){
       linePulse(75,12.5,75,50,dropR,true,0.5,1.15,'none');}}}
 
 
+      //SAVE FOR PROJECT TRANSITIONS
+      // elmAnimate(polarGradR, 'x2',1.01,1.4,'%',0,100,'none');}
+      // elmAnimate(polarGradR, 'x2',1.01,1.4,'%',100,20,'none');}
 
 
-
-leftArrowSVG.onmouseover = function(){
+prevAP.onmouseover = function(){
   if(sCnt===0){var x=projs.length-1}else{var x=sCnt-1;}
-  skillsArr[x].onmouseover();
-  elmAnimate(leftArrow, 'opacity', 0.04, 1, '', 0.5, 0.8,'none')
-  elmAnimate(polarGradL, 'x2',1.01,1.4,'%',0,100,'none');}
-leftArrowSVG.onmouseleave = function(){
+  regElmAnimate(prevA, 'opacity', 0.05, 1, '', 0.1, 1,'none');}
+prevAP.onmouseleave = function(){
   if(sCnt===0){var x=projs.length-1}else{var x=sCnt-1;}
-  skillsArr[x].onmouseleave();
-  elmAnimate(leftArrow, 'opacity', 0.01, 1, '', 0.8, 0.5,'none')
-  elmAnimate(polarGradL, 'x2',1.01,1.4,'%',100,20,'none');}
-leftArrowSVG.onmousedown = function(){
-  if(sCnt===0){var x=projs.length-1}else{var x=sCnt-1;}
-  skillsArr[x].onmouseleave(); swapProjs(-1,true,'n'); leftArrowSVG.onmouseover();}
+  regElmAnimate(prevA, 'opacity', 0.05, 1, '', 1, 0.1,'none');}
 
-rightArrowSVG.onmouseover = function(){
+nextAP.onmouseover = function(){
   if(sCnt===projs.length-1){var x=0}else{var x=sCnt+1;}
-  skillsArr[x].onmouseover();
-  elmAnimate(rightArrow, 'opacity', 0.04, 1, '', 0.5, 0.8,'none')
-  elmAnimate(polarGradR, 'x2',1.01,1.4,'%',0,100,'none');}
-rightArrowSVG.onmouseleave = function(){
+  regElmAnimate(nextA, 'opacity', 0.05, 1, '', 0.1, 1,'none');}
+nextAP.onmouseleave = function(){
   if(sCnt===projs.length-1){var x=0}else{var x=sCnt+1;}
-  skillsArr[x].onmouseleave();
-  elmAnimate(rightArrow, 'opacity', 0.01, 1, '', 0.8, 0.5,'none')
-  elmAnimate(polarGradR, 'x2',1.01,1.4,'%',100,20,'none');}
-rightArrowSVG.onmousedown = function(){
-  if(sCnt===projs.length-1){var x=0}else{var x=sCnt+1;}
-  skillsArr[x].onmouseleave(); swapProjs(1,true,'n'); rightArrowSVG.onmouseover();}
+  regElmAnimate(nextA, 'opacity', 0.05, 1, '', 1, 0.1,'none');}
 
 ////////////////////////////////////////////////////////////////////////////////
 //////////          ANIMATION STATION          /////////////////////////////////
@@ -220,6 +208,7 @@ function reSetProj(){
   mainSVG.appendChild(skillsBox[sCnt]); mainSVG.appendChild(skillsTxt[sCnt]);
   mainSVG.appendChild(skillsArr[sCnt]);
   regElmAnimate(projBar, 'opacity', 0.01, 1.1, '', 0, 1,'none');}
+
 ////////////////////////////////////////////////////////////////////////////////
 //////////          Random Functions         ///////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////

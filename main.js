@@ -74,12 +74,8 @@ setTimeout(function(){blowUp(insta,instaCir,2,3,0,100);},3800);
 
 //-----------------------------------Create background areas for rolling content--------------------
 mainSVG.appendChild(infoBox);
-//mainSVG.appendChild(mediaSLeft);
-//mainSVG.appendChild(bulletBox);
-//mainSVG.appendChild(mediaSRight);
-mainSVG.appendChild(allBoxShadeBot);
-//mainSVG.appendChild(mediaBox);
 mainSVG.appendChild(allBoxShadeTop);
+mainSVG.appendChild(allBoxShadeBot);
 
 //------------------------------------Create Main Skill buttons with line effect--------------------
 
