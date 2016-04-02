@@ -59,47 +59,40 @@ function createBtn(btn, cir){ var on = false;
   btn.onmouseleave = function(){
      cir.style.fill = 'rgb(230,230,230)';cir.style.r = '2%'; on = false;}}
 
-function createBarBtn(position,btn,lnID,box,drop,speed1,ramp1,speed2,ramp2){
-  var sX = parseFloat(lnID.getAttribute('x1'));
-  var sY = parseFloat(lnID.getAttribute('y1'));
-  var eX = parseFloat(lnID.getAttribute('x2'));
-  var eY = parseFloat(lnID.getAttribute('y2'));
+function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
+  var onLine = createLine(l[0],l[1],l[2],l[3],3,'rgb(220,220,220)','onLine'+position,0);
+  var offLine = createLine(l[0],l[1],l[2],l[3],3,'rgb(220,220,220)','offLine'+position,0);
+  var goldLine = createLine(l[0],l[1],l[2],l[3],5,'rgb(184,134,11)','goldLine'+position,0);
   btn.onmouseover = function(){
-    linePulse(sX,sY,eX,eY,lnID,true,speed1,ramp1,'none');
+    linePulse(l[0],l[1],l[2],l[3],onLine,true,speed1,ramp1,'none');
     box.style.fill = 'rgb(200,200,210)';}
   btn.onmouseleave = function(){
-    lnID.setAttributeNS(null, 'opacity', 0);
-    var offLine = createLine(sX,sY,eX,eY,3,'rgb(220,220,220)','offLine',1);
-    linePulse(sX,sY,eX,eY,offLine,false,speed2,ramp2,'none');
-    box.style.fill = 'url(#grad1)';
-
-    // if(drop==='l'){
-    //   linePulse(25,12.5,25,50,dropL,false,0.5,1.15,'none');}
-    // if(drop==='r'){
-    //   linePulse(75,12.5,75,50,dropR,false,0.5,1.15,'none');}
-  }
+    onLine.setAttributeNS(null, 'opacity', 0); offLine.setAttributeNS(null, 'opacity', 1);
+    linePulse(l[0],l[1],l[2],l[3],offLine,false,speed2,ramp2,'none');
+    box.style.fill = 'url(#grad1)';}
 
   btn.onmousedown = function(){ swapProjs(1,true,position);
+    //REMOVE ALL LINES!
+    //dropL and DropR are static creations and should be in main.js??? idk
+    dropL.setAttributeNS(null, 'opacity', 1);
 
-    if(position===0){
-      createLine(0,12.4,25,12.4,5,'rgb(184,134,11)','under'+position,1);
-
+    if(position===0 || position===1){
       createLine(12.5,12.7,12.5,15,3,'rgb(220,220,220)','dropL0',0);
-      linePulse(12.5,12.7,12.5,15,dropL0,true,0.5,1.15,'none');
-
       createLine(12.5,15,5,15,3,'rgb(220,220,220)','dropL1',0);
+
+      linePulse(12.5,12.7,12.5,15,dropL0,true,0.5,1.15,'none');
       linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');
 
     }
     if(drop==='l'){
       createRect(5,15,0.3,40,'url(#linGrad)',0,'none',1,'dropL');
       elmAnimate(dropL,'height',1.001,1.03,'%',0,40,'none');
-
-      // linePulse(5,15,5,55,dropL,true,0.5,1.15,'none');
     }
-
     if(drop==='r'){
-      linePulse(75,12.5,75,50,dropR,true,0.5,1.15,'none');}}}
+      createRect(95,15,0.3,40,'url(#linGrad)',0,'none',1,'dropR');
+      elmAnimate(dropR,'height',1.001,1.03,'%',0,40,'none');
+}}}
+
 
 
       //SAVE FOR PROJECT TRANSITIONS
@@ -121,6 +114,31 @@ nextAP.onmouseleave = function(){
   if(sCnt===projs.length-1){var x=0}else{var x=sCnt+1;}
   regElmAnimate(nextA, 'opacity', 0.05, 1, '', 1, 0.1,'none');}
 
+function swapProjs(dir,fade,position){
+  document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',0);
+  if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
+  } else { skillsBox[sCnt].style.fill = 'url(#grad2)';}
+  skillsBox[sCnt].style.opacity = 1; skillsBox[sCnt].style.filter = 'none';
+  mainSVG.insertBefore(skillsBox[sCnt],vert0);
+  if (position === 'n'){ sCnt+=dir;}else{sCnt=position;}
+  document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',1);
+  if (sCnt >= projs.length){ sCnt=0;} if (sCnt <= -1){ sCnt=projs.length-1;}
+  if (fade) {regElmAnimate(projBar, 'opacity', 0.02, 1.1, '', 1, 0,reSetProj);
+  }else{reSetProj();}}
+
+function reSetProj(){
+  for(var i = 0; i < 5; i++){
+    if (typeof projs[sCnt].projects[i] === 'undefined'){
+      document.getElementById('proj'+i).style.display = 'none';
+    } else {
+      document.getElementById('proj'+i).style.display = 'inline-block';
+      document.getElementById('proj'+i).innerHTML = projs[sCnt].projects[i];}}
+  skillsBox[sCnt].style.filter = 'url(#dropShad)';
+  skillsBox[sCnt].style.opacity = 0.5;
+  mainSVG.appendChild(skillsBox[sCnt]); mainSVG.appendChild(skillsTxt[sCnt]);
+  mainSVG.appendChild(skillsArr[sCnt]);
+  regElmAnimate(projBar, 'opacity', 0.01, 1.1, '', 0, 1,'none');}
+
 ////////////////////////////////////////////////////////////////////////////////
 //////////          ANIMATION STATION          /////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -133,7 +151,7 @@ function elmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = s
     else { if (func !== 'none') { func(); } elID.setAttributeNS(null, elm, end+unit);
     return; }} go();}
 //^This function was created late and could be turned into a universal animation function.
-//...And, could eliminate many of the functions below...
+//...And, could eliminate many of the functions below...BUT,
 function regElmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = start;
   function go(){ speed*=ramp;
     if (start < end){ loc+=speed; } else { loc-=speed; }
@@ -185,29 +203,6 @@ function arreyFade(arrEL, speed, start, end){
     }
     start+=speed;
     if (start <= end){ requestAnimationFrame(go); }  } go(); }
-
-function swapProjs(dir,fade,position){
-  if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
-  } else {skillsBox[sCnt].style.fill = 'url(#grad2)';}
-  skillsBox[sCnt].style.opacity = 1; skillsBox[sCnt].style.filter = 'none';
-  mainSVG.insertBefore(skillsBox[sCnt],vert0);
-  if (position === 'n'){ sCnt+=dir; }else{sCnt=position;}
-  if (sCnt >= projs.length){ sCnt=0;} if (sCnt <= -1){ sCnt=projs.length-1;}
-  if (fade) {regElmAnimate(projBar, 'opacity', 0.02, 1.1, '', 1, 0,reSetProj);
-  }else{reSetProj();}}
-
-function reSetProj(){
-  for(var i = 0; i < 5; i++){
-    if (typeof projs[sCnt].projects[i] === 'undefined'){
-      document.getElementById('proj'+i).style.display = 'none';
-    } else {
-      document.getElementById('proj'+i).style.display = 'inline-block';
-      document.getElementById('proj'+i).innerHTML = projs[sCnt].projects[i];}}
-  skillsBox[sCnt].style.filter = 'url(#dropShad)';
-  skillsBox[sCnt].style.opacity = 0.5;
-  mainSVG.appendChild(skillsBox[sCnt]); mainSVG.appendChild(skillsTxt[sCnt]);
-  mainSVG.appendChild(skillsArr[sCnt]);
-  regElmAnimate(projBar, 'opacity', 0.01, 1.1, '', 0, 1,'none');}
 
 ////////////////////////////////////////////////////////////////////////////////
 //////////          Random Functions         ///////////////////////////////////
