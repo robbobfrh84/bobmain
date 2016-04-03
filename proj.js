@@ -16,10 +16,26 @@ var web = new Skill('Web Development', [
   // 'Tic-tac-toe',
   'Maps'
 ]);
-
 var mic = new Skill('Microcontroller & CNC', ['CNC','Controller','Gcode Editor','LCD']);
 var des = new Skill('Design', ['Airbush Cups','Woodshop','Cogs','hotplate']);
 var woo = new Skill('Woodworking', ['Shed','Folding Chair','Squirrel Guard','Wood Mugs']);
 
-
 var projs = [web,mic,des,woo];
+
+function projSwap(pos){
+  for (var i = 0; i < projs[sCnt].projects.length; i++){
+    if(i===pos){
+      var porjTab = document.getElementById('proj'+pos);
+    } else {
+      var deSelect = document.getElementById('proj'+i);
+      deSelect.style.height = '2.8vw';
+      deSelect.style.verticalAlign = 'text-top';
+      deSelect.style.transition = 'background-color .5s ease-in-out, height .10s ease-in-out,       margin-top .10s ease-in-out';
+    }
+  }
+  console.log(pos);
+  // porjTab.style.backgroundColor = 'rgba(255,255,255,0.6)';
+  porjTab.style.height = '4.8vw';
+  porjTab.style.verticalAlign = 'text-bottom';
+  porjTab.style.transition = 'background-color .5s ease-in-out, height .10s ease-in-out,       margin-top .10s ease-in-out';
+}

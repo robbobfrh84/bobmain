@@ -70,30 +70,45 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
     onLine.setAttributeNS(null, 'opacity', 0); offLine.setAttributeNS(null, 'opacity', 1);
     linePulse(l[0],l[1],l[2],l[3],offLine,false,speed2,ramp2,'none');
     box.style.fill = 'url(#grad1)';}
-
-  btn.onmousedown = function(){ swapProjs(1,true,position);
-    //REMOVE ALL LINES!
-    //dropL and DropR are static creations and should be in main.js??? idk
-    dropL.setAttributeNS(null, 'opacity', 1);
-
-    if(position===0 || position===1){
-      createLine(12.5,12.7,12.5,15,3,'rgb(220,220,220)','dropL0',0);
-      createLine(12.5,15,5,15,3,'rgb(220,220,220)','dropL1',0);
-
-      linePulse(12.5,12.7,12.5,15,dropL0,true,0.5,1.15,'none');
-      linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');
-
-    }
-    if(drop==='l'){
-      createRect(5,15,0.3,40,'url(#linGrad)',0,'none',1,'dropL');
-      elmAnimate(dropL,'height',1.001,1.03,'%',0,40,'none');
-    }
-    if(drop==='r'){
-      createRect(95,15,0.3,40,'url(#linGrad)',0,'none',1,'dropR');
-      elmAnimate(dropR,'height',1.001,1.03,'%',0,40,'none');
-}}}
-
-
+  btn.onmousedown = function(){
+    dropL0.setAttributeNS(null, 'opacity', 0);
+    dropL1.setAttributeNS(null, 'opacity', 0);
+    regElmAnimate(carousel, 'opacity', 0.07, 1, '', 1, 0,'none');
+    if(position===0){ leftDrop();
+      dropL0.setAttributeNS(null,'x1',12.5+'%');
+      dropL0.setAttributeNS(null,'x2',12.5+'%');
+      linePulse(12.5,12.7,12.5,15.1,dropL0,true,0.5,1.15,'none');
+      dropL1.setAttributeNS(null, 'x1', 12.5+'%');
+      linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');}
+    if(position===1){
+      dropL0.setAttributeNS(null, 'x1', 37.5+'%');
+      dropL0.setAttributeNS(null, 'x2', 37.5+'%');
+      linePulse(37.5,12.7,37.5,15.1,dropL0,true,0.5,1.15,'none');
+      dropL1.setAttributeNS(null, 'x1', 37.5+'%');
+      linePulse(37.5,15,5,15,dropL1,true,0.5,1.15,leftDrop);}
+    if(position===2){ rightDrop();
+      dropL0.setAttributeNS(null, 'x1', 62.5+'%');
+      dropL0.setAttributeNS(null, 'x2', 62.5+'%');
+      linePulse(62.5,12.7,62.5,15.1,dropL0,true,0.5,1.15,'none');
+      dropL1.setAttributeNS(null, 'x1', 62.5+'%');
+      dropL1.setAttributeNS(null, 'x2', 95.3+'%');
+      linePulse(62.5,15,95.3,15,dropL1,true,0.5,1.15,'none');}
+    if(position===3){
+      dropL0.setAttributeNS(null, 'x1', 87.5+'%');
+      dropL0.setAttributeNS(null, 'x2', 87.5+'%');
+      linePulse(87.5,12.7,87.5,15.1,dropL0,true,0.5,1.15,'none');
+      dropL1.setAttributeNS(null, 'x1', 87.5+'%');
+      dropL1.setAttributeNS(null, 'x2', 95.3+'%');
+      linePulse(87.5,15,95.3,15,dropL1,true,0.5,1.15,rightDrop);}
+    swapProjs(1,true,position);}}
+function leftDrop(){
+  dropL.setAttributeNS(null, 'opacity', 1);
+  dropR.setAttributeNS(null, 'opacity', 0);
+  elmAnimate(dropL,'height',1.001,1.03,'%',0,40,'none');}
+function rightDrop(){
+  dropR.setAttributeNS(null, 'opacity', 1);
+  dropL.setAttributeNS(null, 'opacity', 0);
+  elmAnimate(dropR,'height',1.001,1.03,'%',0,40,'none');}
 
       //SAVE FOR PROJECT TRANSITIONS
       // elmAnimate(polarGradR, 'x2',1.01,1.4,'%',0,100,'none');}
@@ -123,8 +138,12 @@ function swapProjs(dir,fade,position){
   if (position === 'n'){ sCnt+=dir;}else{sCnt=position;}
   document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',1);
   if (sCnt >= projs.length){ sCnt=0;} if (sCnt <= -1){ sCnt=projs.length-1;}
-  if (fade) {regElmAnimate(projBar, 'opacity', 0.02, 1.1, '', 1, 0,reSetProj);
-  }else{reSetProj();}}
+  if (fade) { mainSVG.appendChild(skillsBox[sCnt]);
+  mainSVG.appendChild(skillsTxt[sCnt]); mainSVG.appendChild(skillsArr[sCnt]);
+  skillsBox[sCnt].style.filter = 'url(#dropShad)';
+  skillsBox[sCnt].style.opacity = 0.5;
+  regElmAnimate(projBar,'opacity',0.01, 1.1,'',1,0,reSetProj);
+  }else{ reSetProj();}}
 
 function reSetProj(){
   for(var i = 0; i < 5; i++){
@@ -133,11 +152,8 @@ function reSetProj(){
     } else {
       document.getElementById('proj'+i).style.display = 'inline-block';
       document.getElementById('proj'+i).innerHTML = projs[sCnt].projects[i];}}
-  skillsBox[sCnt].style.filter = 'url(#dropShad)';
-  skillsBox[sCnt].style.opacity = 0.5;
-  mainSVG.appendChild(skillsBox[sCnt]); mainSVG.appendChild(skillsTxt[sCnt]);
-  mainSVG.appendChild(skillsArr[sCnt]);
-  regElmAnimate(projBar, 'opacity', 0.01, 1.1, '', 0, 1,'none');}
+  regElmAnimate(projBar, 'opacity', 0.01, 1.05, '', 0, 1,reCar);}
+function reCar(){regElmAnimate(carousel, 'opacity', 0.05, 1, '', 0, 1,'none');}
 
 ////////////////////////////////////////////////////////////////////////////////
 //////////          ANIMATION STATION          /////////////////////////////////

@@ -103,7 +103,11 @@ mainSVG.appendChild(projln);
 var sCnt = 0;
 var skillsBox = [webBox,micBox,desBox,wooBox];
 var skillsTxt = [webText,micText,desText,wooText];
-swapProjs(0,false,'n');
+var dropL = createRect(5,15,0.3,40,'url(#linGrad)',0,'none',0,'dropL');
+var dropR = createRect(95,15,0.3,40,'url(#linGrad)',0,'none',0,'dropR');
+var dropL0 = createLine(12.5,12.7,12.5,15.1,6,'rgb(220,220,220)','dropL0',0);
+var dropL1 = createLine(12.5,15,5,15,3,'rgb(220,220,220)','dropL1',0);
+swapProjs(0,true,'n');
 
 //check to see if you can delete document.getElmentByID with proj+i^^^
 
