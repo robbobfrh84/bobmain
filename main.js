@@ -8,6 +8,7 @@ drawGrid(40,40,0.25,0.75,1.5,'cornflowerblue');
 
 //--------------------------------declare main object variables created in HTML--------------------
 var introBlock=[]; var copyBlock=[]; var proBlock=[];
+var uploadDone = false;
 
 //SEEMS TO BE MORE TROUBLE BOUNCING UP HERE TO GET IDS, prob just move back where they're appended.
 var bobMain = document.getElementById('bobMain');
@@ -106,7 +107,10 @@ var dropR = createRect(95,15,0.3,40,'url(#linGrad)',0,'none',0,'dropR');
 var dropL0 = createLine(12.5,12.7,12.5,15.1,6,'rgb(220,220,220)','dropL0',0);
 var dropL1 = createLine(12.5,15,5,15,3,'rgb(220,220,220)','dropL1',0);
 webWin.onmousedown();
-// swapProjs(0,true,'n');
+
+
+
+uploadDone = true;
 
 //check to see if you can delete document.getElmentByID with proj+i^^^
 

@@ -23,49 +23,20 @@ var woo = new Skill('Woodworking', ['Shed','Folding Chair','Squirrel Guard','Woo
 var skills = [web,mic,des,woo];
 var sCnt = 0; var oldPos=1;
 
-var holdpos=0;
-
-
 function projSwap(pos){ console.log(skills[sCnt].projects[pos]);
   if (pos !== oldPos){
-
-
-
 	  var deSelect = document.getElementById('proj'+oldPos);
-		// deSelect.style.pointerEvents = 'auto';
-		// deSelect.style.height = '2.8vw';
-		regElmAnimate(deSelect, 'height', 0.1, 1.05, 'vw', 4.8, 2.8,'none');
-
-
+		regElmAnimate(deSelect, 'height', 0.1, 1.05, 'vw', 4.5, 2.8,'none');
 		var projTab = document.getElementById('proj'+pos);
-		// projTab.style.pointerEvents = 'none';
-		// projTab.style.verticalAlign = 'text-bottom';
-		// regElmAnimate(projTab, 'background-color', 0.05, 1, 'rgba(255,255,255,', 0.1, 0.9,'none');
-		regElmAnimate(projTab, 'height', 0.1, 1.05, 'vw', 3.5, 4.8,'none');
-		// projTab.style.height = '4.8vw';
-		oldPos = pos;
-	}
-}
+		regElmAnimate(projTab, 'height', 0.1, 1.05, 'vw', 3.5, 4.5,'none');
+		setTimeout(function(){projTab.style.backgroundColor = 'rgba(102,155,235,0.3)';},500);
+		oldPos = pos;}}
 
-function projHover(pos){ console.log(skills[sCnt].projects[pos]);
-	if (pos !== oldPos){
-		holdpos=pos;
-		var projTab = document.getElementById('proj'+pos);
-		regElmAnimate(projTab, 'height', 0.1, 1.05, 'vw', 2.8, 3.5,projBarHoverFade);
-		// projTab.style.height = '3.5vw';
-
-	}
-}
-
-function projOff(pos){ console.log(skills[sCnt].projects[pos]);
+function projHover(pos){
 	if (pos !== oldPos){
 		var projTab = document.getElementById('proj'+pos);
-		regElmAnimate(projTab, 'height', 0.1, 1.05, 'vw', 3.5, 2.8,'none');
-	}
-}
+		regElmAnimate(projTab, 'height', 0.1, 1.05, 'vw', 2.8, 3.5,'none');}}
 
-function projBarHoverFade(){ console.log('fade');
-	var projTab = document.getElementById('proj'+holdpos);
-	// projTab.style.backgroundColor = 'white';
-	regElmAnimate(projTab, 'background-color', 0.03, 1, 'rgba(255,255,255,', 0.1, 0.9,'none');
-}
+function projOff(pos){
+	var projTab = document.getElementById('proj'+pos);
+	if (pos !== oldPos){ regElmAnimate(projTab, 'height', 0.1, 1.05, 'vw', 3.5, 2.8,'none');}}
