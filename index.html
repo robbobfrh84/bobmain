@@ -138,8 +138,8 @@
 
 <!-- Main body background ----------------------------------------------------->
       <rect id='allBoxShadeTop' x=0% y=12.5% width=100% height=0.5% opacity=0.2 fill="url(#linT)" />
-      <rect id='allBoxShadeBot' x=0% y=51.5% width=100% height=1% opacity=0.2 fill="url(#linB)" />
-      <rect id='infoBox' x=0% y=12.4% width=100% height=40% opacity=0.25 fill="cornflowerblue" />
+      <rect id='allBoxShadeBot' x=0% y=49.5% width=100% height=0.5% opacity=0.3 fill="url(#linB)" />
+      <rect id='infoBox' x=0% y=12.4% width=100% height=37.5% opacity=0.25 fill="cornflowerblue" />
 
 <!-- Main Skill sets bar ------------------------------------------------------>
       <rect id='webBox' x=0% y=10% width=25% height=2.6% fill='url(#grad1)'/>
@@ -245,11 +245,17 @@
   </div>
 
     <div id='projBar' class='html1'>
-      <div id='proj0' class='projs' onclick='projSwap(0)'>1</div>
-      <div id='proj1' class='projs' onclick='projSwap(1)'>2</div>
-      <div id='proj2' class='projs' onclick='projSwap(2)'>3</div>
-      <div id='proj3' class='projs' onclick='projSwap(3)'>4</div>
-      <div id='proj4' class='projs' onclick='projSwap(4)'>5</div>
+      <div id='projBlank' class='projs'></div>
+      <div id='proj0' onclick='projSwap(0)'class='projs'
+        onmouseover='projHover(0)' onmouseleave='projOff(0)'>0</div>
+      <div id='proj1' onclick='projSwap(1)'class='projs'
+        onmouseover='projHover(1)' onmouseleave='projOff(1)'>1</div>
+      <div id='proj2' onclick='projSwap(2)'class='projs'
+        onmouseover='projHover(2)' onmouseleave='projOff(2)'>2</div>
+      <div id='proj3' onclick='projSwap(3)'class='projs'
+        onmouseover='projHover(3)' onmouseleave='projOff(3)'>3</div>
+      <div id='proj4' onclick='projSwap(4)'class='projs'
+        onmouseover='projHover(4)' onmouseleave='projOff(4)'>4</div>
     </div>
 
 <!-- Top Layer SVGs -------------------------------------------------------------->
@@ -269,8 +275,8 @@
     </svg> -->
 </svg>
   </body>
-  <script src="proj.js"></script>
   <script src="anima.js"></script>
   <script src="easterEggs.js"></script>
+  <script src="proj.js"></script>
   <script src="main.js"></script>
 </html>

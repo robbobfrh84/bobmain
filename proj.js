@@ -13,29 +13,59 @@ var web = new Skill('Web Development', [
   'Sudoku',
   'riiple',
   'Profile',
-  // 'Tic-tac-toe',
+  'Tic-tac-toe',
   'Maps'
 ]);
 var mic = new Skill('Microcontroller & CNC', ['CNC','Controller','Gcode Editor','LCD']);
 var des = new Skill('Design', ['Airbush Cups','Woodshop','Cogs','hotplate']);
 var woo = new Skill('Woodworking', ['Shed','Folding Chair','Squirrel Guard','Wood Mugs']);
 
-var projs = [web,mic,des,woo];
+var skills = [web,mic,des,woo];
+var sCnt = 0; var oldPos=1;
 
-function projSwap(pos){
-  for (var i = 0; i < projs[sCnt].projects.length; i++){
-    if(i===pos){
-      var porjTab = document.getElementById('proj'+pos);
-    } else {
-      var deSelect = document.getElementById('proj'+i);
-      deSelect.style.height = '2.8vw';
-      deSelect.style.verticalAlign = 'text-top';
-      deSelect.style.transition = 'background-color .5s ease-in-out, height .10s ease-in-out,       margin-top .10s ease-in-out';
-    }
-  }
-  console.log(pos);
-  // porjTab.style.backgroundColor = 'rgba(255,255,255,0.6)';
-  porjTab.style.height = '4.8vw';
-  porjTab.style.verticalAlign = 'text-bottom';
-  porjTab.style.transition = 'background-color .5s ease-in-out, height .10s ease-in-out,       margin-top .10s ease-in-out';
+var holdpos=0;
+
+
+function projSwap(pos){ console.log(skills[sCnt].projects[pos]);
+  if (pos !== oldPos){
+
+
+
+	  var deSelect = document.getElementById('proj'+oldPos);
+		// deSelect.style.pointerEvents = 'auto';
+		// deSelect.style.height = '2.8vw';
+		regElmAnimate(deSelect, 'height', 0.1, 1.05, 'vw', 4.8, 2.8,'none');
+
+
+		var projTab = document.getElementById('proj'+pos);
+		// projTab.style.pointerEvents = 'none';
+		// projTab.style.verticalAlign = 'text-bottom';
+		// regElmAnimate(projTab, 'background-color', 0.05, 1, 'rgba(255,255,255,', 0.1, 0.9,'none');
+		regElmAnimate(projTab, 'height', 0.1, 1.05, 'vw', 3.5, 4.8,'none');
+		// projTab.style.height = '4.8vw';
+		oldPos = pos;
+	}
+}
+
+function projHover(pos){ console.log(skills[sCnt].projects[pos]);
+	if (pos !== oldPos){
+		holdpos=pos;
+		var projTab = document.getElementById('proj'+pos);
+		regElmAnimate(projTab, 'height', 0.1, 1.05, 'vw', 2.8, 3.5,projBarHoverFade);
+		// projTab.style.height = '3.5vw';
+
+	}
+}
+
+function projOff(pos){ console.log(skills[sCnt].projects[pos]);
+	if (pos !== oldPos){
+		var projTab = document.getElementById('proj'+pos);
+		regElmAnimate(projTab, 'height', 0.1, 1.05, 'vw', 3.5, 2.8,'none');
+	}
+}
+
+function projBarHoverFade(){ console.log('fade');
+	var projTab = document.getElementById('proj'+holdpos);
+	// projTab.style.backgroundColor = 'white';
+	regElmAnimate(projTab, 'background-color', 0.03, 1, 'rgba(255,255,255,', 0.1, 0.9,'none');
 }

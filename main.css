@@ -53,9 +53,10 @@ body {
 .carousel-inner > .item > img, video
 .carousel-inner > .item > a > img, video {
     width: 51vw;
-    height: 31vw;
+    height: 30vw;
     margin: auto;
-    margin-top: 3vw; /*margin-bottom: 0.25vw;*/
+    margin-top: 3.5vw;
+    margin-bottom: 0.15vw;
 }
 
 .pic, .vid {
@@ -88,10 +89,19 @@ body {
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
 }
 
+.mediaGraph::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+.mediaGraph::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
 .mediaGraph {
   font-size: 14px;
   width: 48vw;
-  height: 6vw;
+  height: 6.5vw;
   margin: auto;
   margin-bottom: -3.5vw;
   padding-top: 0.5vw;
@@ -105,7 +115,7 @@ body {
   color: rgba(255,255,255,0.9);
   background-color: rgba(0,0,0,0.3);
   height: 30vw;
-  margin-bottom: -3vw;
+  margin-bottom: -4.5vw;
   text-align: left;
 }
 
@@ -137,7 +147,6 @@ body {
 }
 
 #projBar {
-  opacity: 0;
   width: 95vw;
   height: 5vw;
   margin: auto;
@@ -147,6 +156,7 @@ body {
 .projs {
   font-size: 1.8vw;
   color: rgba(0,0,0,0.65);
+  background-color: rgba(255,255,255,0.1);
   background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2) 10%
     ,rgba(150,150,150,0.4) 10%, rgba(255,255,255,0.2) 50%);
   /*background-color: #F07575; fallback color if gradients are not supported
@@ -161,26 +171,28 @@ body {
   margin-right: 1%;
   margin-top: -2.8vw;
   vertical-align: text-top;
-  border-radius: 0.3vw;
-  transition: background-color .5s ease-in-out, height .10s ease-in-out
-    , margin-top .10s ease-in-out;
-}
-
-#proj0{
-  pointer-events: none;
-  height: 4.8vw;
   vertical-align: text-bottom;
-  background: linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0.5) 10%
-    ,rgba(150,150,150,0.7) 10%, rgba(255,255,255,0.5) 50%);
+  border-radius: 0.3vw;
+  /*transition: background-color .5s ease-in-out, height .10s ease-in-out
+    , margin-top .10s ease-in-out*/
 }
 
+#projBlank{
+  pointer-events: none;
+  height: 4.9vw; width: 0;
+}
+/*#proj0{
+  pointer-events: none;
+  height: 4.9vw;
+}*/
+/*
 #proj0:hover, #proj1:hover, #proj2:hover, #proj3:hover, #proj4:hover{
   height: 3.5vw;
   margin-top: -3.5vw;
   background-color: white;
   transition: background-color .5s ease-in-out, height .10s ease-in-out
     , margin-top .10s ease-in-out;
-}
+}*/
 
 /*----------------------------------------------------------------------------*/
 /*----------          TOP LAYER SVGs          --------------------------------*/

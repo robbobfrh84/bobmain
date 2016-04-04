@@ -74,32 +74,32 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
     dropL0.setAttributeNS(null, 'opacity', 0);
     dropL1.setAttributeNS(null, 'opacity', 0);
     regElmAnimate(carousel, 'opacity', 0.07, 1, '', 1, 0,'none');
-    if(position===0){ leftDrop();
+    if(position===0){ leftDrop(); projSwap(0);
       dropL0.setAttributeNS(null,'x1',12.5+'%');
       dropL0.setAttributeNS(null,'x2',12.5+'%');
       linePulse(12.5,12.7,12.5,15.1,dropL0,true,0.5,1.15,'none');
       dropL1.setAttributeNS(null, 'x1', 12.5+'%');
       linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');}
-    if(position===1){
+    if(position===1){ projSwap(0);
       dropL0.setAttributeNS(null, 'x1', 37.5+'%');
       dropL0.setAttributeNS(null, 'x2', 37.5+'%');
       linePulse(37.5,12.7,37.5,15.1,dropL0,true,0.5,1.15,'none');
       dropL1.setAttributeNS(null, 'x1', 37.5+'%');
       linePulse(37.5,15,5,15,dropL1,true,0.5,1.15,leftDrop);}
-    if(position===2){ rightDrop();
+    if(position===2){ projSwap(0);
       dropL0.setAttributeNS(null, 'x1', 62.5+'%');
       dropL0.setAttributeNS(null, 'x2', 62.5+'%');
       linePulse(62.5,12.7,62.5,15.1,dropL0,true,0.5,1.15,'none');
       dropL1.setAttributeNS(null, 'x1', 62.5+'%');
       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
-      linePulse(62.5,15,95.3,15,dropL1,true,0.5,1.15,'none');}
-    if(position===3){
+      linePulse(62.5,15,95.3,15,dropL1,true,0.5,1.15,rightDrop);}
+    if(position===3){ rightDrop(); projSwap(0);
       dropL0.setAttributeNS(null, 'x1', 87.5+'%');
       dropL0.setAttributeNS(null, 'x2', 87.5+'%');
       linePulse(87.5,12.7,87.5,15.1,dropL0,true,0.5,1.15,'none');
       dropL1.setAttributeNS(null, 'x1', 87.5+'%');
       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
-      linePulse(87.5,15,95.3,15,dropL1,true,0.5,1.15,rightDrop);}
+      linePulse(87.5,15,95.3,15,dropL1,true,0.5,1.15,'none');}
     swapProjs(1,true,position);}}
 function leftDrop(){
   dropL.setAttributeNS(null, 'opacity', 1);
@@ -114,19 +114,17 @@ function rightDrop(){
       // elmAnimate(polarGradR, 'x2',1.01,1.4,'%',0,100,'none');}
       // elmAnimate(polarGradR, 'x2',1.01,1.4,'%',100,20,'none');}
 
-
 prevAP.onmouseover = function(){
-  if(sCnt===0){var x=projs.length-1}else{var x=sCnt-1;}
+  if(sCnt===0){var x=skills.length-1}else{var x=sCnt-1;}
   regElmAnimate(prevA, 'opacity', 0.05, 1, '', 0.1, 1,'none');}
 prevAP.onmouseleave = function(){
-  if(sCnt===0){var x=projs.length-1}else{var x=sCnt-1;}
+  if(sCnt===0){var x=skills.length-1}else{var x=sCnt-1;}
   regElmAnimate(prevA, 'opacity', 0.05, 1, '', 1, 0.1,'none');}
-
 nextAP.onmouseover = function(){
-  if(sCnt===projs.length-1){var x=0}else{var x=sCnt+1;}
+  if(sCnt===skills.length-1){var x=0}else{var x=sCnt+1;}
   regElmAnimate(nextA, 'opacity', 0.05, 1, '', 0.1, 1,'none');}
 nextAP.onmouseleave = function(){
-  if(sCnt===projs.length-1){var x=0}else{var x=sCnt+1;}
+  if(sCnt===skills.length-1){var x=0}else{var x=sCnt+1;}
   regElmAnimate(nextA, 'opacity', 0.05, 1, '', 1, 0.1,'none');}
 
 function swapProjs(dir,fade,position){
@@ -137,7 +135,7 @@ function swapProjs(dir,fade,position){
   mainSVG.insertBefore(skillsBox[sCnt],vert0);
   if (position === 'n'){ sCnt+=dir;}else{sCnt=position;}
   document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',1);
-  if (sCnt >= projs.length){ sCnt=0;} if (sCnt <= -1){ sCnt=projs.length-1;}
+  if (sCnt >= skills.length){ sCnt=0;} if (sCnt <= -1){ sCnt=skills.length-1;}
   if (fade) { mainSVG.appendChild(skillsBox[sCnt]);
   mainSVG.appendChild(skillsTxt[sCnt]); mainSVG.appendChild(skillsArr[sCnt]);
   skillsBox[sCnt].style.filter = 'url(#dropShad)';
@@ -147,11 +145,11 @@ function swapProjs(dir,fade,position){
 
 function reSetProj(){
   for(var i = 0; i < 5; i++){
-    if (typeof projs[sCnt].projects[i] === 'undefined'){
+    if (typeof skills[sCnt].projects[i] === 'undefined'){
       document.getElementById('proj'+i).style.display = 'none';
     } else {
       document.getElementById('proj'+i).style.display = 'inline-block';
-      document.getElementById('proj'+i).innerHTML = projs[sCnt].projects[i];}}
+      document.getElementById('proj'+i).innerHTML = skills[sCnt].projects[i];}}
   regElmAnimate(projBar, 'opacity', 0.01, 1.05, '', 0, 1,reCar);}
 function reCar(){regElmAnimate(carousel, 'opacity', 0.05, 1, '', 0, 1,'none');}
 
@@ -169,12 +167,27 @@ function elmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = s
 //^This function was created late and could be turned into a universal animation function.
 //...And, could eliminate many of the functions below...BUT,
 function regElmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = start;
+
+
   function go(){ speed*=ramp;
-    if (start < end){ loc+=speed; } else { loc-=speed; }
-    elID.setAttribute('style', elm+': '+loc+unit+';');
+    console.log('inside'+elm);
+    if (start < end){
+      loc+=speed;
+    } else {
+      loc-=speed;
+    }
+    if (unit[0]+unit[1]+unit[2] === 'rgb'){
+      elID.setAttribute('style', elm+': '+unit+loc+');');
+    } else {
+    elID.setAttribute('style', elm+': '+loc+unit+';');}
     if (start < end && loc <= end){ requestAnimationFrame(go); }
     else if (start > end && loc >= end){ requestAnimationFrame(go); }
-    else { if (func !== 'none') { func(); return; }}} go();}
+    else { if (func !== 'none') {
+      func(); }
+    elID.setAttribute('style', elm+': '+end+unit+';');
+    return;
+
+  }} go();}
 
 function linePulse(sX,sY,eX,eY,lnID,grow,speed,ramp,func,xx){ var end = false;
   var x = Math.abs(sX-eX); var y = Math.abs(sY-eY); var newX=sX; var newY=sY;
