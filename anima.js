@@ -54,8 +54,8 @@ function createBtn(btn, cir){ var on = false;
     if (on === false){
       cir.style.fill = 'rgb(210,210,210)'; cir.style.r = '2.3%';
       blowUp(btn,cir,1,2,75,100); on = true;}}
-  btn.onmouseleave = function(){if (!aboutMeClicked){
-     cir.style.fill = 'rgb(230,230,230)';cir.style.r = '2%'; on = false;}}}
+  btn.onmouseleave = function(){
+     cir.style.fill = 'rgb(230,230,230)';cir.style.r = '2%'; on = false;}}
 
 function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
   var onLine = createLine(l[0],l[1],l[2],l[3],3,'rgb(220,220,220)','onLine'+position,0);

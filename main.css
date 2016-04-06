@@ -231,9 +231,8 @@ video { /*width: 46.25vw; height: 24.3vw; margin-top: 2vw; margin-bottom: 1vw;*/
   width: 35vw;
   margin-top: 15vw;
   opacity: 0.8;
-  display: none;
+  visibility: hidden;
 }
-
 
 #aboutMeText{
   font-size: 1.8vw;
@@ -242,8 +241,7 @@ video { /*width: 46.25vw; height: 24.3vw; margin-top: 2vw; margin-bottom: 1vw;*/
   margin-top: 15vw;
   margin-left: 37vw;
   text-align: left;
-  display: none;
-
+  visibility: hidden;
 }
 
 

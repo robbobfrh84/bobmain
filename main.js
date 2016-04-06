@@ -117,37 +117,40 @@ uploadDone = true;
 var aboutMeClicked = false;
 
 
-// function displaySwitch(state,elmsId){
-//   for (var i = 0; )
-//   document.getElementById('myCarousel').setAttribute('style','display: none;');
-// }
-// displaySwitch('none',['mycarousel']);
+function displaySwitch(state,elmsId){
+  for (var i = 0; i < elmsId.length; i++){
+    console.log(elmsId[i]);
+    document.getElementById(elmsId[i]).setAttribute('style','visibility: '+state+';');
+  }
+}
+
+displaySwitch('hidden',['myCarousel','projBar','projln','infotoolsSVG'
+,'dropL','dropR','dropL0','dropL1']);
+
 
 about.onmousedown = function aboutMe(){ aboutMeClicked = true;
 
-  document.getElementById('myCarousel').setAttribute('style','display: none;');
-  document.getElementById('projBar').setAttribute('style','display: none;');
-  document.getElementById('projln').setAttribute('style','display: none;');
-  document.getElementById('infotoolsSVG').setAttribute('style','display: none;');
-  document.getElementById('dropL').setAttribute('style','display: none;');
-  document.getElementById('dropR').setAttribute('style','display: none;');
-  document.getElementById('dropL0').setAttribute('style','display: none;');
-  document.getElementById('dropL1').setAttribute('style','display: none;');
+  displaySwitch('hidden',['myCarousel','projBar','projln','infotoolsSVG'
+  ,'dropL','dropR','dropL0','dropL1']);
+
   document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',0);
   if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
   } else { skillsBox[sCnt].style.fill = 'url(#grad2)';}
   skillsBox[sCnt].style.opacity = 1; skillsBox[sCnt].style.filter = 'none';
   mainSVG.insertBefore(skillsBox[sCnt],vert0);
 
-  document.getElementById('bobIcon').setAttribute('style','display: initial;');
-  document.getElementById('aboutMeText').setAttribute('style','display: initial;');
+  displaySwitch('visible',['bobIcon','aboutMeText']);
+
+}
+contact.onmousedown = function aboutMe(){
+  displaySwitch('visible',['myCarousel','projBar','projln','infotoolsSVG'
+  ,'dropL','dropR','dropL0','dropL1']);
+  displaySwitch('hidden',['bobIcon','aboutMeText']);
 
 }
 
 
-
 //check to see if you can delete document.getElmentByID with proj+i^^^
-
 
 /*////////// CHECKLIST NOTES ///////////////////////////////////////////////////
 -
