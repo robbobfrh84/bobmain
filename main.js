@@ -116,12 +116,12 @@ webWin.onmousedown();
 uploadDone = true;
 var aboutMeClicked = false;
 
-
-function displaySwitch(state,elmsId){
-  for (var i = 0; )
-  document.getElementById('myCarousel').setAttribute('style','display: none;');
-}
-displaySwitch('none',['mycarousel']);
+// 
+// function displaySwitch(state,elmsId){
+//   for (var i = 0; )
+//   document.getElementById('myCarousel').setAttribute('style','display: none;');
+// }
+// displaySwitch('none',['mycarousel']);
 
 about.onmousedown = function aboutMe(){ aboutMeClicked = true;
 
