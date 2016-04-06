@@ -1,8 +1,8 @@
 var svgElement = 'http://www.w3.org/2000/svg';
 
-////////////////////////////////////////////////////////////////////////////////
-/////////          CREATE SVG ELEMENTS          ////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////          CREATE SVG ELEMENTS          ///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 function drawGrid(numVLines,numHLines,thin,fifth,tenth,color){
   lines = (100/numVLines); hlines = (100/numHLines);
   for (var i = 0; i <= numVLines; i++){ fat = thin;
@@ -44,9 +44,9 @@ function updateSVG(elm, att) {
   for (var i=0; i<att.length; i++){
     elm.setAttributeNS(null, att[i][0],att[i][1]);}}
 
-////////////////////////////////////////////////////////////////////////////////
-/////////          CREATE BUTTONS & HOVERS        //////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////          BUTTONS & HOVERS        //////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function createBtn(btn, cir){ var on = false;
   var btn = document.getElementById(btn); mainSVG.appendChild(btn);
   var cir = document.getElementById(cir);
@@ -68,7 +68,7 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
     onLine.setAttributeNS(null, 'opacity', 0); offLine.setAttributeNS(null, 'opacity', 1);
     linePulse(l[0],l[1],l[2],l[3],offLine,false,speed2,ramp2,'none');
     box.style.fill = 'url(#grad1)';}
-  btn.onmousedown = function(){
+  btn.onmousedown = function(){ returnMainContent();
     dropL0.setAttributeNS(null, 'opacity', 0);
     dropL1.setAttributeNS(null, 'opacity', 0);
     regElmAnimate(carousel, 'opacity', 0.07, 1, '', 1, 0,'none');
@@ -103,8 +103,9 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       video.id = 'slide1VideoElm';
       video.setAttribute('autoplay','');
       video.setAttribute('loop','');
-      source.id = 'slide1Vid';
-      source.setAttribute('src','media/cncVid0.mov');
+      video.setAttribute('muted','true');
+
+      source.id = 'slide1Vid'; source.setAttribute('src','media/cncVid0.mov');
       slide1Div.insertBefore(video, slide1Div.firstChild);
       video.insertBefore(source, video.firstChild);
 
@@ -174,6 +175,44 @@ nextAP.onmouseleave = function(){
   if(sCnt===skills.length-1){var x=0}else{var x=sCnt+1;}
   regElmAnimate(nextA, 'opacity', 0.05, 1, '', 1, 0.1,'none');}
 
+about.onmousedown = function aboutMe(){
+  displaySwitch('hidden',['myCarousel','projBar','projln','infotoolsSVG'
+  ,'dropL','dropR','dropL0','dropL1','contactMeText']);
+  document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',0);
+  if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
+  } else { skillsBox[sCnt].style.fill = 'url(#grad2)';}
+  skillsBox[sCnt].style.opacity = 1; skillsBox[sCnt].style.filter = 'none';
+  mainSVG.insertBefore(skillsBox[sCnt],vert0);
+  displaySwitch('visible',['bobIcon','aboutMeText']); hideMorse = true;
+
+}
+contact.onmousedown = function contactMe(){
+  displaySwitch('hidden',['myCarousel','projBar','projln','infotoolsSVG'
+  ,'dropL','dropR','dropL0','dropL1','aboutMeText','bobIcon']);
+  document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',0);
+  if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
+  } else { skillsBox[sCnt].style.fill = 'url(#grad2)';}
+  skillsBox[sCnt].style.opacity = 1; skillsBox[sCnt].style.filter = 'none';
+  mainSVG.insertBefore(skillsBox[sCnt],vert0);
+  displaySwitch('visible',['morBase','morUp','morDown','contactMeText']);
+  hideMorse = false;
+}
+
+infoIcon.onmouseover = function(){ $('#myCarousel').carousel('pause');}
+infoIcon.onmouseleave = function(){ $('#myCarousel').carousel('cycle');}
+
+function displaySwitch(state,elmsId){
+  for (var i = 0; i < elmsId.length; i++){
+    console.log(elmsId[i]);
+    document.getElementById(elmsId[i]).setAttribute('style','visibility: '+state+';');}}
+
+function returnMainContent(){ hideMorse = true;
+  displaySwitch('visible',['myCarousel','projBar','projln','infotoolsSVG'
+  ,'dropL','dropR','dropL0','dropL1']);
+  displaySwitch('hidden',['bobIcon','aboutMeText','contactMeText']);
+  if (typeof slide1VideoElm !== 'undefined'){
+    document.getElementById('slide1Div').removeChild(slide1VideoElm);}}
+
 function swapProjs(dir,fade,position){
   document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',0);
   if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
@@ -207,9 +246,9 @@ function manualClick(allSkills){
     var elID = document.getElementById("elID");
     allSkills.dispatchEvent(evt);}
 
-////////////////////////////////////////////////////////////////////////////////
-//////////          ANIMATION STATION          /////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////          ANIMATION STATION          /////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 function elmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = start;
   function go(){ speed*=ramp;
     if (start < end){ loc+=speed; } else { loc-=speed; }
@@ -263,11 +302,24 @@ function blowUp(varName, cir, speed, ramp, start, end){ var x; var y;
 function arreyFade(arrEL, speed, start, end){
   function go(){
     for (var i = 0; i < arrEL.length;i++){
-      var intb = arrEL[i];
-      intb.style.opacity = start;
-    }
-    start+=speed;
+      var intb = arrEL[i]; intb.style.opacity = start;} start+=speed;
     if (start <= end){ requestAnimationFrame(go); }  } go(); }
+
+function morUpE(){
+  if (!hideMorse){
+  regElmAnimate(morUp, 'opacity', 0.1, 1.5, '', 0, 0.8,'none');
+  regElmAnimate(morDown, 'opacity', 0.1, 1.2, '', 0.8, 0,'none');}
+  else{morUp.style.opacity='0';morBase.style.opacity='0';morDown.style.opacity='0';}
+  setTimeout(function(){morDownE();},100);}
+
+function morDownE(){
+  if (!hideMorse){
+  regElmAnimate(morUp, 'opacity', 0.1, 1.2, '', 1, 0,'none');
+  regElmAnimate(morDown, 'opacity', 0.1, 1.5, '', 0, 1,'none');}
+  else{morUp.style.opacity='0';morBase.style.opacity='0';morDown.style.opacity='0';}
+
+  var delay = random(1,2); if (delay===1){delay = 100;} else {delay=400;}
+  setTimeout(function(){morUpE();},delay);}
 
 ////////////////////////////////////////////////////////////////////////////////
 //////////          Random Functions         ///////////////////////////////////

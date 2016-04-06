@@ -65,6 +65,7 @@ body {
 }
 
 video { /*width: 46.25vw; height: 24.3vw; margin-top: 2vw; margin-bottom: 1vw;*/
+  opacity: 0.7;
   object-fit: cover;
 }
 
@@ -233,13 +234,28 @@ video { /*width: 46.25vw; height: 24.3vw; margin-top: 2vw; margin-bottom: 1vw;*/
   opacity: 0.8;
   visibility: hidden;
 }
-
 #aboutMeText{
   font-size: 1.8vw;
   color: rgba(50,50,50,0.8);
   width: 60vw;
   margin-top: 15vw;
   margin-left: 37vw;
+  text-align: left;
+  visibility: hidden;
+}
+
+.morse {
+  width: 48vw;
+  margin-top: 27.6vw;
+  margin-left: 52vw;
+}
+
+#contactMeText{
+  font-size: 1.8vw;
+  color: rgba(50,50,50,0.8);
+  width: 46vw;
+  margin-top: 15vw;
+  margin-left: 2.5vw;
   text-align: left;
   visibility: hidden;
 }

@@ -114,41 +114,8 @@ var dropL0 = createLine(12.5,12.7,12.5,15.1,6,'rgb(220,220,220)','dropL0',0);
 var dropL1 = createLine(12.5,15,5,15,3,'rgb(220,220,220)','dropL1',0);
 webWin.onmousedown();
 uploadDone = true;
-var aboutMeClicked = false;
-
-
-function displaySwitch(state,elmsId){
-  for (var i = 0; i < elmsId.length; i++){
-    console.log(elmsId[i]);
-    document.getElementById(elmsId[i]).setAttribute('style','visibility: '+state+';');
-  }
-}
-
-displaySwitch('hidden',['myCarousel','projBar','projln','infotoolsSVG'
-,'dropL','dropR','dropL0','dropL1']);
-
-
-about.onmousedown = function aboutMe(){ aboutMeClicked = true;
-
-  displaySwitch('hidden',['myCarousel','projBar','projln','infotoolsSVG'
-  ,'dropL','dropR','dropL0','dropL1']);
-
-  document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',0);
-  if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
-  } else { skillsBox[sCnt].style.fill = 'url(#grad2)';}
-  skillsBox[sCnt].style.opacity = 1; skillsBox[sCnt].style.filter = 'none';
-  mainSVG.insertBefore(skillsBox[sCnt],vert0);
-
-  displaySwitch('visible',['bobIcon','aboutMeText']);
-
-}
-contact.onmousedown = function aboutMe(){
-  displaySwitch('visible',['myCarousel','projBar','projln','infotoolsSVG'
-  ,'dropL','dropR','dropL0','dropL1']);
-  displaySwitch('hidden',['bobIcon','aboutMeText']);
-
-}
-
+var hideMorse = true;
+morUpE();
 
 //check to see if you can delete document.getElmentByID with proj+i^^^
 
