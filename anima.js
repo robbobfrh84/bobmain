@@ -54,8 +54,8 @@ function createBtn(btn, cir){ var on = false;
     if (on === false){
       cir.style.fill = 'rgb(210,210,210)'; cir.style.r = '2.3%';
       blowUp(btn,cir,1,2,75,100); on = true;}}
-  btn.onmouseleave = function(){
-     cir.style.fill = 'rgb(230,230,230)';cir.style.r = '2%'; on = false;}}
+  btn.onmouseleave = function(){if (!aboutMeClicked){
+     cir.style.fill = 'rgb(230,230,230)';cir.style.r = '2%'; on = false;}}}
 
 function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
   var onLine = createLine(l[0],l[1],l[2],l[3],3,'rgb(220,220,220)','onLine'+position,0);
@@ -73,6 +73,18 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
     dropL1.setAttributeNS(null, 'opacity', 0);
     regElmAnimate(carousel, 'opacity', 0.07, 1, '', 1, 0,'none');
     if(position===0){ leftDrop(); projSwap(0);
+//0000000!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      if (typeof slide1VideoElm !== 'undefined'){
+        document.getElementById('slide1Div').removeChild(slide1VideoElm);
+      }
+      var slide1 = document.getElementById('slide1Img');
+      slide1.style.display = 'initial';
+      slide1.setAttribute('src','media/sud0.png');
+      slide1.className = 'pic';
+      document.getElementById('slide1cap').setAttribute('style','display: initial;');
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       if (uploadDone){manualClick(allSkills);}
       dropL0.setAttributeNS(null,'x1',12.5+'%');
       dropL0.setAttributeNS(null,'x2',12.5+'%');
@@ -80,11 +92,26 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       dropL1.setAttributeNS(null, 'x1', 12.5+'%');
       linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');}
     if(position===1){ projSwap(0); manualClick(allSkills);
-//1111111!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      // var slide1 = document.getElementById('slide1');
-      // slide1.setAttribute('src','media/cncVid0.mov');
-      // slide1.className = 'vid';
-//1111111!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// 1111111!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+      // document.getElementById('slide1Img').setAttribute('src','');
+      // document.getElementById('slide1Img').className = '';
+
+      var video = document.createElement("VIDEO");
+      var source = document.createElement("SOURCE");
+      var slide1Div = document.getElementById('slide1Div')
+      video.id = 'slide1VideoElm';
+      video.setAttribute('autoplay','');
+      video.setAttribute('loop','');
+      source.id = 'slide1Vid';
+      source.setAttribute('src','media/cncVid0.mov');
+      slide1Div.insertBefore(video, slide1Div.firstChild);
+      video.insertBefore(source, video.firstChild);
+
+      document.getElementById('slide1cap').setAttribute('style','display: none;');
+      document.getElementById('slide1Img').setAttribute('style','display: none;');
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       dropL0.setAttributeNS(null, 'x1', 37.5+'%');
       dropL0.setAttributeNS(null, 'x2', 37.5+'%');
       linePulse(37.5,12.7,37.5,15.1,dropL0,true,0.5,1.15,'none');
@@ -92,10 +119,15 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       linePulse(37.5,15,5,15,dropL1,true,0.5,1.15,leftDrop);}
     if(position===2){ projSwap(0); manualClick(allSkills);
 //2222222!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      var slide1 = document.getElementById('slide1');
+      if (typeof slide1VideoElm !== 'undefined'){
+        document.getElementById('slide1Div').removeChild(slide1VideoElm);
+      }
+      document.getElementById('slide1cap').setAttribute('style','display: none;');
+      var slide1 = document.getElementById('slide1Img');
+      slide1.style.display = 'initial';
       slide1.setAttribute('src','SVGs/cog.svg');
       slide1.className = 'SVG';
-//2222222!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       dropL0.setAttributeNS(null, 'x1', 62.5+'%');
       dropL0.setAttributeNS(null, 'x2', 62.5+'%');
       linePulse(62.5,12.7,62.5,15.1,dropL0,true,0.5,1.15,'none');
@@ -103,7 +135,16 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
       linePulse(62.5,15,95.3,15,dropL1,true,0.5,1.15,rightDrop);}
     if(position===3){ rightDrop(); projSwap(0); manualClick(allSkills);
-
+//3333333!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      if (typeof slide1VideoElm !== 'undefined'){
+        document.getElementById('slide1Div').removeChild(slide1VideoElm);
+      }
+      document.getElementById('slide1cap').setAttribute('style','display: none;');
+      var slide1 = document.getElementById('slide1Img');
+      slide1.style.display = 'initial';
+      slide1.setAttribute('src','SVGs/squ.svg');
+      slide1.className = 'SVG';
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       dropL0.setAttributeNS(null, 'x1', 87.5+'%');
       dropL0.setAttributeNS(null, 'x2', 87.5+'%');
       linePulse(87.5,12.7,87.5,15.1,dropL0,true,0.5,1.15,'none');
@@ -119,10 +160,6 @@ function rightDrop(){
   dropR.setAttributeNS(null, 'opacity', 1);
   dropL.setAttributeNS(null, 'opacity', 0);
   elmAnimate(dropR,'height',1.001,1.03,'%',0,40,'none');}
-
-      //SAVE FOR PROJECT TRANSITIONS
-      // elmAnimate(polarGradR, 'x2',1.01,1.4,'%',0,100,'none');}
-      // elmAnimate(polarGradR, 'x2',1.01,1.4,'%',100,20,'none');}
 
 prevAP.onmouseover = function(){
   if(sCnt===0){var x=skills.length-1}else{var x=sCnt-1;}
@@ -155,10 +192,8 @@ function swapProjs(dir,fade,position){
   }else{ reSetProj();}}
 
 function reSetProj(){
-  for(var i = 0; i < 5; i++){
-    if (typeof skills[sCnt].projects[i] === 'undefined'){
-      document.getElementById('proj'+i).style.display = 'none';
-    } else {
+  for(var i = 0; i < 5; i++){ if (typeof skills[sCnt].projects[i] === 'undefined'){
+      document.getElementById('proj'+i).style.display = 'none'; } else {
       document.getElementById('proj'+i).style.display = 'inline-block';
       document.getElementById('proj'+i).innerHTML = skills[sCnt].projects[i];}}
   regElmAnimate(projBar, 'opacity', 0.01, 1.05, '', 0, 1,reCar);}
@@ -167,10 +202,10 @@ function reCar(){regElmAnimate(carousel, 'opacity', 0.05, 1, '', 0, 1,'none');
   regElmAnimate(infotoolsSVG,'opacity',0.05, 1,'',0,1,'none');}
 
 function manualClick(allSkills){
-    var evt = document.createEvent("MouseEvents");//TURN INTO FUNCTION VALUABLE!!!!
-    evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+    var evt = document.createEvent("MouseEvents");
+    evt.initMouseEvent("click",true,true,window,0,0,0,0,0,false,false,false,false,0,null);
     var elID = document.getElementById("elID");
-    allSkills.dispatchEvent(evt);  }
+    allSkills.dispatchEvent(evt);}
 
 ////////////////////////////////////////////////////////////////////////////////
 //////////          ANIMATION STATION          /////////////////////////////////
@@ -183,8 +218,7 @@ function elmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = s
     else if (start > end && loc >= end){ requestAnimationFrame(go); }
     else { if (func !== 'none') { func(); } elID.setAttributeNS(null, elm, end+unit);
     return; }} go();}
-//^This function was created late and could be turned into a universal animation function.
-//...And, could eliminate many of the functions below...BUT,
+    //^This function was created late and could be turned into a universal animation function.
 
 function regElmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = start;
   function go(){ speed*=ramp;
@@ -204,16 +238,11 @@ function linePulse(sX,sY,eX,eY,lnID,grow,speed,ramp,func,xx){ var end = false;
     if(sX < eX && x > 0){end=false; if(grow){newX=eX-x;} else {newX=sX+x;}}
     if(sY > eY && y > 0){end=false; if(grow){newY=eY+y;} else {newY=sY-y;}}
     if(sY < eY && y > 0){end=false; if(grow){newY=eY-y;} else {newY=sY+y;}}
-    if(end === true){
-      if (!grow){lnID.setAttributeNS(null, 'opacity', 0);}
-      lnID.setAttributeNS(null,'x2',eX+'%');
-      lnID.setAttributeNS(null,'y2',eY+'%');
-      if (func !== 'none'){ func(xx);}
-      return; }
-    lnID.setAttributeNS(null, 'x2',newX+'%');
-    lnID.setAttributeNS(null, 'y2',newY+'%');
-    end = true;
-    requestAnimationFrame(go);} go();}
+    if(end === true){ if (!grow){lnID.setAttributeNS(null, 'opacity', 0);}
+      lnID.setAttributeNS(null,'x2',eX+'%'); lnID.setAttributeNS(null,'y2',eY+'%');
+      if (func !== 'none'){ func(xx);} return; }
+      lnID.setAttributeNS(null, 'x2',newX+'%'); lnID.setAttributeNS(null, 'y2',newY+'%');
+      end = true; requestAnimationFrame(go);} go();}
 
 function fadeIn(varName, element, speed, start, end){
   function go(){

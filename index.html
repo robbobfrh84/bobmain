@@ -39,36 +39,12 @@
         <stop offset="100%" stop-color="rgba(220,220,220,1)"/>
       </linearGradient>
 
-      <linearGradient id="polarGradL" x1=100% y1="0%" x2=0% y2=0%>
-        <stop offset="0%" stop-color="rgba(255,255,255,0.5)"/>
-        <stop offset="20%" stop-color="rgba(255,255,255,0)"/>
-        <stop offset="80%" stop-color="rgba(255,255,255,0)"/>
-        <stop offset="100%" stop-color="rgba(255,255,255,0.5)"/>
-      </linearGradient>
-
-      <linearGradient id="polarGradR" x1=100% y1="0%" x2=0% y2=0%>
-        <stop offset="0%" stop-color="rgba(255,255,255,0.5)"/>
-        <stop offset="20%" stop-color="rgba(255,255,255,0)"/>
-        <stop offset="80%" stop-color="rgba(255,255,255,0)"/>
-        <stop offset="100%" stop-color="rgba(255,255,255,0.5)"/>
-      </linearGradient>
-
       <linearGradient id="linT" x1=0% y1="100%" x2=0% y2=0%>
         <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
         <stop offset="100%" stop-color="rgba(0,0,0,1)"/>
       </linearGradient>
 
       <linearGradient id="linB" x1=0% y1="100%" x2=0% y2=0%>
-        <stop offset="0%" stop-color="rgba(0,0,0,1)"/>
-        <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
-      </linearGradient>
-
-      <linearGradient id="linLR" x1=0% y1=0% x2="100%" y2=0%>
-        <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
-        <stop offset="100%" stop-color="rgba(0,0,0,1)"/>
-      </linearGradient>
-
-      <linearGradient id="linRL" x1=0% y1=0% x2="100%" y2=0%>
         <stop offset="0%" stop-color="rgba(0,0,0,1)"/>
         <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
       </linearGradient>
@@ -89,7 +65,9 @@
       </svg>
 
       <svg id='about' x=0% y=0% width=0% height=0% xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-       <a xlink:href="http://astronomynow.com" target="_blank">
+<!-- <a xlink:href="http://astronomynow.com" target="_blank"> -->
+<!-------------------------------------------------------------->
+
        <circle id='aboutCir' cx="21.25%" cy="6.25%" r="2%" stroke="cornflowerblue"
            stroke-width="0.2%" fill="rgba(230,230,230,1)"/>
        <svg x='18.85%' y='3.85%' width="4.8%" height="4.8%" viewBox="0 0 500 500">
@@ -137,9 +115,9 @@
       </svg>
 
 <!-- Main body background ----------------------------------------------------->
+      <rect id='infoBox' x=0% y=12.4% width=100% height=37.5% opacity=0.25 fill="cornflowerblue" />
       <rect id='allBoxShadeTop' x=0% y=12.5% width=100% height=0.5% opacity=0.2 fill="url(#linT)" />
       <rect id='allBoxShadeBot' x=0% y=49.5% width=100% height=0.5% opacity=0.3 fill="url(#linB)" />
-      <rect id='infoBox' x=0% y=12.4% width=100% height=37.5% opacity=0.25 fill="cornflowerblue" />
 
 <!-- Main Skill sets bar --------------------------------------------------------------------------->
       <rect id='webBox' x=0% y=10% width=25% height=2.6% fill='url(#grad1)'/>
@@ -177,20 +155,18 @@
         <!-- Wrapper for slides -->
         <div id='carousel' class="carousel-inner" role="listbox">
 
-          <div class="item active" >
-            <!-- gonna have to like create child for the video -->
-            <!-- <video autoplay loop class='vid' > -->
-
-            <img id='slide1' src="media/sud0.png" class='pic'>
-            <div class='carousel-caption'>
+          <div id='slide1Div' class="item active" >
+            <video id='slide1VideoElm' autoplay loop ><source id='slide1Vid' src=''></video>
+            <img id='slide1Img' src='' class='' />
+            <div class='carousel-caption' id='slide1cap'>
               <p class='mediaGraph'>A basic Sudoku game with 4 difficulty settings. and... scoop and poop and poop and scoop... school. OHHHH more scooping for sure. need to get to the third line.</p>
             </div>
           </div>
 
           <div class="item">
             <img src="media/sud1.png" class='pic'>
-            <div class="carousel-caption" style="display: none;">
-              <p class='mediaGraph'></p>
+            <div class="carousel-caption" >
+              <p class='mediaGraph' style="display: none;"></p>
             </div>
           </div>
 
@@ -282,19 +258,33 @@
     <div id='infotoolsSVG' >
       <img id='infoIcon' href="#myCarousel" role="button" data-slide-to="4" src="SVGs/info.svg" viewBox="0 0 500 500">
       <img id='toolsIcon' href="#myCarousel" role="button" data-slide-to="5" src="SVGs/tools.svg" viewBox="0 0 500 500">
+
     </div>
     <div id='allSkills' class='html1' href="#myCarousel" data-slide-to="0"></div>
-
-    <!-- <svg id='leftArrowSVG' width=5vw height=5vw >
-      <circle id='arrowAreaL' class='noMouse' cx=50% cy=50% r=50% fill='url(#polarGradL)'/>
-      <svg id='leftArrow' class='noMouse' x=-85% y=-101% width=300% height=300% viewBox="0 0 500 500"
-        onclick='leftArrowClick()' opacity=0.5 fill='rgb(0,0,0)' ><path d="M123 379v-256h256v256h-256zm147.695-163.269c-28.119 18.115-59.092 27.566-91.062 35.062 32.003 7.554 63.125 17.013 91.142 35.229-4.996-9.528-9.994-19.056-15.486-29.528h67.959v-11.687h-67.791c5.313-10.138 10.275-19.607 15.238-29.076z" fill="none"/><path fill-rule="evenodd" clip-rule="evenodd" d="M270.695 215.731c-4.963 9.469-9.926 18.938-15.238 29.076h67.791v11.687h-67.959c5.492 10.473 10.49 20 15.486 29.528-28.017-18.216-59.138-27.675-91.142-35.229 31.971-7.496 62.944-16.947 91.062-35.062z"/></svg>
-    </svg>
-    <svg id='rightArrowSVG' width=5vw height=5vw >
-      <circle id='arrowAreaR' class='noMouse' cx=50% cy=50% r=50% fill='url(#polarGradR)'/>
-      <svg id='rightArrow' class='noMouse' x=-118% y=-101% width=300% height=300% viewBox="0 0 500 500"
-        onclick='rightArrowClick()' opacity=0.5 fill='rgb(0,0,0)'><path d="M123 379v-256h256v256h-256zm108.267-162.951l15.325 29.258h-67.905v11.871h67.868c-5.372 10.252-10.323 19.703-15.274 29.154 28.004-18.174 59.063-27.57 91.016-35.167-32.014-7.47-63.017-17-91.03-35.116z" fill="none"/><path fill-rule="evenodd" clip-rule="evenodd" d="M231.267 216.049c28.013 18.116 59.016 27.646 91.03 35.116-31.952 7.597-63.012 16.993-91.016 35.167 4.951-9.451 9.903-18.902 15.274-29.154h-67.868v-11.871h67.905l-15.325-29.258z"/></svg>
-    </svg> -->
+<!-- Hidden About Me and Contact Stuff -------------------------------------------------------->
+    <div>
+      <img class='html1' id='bobIcon' class='html1' src="SVGs/bob.svg" >
+    </div>
+    <div >
+      <p class='html1' id='aboutMeText'>
+        About Bob  <br><br>
+        &nbsp; &nbsp; Airight so this is the world and
+                        there are five billion people on
+                        it.  When I was a kid there were
+                        three.  It's hard to keep up.<br><br>
+        &nbsp; &nbsp;
+        In Odessa, Texas, the great Frank
+                        Cushman.  Cush is 20.
+                        Quarterback, role model, my
+                        client. He'll probably go number
+                        one in the draft this year.<br><br>
+        &nbsp; &nbsp;
+        Now I'm the guy you don't usually
+                      see. I'm the one behind the
+                      scenes.  I'm the sports agent.
+        <br><br>
+      </p>
+    </div>
 
   </body>
   <script src="anima.js"></script>

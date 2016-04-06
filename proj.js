@@ -10,7 +10,7 @@ function Skill(type,projects){ //using Object Method here mostly for practice.
 	this.projects = projects; }   //...clarity of objects after doing it.
 
 var web = new Skill('Web Development', [
-  'Sudoku',
+  'Sudoku', 
   'riiple',
   'Profile',
   'Tic-tac-toe',
