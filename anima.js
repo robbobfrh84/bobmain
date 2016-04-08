@@ -5,10 +5,10 @@ var svgElement = 'http://www.w3.org/2000/svg';
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 function drawGrid(numVLines,numHLines,thin,fifth,tenth,color){
   lines = (100/numVLines); hlines = (100/numHLines);
-  for (var i = 0; i <= numVLines; i++){ fat = thin;
+  for (var i = 1; i < numVLines; i++){ fat = thin;
     if(i%5===0){fat=fifth;} if(i%10===0||i===0){fat=tenth;}
     createLine(lines*i,0,lines*i,100,fat,color,'vert'+i); }
-  for (var i = 0; i <= numHLines; i++){ fat = thin;
+  for (var i = 1; i < numHLines; i++){ fat = thin;
     if(i%5===0){fat=fifth;} if(i%10===0||i===0){fat=tenth;}
     createLine(0,hlines*i,100,hlines*i,fat,color,'horiz'+i);}}
 
@@ -71,8 +71,9 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
   btn.onmousedown = function(){ returnMainContent();
     dropL0.setAttributeNS(null, 'opacity', 0);
     dropL1.setAttributeNS(null, 'opacity', 0);
+
     regElmAnimate(carousel, 'opacity', 0.07, 1, '', 1, 0,'none');
-    if(position===0){ leftDrop(); projSwap(0);
+    if(position===0){ leftDrop();
 //0000000!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       if (typeof slide1VideoElm !== 'undefined'){
         document.getElementById('slide1Div').removeChild(slide1VideoElm);
@@ -91,7 +92,7 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       linePulse(12.5,12.7,12.5,15.1,dropL0,true,0.5,1.15,'none');
       dropL1.setAttributeNS(null, 'x1', 12.5+'%');
       linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');}
-    if(position===1){ projSwap(0); manualClick(allSkills);
+    if(position===1){  manualClick(allSkills);
 // 1111111!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
       // document.getElementById('slide1Img').setAttribute('src','');
@@ -101,6 +102,8 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       var source = document.createElement("SOURCE");
       var slide1Div = document.getElementById('slide1Div')
       video.id = 'slide1VideoElm';
+      video.className = 'squareVid';
+
       video.setAttribute('autoplay','');
       video.setAttribute('loop','');
       video.setAttribute('muted','true');
@@ -118,7 +121,7 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       linePulse(37.5,12.7,37.5,15.1,dropL0,true,0.5,1.15,'none');
       dropL1.setAttributeNS(null, 'x1', 37.5+'%');
       linePulse(37.5,15,5,15,dropL1,true,0.5,1.15,leftDrop);}
-    if(position===2){ projSwap(0); manualClick(allSkills);
+    if(position===2){  manualClick(allSkills);
 //2222222!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       if (typeof slide1VideoElm !== 'undefined'){
         document.getElementById('slide1Div').removeChild(slide1VideoElm);
@@ -135,7 +138,7 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       dropL1.setAttributeNS(null, 'x1', 62.5+'%');
       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
       linePulse(62.5,15,95.3,15,dropL1,true,0.5,1.15,rightDrop);}
-    if(position===3){ rightDrop(); projSwap(0); manualClick(allSkills);
+    if(position===3){ rightDrop(); manualClick(allSkills);
 //3333333!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       if (typeof slide1VideoElm !== 'undefined'){
         document.getElementById('slide1Div').removeChild(slide1VideoElm);
@@ -152,7 +155,10 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       dropL1.setAttributeNS(null, 'x1', 87.5+'%');
       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
       linePulse(87.5,15,95.3,15,dropL1,true,0.5,1.15,'none');}
-    swapProjs(1,true,position);}}
+    swapProjs(1,true,position);
+    projSwap(0);
+
+  }}
 function leftDrop(){
   dropL.setAttributeNS(null, 'opacity', 1);
   dropR.setAttributeNS(null, 'opacity', 0);
@@ -177,39 +183,35 @@ nextAP.onmouseleave = function(){
 
 about.onmousedown = function aboutMe(){
   displaySwitch('hidden',['myCarousel','projBar','projln','infotoolsSVG'
-  ,'dropL','dropR','dropL0','dropL1','contactMeText']);
+  ,'dropL','dropR','dropL0','dropL1','contactMeText','contactData','projInfo']);
   document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',0);
   if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
   } else { skillsBox[sCnt].style.fill = 'url(#grad2)';}
   skillsBox[sCnt].style.opacity = 1; skillsBox[sCnt].style.filter = 'none';
-  mainSVG.insertBefore(skillsBox[sCnt],vert0);
+  mainSVG.insertBefore(skillsBox[sCnt],vert1);
   displaySwitch('visible',['bobIcon','aboutMeText']); hideMorse = true;
 
 }
 contact.onmousedown = function contactMe(){
   displaySwitch('hidden',['myCarousel','projBar','projln','infotoolsSVG'
-  ,'dropL','dropR','dropL0','dropL1','aboutMeText','bobIcon']);
+  ,'dropL','dropR','dropL0','dropL1','aboutMeText','bobIcon','projInfo']);
   document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',0);
   if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
   } else { skillsBox[sCnt].style.fill = 'url(#grad2)';}
   skillsBox[sCnt].style.opacity = 1; skillsBox[sCnt].style.filter = 'none';
-  mainSVG.insertBefore(skillsBox[sCnt],vert0);
-  displaySwitch('visible',['morBase','morUp','morDown','contactMeText']);
+  mainSVG.insertBefore(skillsBox[sCnt],vert1);
+  displaySwitch('visible',['morBase','morUp','morDown','contactMeText','contactData']);
   hideMorse = false;
 }
 
-infoIcon.onmouseover = function(){ $('#myCarousel').carousel('pause');}
-infoIcon.onmouseleave = function(){ $('#myCarousel').carousel('cycle');}
-
 function displaySwitch(state,elmsId){
   for (var i = 0; i < elmsId.length; i++){
-    console.log(elmsId[i]);
     document.getElementById(elmsId[i]).setAttribute('style','visibility: '+state+';');}}
 
 function returnMainContent(){ hideMorse = true;
   displaySwitch('visible',['myCarousel','projBar','projln','infotoolsSVG'
-  ,'dropL','dropR','dropL0','dropL1']);
-  displaySwitch('hidden',['bobIcon','aboutMeText','contactMeText']);
+  ,'dropL','dropR','dropL0','dropL1','projInfo']);
+  displaySwitch('hidden',['bobIcon','aboutMeText','contactMeText','contactData']);
   if (typeof slide1VideoElm !== 'undefined'){
     document.getElementById('slide1Div').removeChild(slide1VideoElm);}}
 
@@ -218,7 +220,7 @@ function swapProjs(dir,fade,position){
   if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
   } else { skillsBox[sCnt].style.fill = 'url(#grad2)';}
   skillsBox[sCnt].style.opacity = 1; skillsBox[sCnt].style.filter = 'none';
-  mainSVG.insertBefore(skillsBox[sCnt],vert0);
+  mainSVG.insertBefore(skillsBox[sCnt],vert1);
   if (position === 'n'){ sCnt+=dir;}else{sCnt=position;}
   document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',1);
   if (sCnt >= skills.length){ sCnt=0;} if (sCnt <= -1){ sCnt=skills.length-1;}
@@ -228,6 +230,8 @@ function swapProjs(dir,fade,position){
   skillsBox[sCnt].style.opacity = 0.5;
   regElmAnimate(projBar,'opacity',0.01, 1.1,'',1,0,reSetProj);
   regElmAnimate(infotoolsSVG,'opacity',0.03, 1.1,'',1,0,'none');
+  regElmAnimate(projInfo,'opacity',0.03, 1.1,'',1,0,'none');
+
   }else{ reSetProj();}}
 
 function reSetProj(){
@@ -238,7 +242,9 @@ function reSetProj(){
   regElmAnimate(projBar, 'opacity', 0.01, 1.05, '', 0, 1,reCar);}
 
 function reCar(){regElmAnimate(carousel, 'opacity', 0.05, 1, '', 0, 1,'none');
-  regElmAnimate(infotoolsSVG,'opacity',0.05, 1,'',0,1,'none');}
+  regElmAnimate(infotoolsSVG,'opacity',0.05, 1,'',0,1,'none');
+  regElmAnimate(projInfo,'opacity',0.05, 1,'',0,1,'none');}
+
 
 function manualClick(allSkills){
     var evt = document.createEvent("MouseEvents");
@@ -314,8 +320,8 @@ function morUpE(){
 
 function morDownE(){
   if (!hideMorse){
-  regElmAnimate(morUp, 'opacity', 0.1, 1.2, '', 1, 0,'none');
-  regElmAnimate(morDown, 'opacity', 0.1, 1.5, '', 0, 1,'none');}
+  regElmAnimate(morUp, 'opacity', 0.1, 1.2, '', 0.6, 0,'none');
+  regElmAnimate(morDown, 'opacity', 0.1, 1.5, '', 0, 0.6,'none');}
   else{morUp.style.opacity='0';morBase.style.opacity='0';morDown.style.opacity='0';}
 
   var delay = random(1,2); if (delay===1){delay = 100;} else {delay=400;}

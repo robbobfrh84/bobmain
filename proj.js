@@ -10,27 +10,35 @@ function Skill(type,projects){ //using Object Method here mostly for practice.
 	this.projects = projects; }   //...clarity of objects after doing it.
 
 var web = new Skill('Web Development', [
-  'Sudoku', 
+  'Sudoku',
   'riiple',
-  'Profile',
+  'Portfolio',
   'Tic-tac-toe',
   'Maps'
 ]);
 var mic = new Skill('Microcontroller & CNC', ['CNC','Controller','Gcode Editor','LCD']);
-var des = new Skill('Design', ['Airbush Cups','Woodshop','Cogs','hotplate']);
+var des = new Skill('Design', ['Airbrush Cups','Woodshop','Cogs','hotplate']);
 var woo = new Skill('Woodworking', ['Shed','Folding Chair','Squirrel Guard','Wood Mugs']);
 
 var skills = [web,mic,des,woo];
 var sCnt = 0; var oldPos=1;
 
-function projSwap(pos){ console.log(skills[sCnt].projects[pos]);
+function projSwap(pos){
   if (pos !== oldPos){
 	  var deSelect = document.getElementById('proj'+oldPos);
 		regElmAnimate(deSelect, 'height', 0.1, 1.05, 'vw', 4.5, 2.8,'none');
 		var projTab = document.getElementById('proj'+pos);
 		regElmAnimate(projTab, 'height', 0.1, 1.05, 'vw', 3.5, 4.5,'none');
 		setTimeout(function(){projTab.style.backgroundColor = 'rgba(102,155,235,0.3)';},500);
-		oldPos = pos;}}
+		oldPos = pos; }
+
+
+		var projInfo = document.getElementById('html'+skills[sCnt].projects[pos]).innerHTML;
+    document.getElementById('projHtml').innerHTML = projInfo;
+		console.log(skills[sCnt].projects[pos]);
+
+
+	}
 
 function projHover(pos){
 	if (pos !== oldPos){
@@ -39,4 +47,6 @@ function projHover(pos){
 
 function projOff(pos){
 	var projTab = document.getElementById('proj'+pos);
-	if (pos !== oldPos){ regElmAnimate(projTab, 'height', 0.1, 1.05, 'vw', 3.5, 2.8,'none');}}
+	if (pos !== oldPos){
+		regElmAnimate(projTab, 'height', 0.1, 1.05, 'vw', 3.5, 2.8,'none');
+	}}

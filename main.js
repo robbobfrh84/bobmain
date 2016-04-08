@@ -28,7 +28,7 @@ function placetextBoxes(x,y,size,text,block){
     ,'inBk'+i, 'allIntro', text[i]); }
   setTimeout(function(){arreyFade(block, 0.01, 0, 1);},750);}
 placetextBoxes(2.5,1.8,16,'  A Journal & Presentation of Projects  ',introBlock);
-placetextBoxes(2.505,62.1,12,'            © 2016 Bob Main',copyBlock);
+placetextBoxes(2.505,96.8,12,'            © 2016 Bob Main',copyBlock);
 
 //--------------------------------------------------------Draw intro underline--------------------
 var introL=createLine(50,2.5,2.5,2.5,2,'rgb(150,150,150)','introL',0);
@@ -65,12 +65,18 @@ createBtn('twit', 'twitCir');
 createBtn('git', 'gitCir');
 createBtn('insta', 'instaCir');
 createBtn('angel', 'angelCir');
-setTimeout(function(){blowUp(contact,contactCir,2,3,0,100);},4000);
-setTimeout(function(){blowUp(about,aboutCir,2,3,0,100);},3200);
+
+setTimeout(function(){blowUp(contact,contactCir,2,3,0,100);},50);
+setTimeout(function(){blowUp(about,aboutCir,2,3,0,100);},500);
+// setTimeout(function(){blowUp(contact,contactCir,2,3,0,100);},4000);
+// setTimeout(function(){blowUp(about,aboutCir,2,3,0,100);},3200);
 setTimeout(function(){blowUp(twit,twitCir,2,3,0,100);},3400);
 setTimeout(function(){blowUp(angel,angelCir,2,3,0,100);},3600);
 setTimeout(function(){blowUp(git,gitCir,2,2,0,100);},3500);
 setTimeout(function(){blowUp(insta,instaCir,2,3,0,100);},3800);
+
+
+
 
 //----------------------------------Create background areas for rolling content--------------------
 mainSVG.appendChild(infoBox);
@@ -116,6 +122,11 @@ webWin.onmousedown();
 uploadDone = true;
 var hideMorse = true;
 morUpE();
+// mainSVG.appendChild(moreBaseT);
+////// do class name for info contact shit
+// var projBar = document.getElementById('projBar')
+// mainSVG.appendChild(infotoolsSVG);
+// setTimeout(function(){mainSVG.appendChild(projBar);},5000);
 
 //check to see if you can delete document.getElmentByID with proj+i^^^
 

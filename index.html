@@ -3,7 +3,10 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script><script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="main.css"/>
   </head>
   <body>
@@ -57,9 +60,6 @@
 
 <!-- BUTTONS & LINKS ---------------------------------------------------------->
       <svg id='contact' x=0% y=0% width=0% height=0% xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-       <!-- <a xlink:href="http://espn.com" target="_blank"> -->
-
-
        <circle id='contactCir' cx="8.75%" cy="6.25%" r="2%" stroke="cornflowerblue"
            stroke-width="0.2%" fill="rgba(230,230,230,1)"/>
        <svg x='6.35%' y='3.85%' width="4.8%" height="4.8%" viewBox="0 0 500 500">
@@ -131,13 +131,15 @@
       <rect id='wooBox' x=75% y=10% width=25% height=2.6% fill='url(#grad2)'/>
       <text id='wooText' class='txt1'x='81.3%' y='11.8%' >
         Woodworking</text>
+
    </svg>
 
-<!----------------------------------------------------------------------------->
-<!-- End of mainSVGs! ---------------------------------------------------------->
-<!----------------------------------------------------------------------------->
 
-    <div class="mainContent">
+<!----------------------------------------------------------------------------->
+<!--    CAROUSEL     ---------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+  <div class='confixed'>
+    <div class="container-fixed">
       <br>
       <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000" >
         <!-- Indicators -->
@@ -153,42 +155,50 @@
 
         <!-- Wrapper for slides -->
         <div id='carousel' class="carousel-inner"  role="listbox">
-
           <div id='slide1Div' class="item active" >
             <video id='slide1VideoElm' autoplay loop ><source id='slide1Vid' src=''></video>
-            <img id='slide1Img' src='' class='' />
+            <div >
+              <img id='slide1Img' src='' class='' />
+            </div>
             <div class='carousel-caption' id='slide1cap'>
-              <p class='mediaGraph'>A basic Sudoku game with 4 difficulty settings. and... scoop and poop and poop and scoop... school. OHHHH more scooping for sure. need to get to the third line.</p>
+              <p class='mediaGraph scrollVisable'>A basic Sudoku game with 4 difficulty settings. and... scoop and poop and poop and scoop... school. OHHHH more scooping for sure. need to get to the third line.</p>
             </div>
           </div>
 
           <div class="item">
             <img src="media/sud1.png" class='pic'>
             <div class="carousel-caption" >
-              <p class='mediaGraph' style="display: none;"></p>
+              <p class='mediaGraph scrollVisable' style="display: none;"></p>
             </div>
           </div>
 
-          <div class="item">
-            <video autoplay loop class='vid' >
-            <source src="media/sudVid0.mov" >
-            </video>
+          <div class="item wideVid" >
+            <div class='vidDiv'>
+              <video autoplay loop >
+                <source class='vid' src="media/sudVid0.mov" >
+              </video>
+            </div>
             <div class="carousel-caption">
-              <p class='mediaGraph'>keeps track game time and which puzzle is being played to be compared to other players times.</p>
+              <p class='mediaGraph wideVidGraph scrollVisable'>
+                keeps track game time and which puzzle is being played to be compared to other players times.</p>
             </div>
           </div>
 
-          <div class="item">
-            <img src="SVGs/aboutMe.svg">
+          <div class="item ">
+            <div >
+              <img src="SVGs/aboutMe.svg" class="SVG" >
+            </div>
             <div class="carousel-caption">
-              <p class='mediaGraph'>SVGs will look great if I can incorprate some!.</p>
+              <p class='mediaGraph scrollVisable'>SVGs will look great if I can incorprate some! BUT No . oh no will this text continue down to the bottom of th media area. i sure hope so... Oh. so I checked and it did!</p>
             </div>
           </div>
 
             <div class="item">
-              <img src="SVGs/info.svg" style='opacity: 0.2;' >
+              <div>
+                <img src="SVGs/info.svg" class="SVG" style='opacity: 0.2;'>
+              </div>
               <div class="carousel-caption" >
-                <p id='infoText' class='mediaGraph'>
+                <p id='infoText' class='mediaGraph scrollVisable'>
                   BEACH SUDOKU  <br><br>
                   &nbsp; &nbsp; A from scratch coded simple Sudoku game with 100 easy, medium, hard and extra-hard
                   puzzels. The puzzels were generated by a python code I wrote to find
@@ -209,14 +219,17 @@
                   &nbsp; &nbsp; So, I need to write more to see if it scrolls! fancy that!
                   What does fancy that even mean? I don't like it. Has anyone ever been
                   genuenly complimated by someone calling them or something associated with
-                  them fancy? can't imagine... I blame the british.</p>
+                  them fancy? can't imagine... I blame the british.
+              </p>
             </div>
           </div>
 
           <div class="item">
-            <img src="SVGs/tools.svg" style='opacity: 0.2;' >
+            <div >
+              <img src="SVGs/tools.svg" class="SVG" style='opacity: 0.2;' >
+            </div>
             <div class="carousel-caption" >
-              <p id='infoText' class='mediaGraph'>
+              <p id='infoText' class='mediaGraph scrollVisable'>
                 - TOOLS USED WHEN CREATING BEACH SUDOKU -   <br><br>
                 Programing Languages...<br>
                 <br> html -
@@ -238,9 +251,11 @@
       </div>
     </div>
   </div>
+</div>
+
 
     <div id='projBar' class='html1'>
-      <div id='projBlank' class='projs'></div>
+      <div class='projBlank projs'></div>
       <div id='proj0' onclick='projSwap(0)'class='projs'
         onmouseover='projHover(0)' onmouseleave='projOff(0)'>0</div>
       <div id='proj1' onclick='projSwap(1)'class='projs'
@@ -253,21 +268,24 @@
         onmouseover='projHover(4)' onmouseleave='projOff(4)'>4</div>
     </div>
 
-<!-- Top Layer SVGs -------------------------------------------------------------->
-    <div id='infotoolsSVG' >
-      <img id='infoIcon' href="#myCarousel" role="button" data-slide-to="4"
-        src="SVGs/info.svg" viewBox="0 0 500 500">
-      <img id='toolsIcon' href="#myCarousel" role="button" data-slide-to="5" src="SVGs/tools.svg" viewBox="0 0 500 500">
 
-    </div>
-    <div id='allSkills' class='html1' href="#myCarousel" data-slide-to="0"></div>
+<!--------------------------------------------------------------------------------------------->
 <!-- Hidden About Me and Contact Stuff -------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------->
+
+
+    <div id='infotoolsSVG'>
+      <img id='toolsIcon' href="#myCarousel" role="button" data-slide-to="5" src="SVGs/tools.svg" viewBox="0 0 500 500">
+    </div>
+
+    <div id='allSkills' class='html1' href="#myCarousel" data-slide-to="0"></div>
+
     <div>
       <img class='html1' id='bobIcon' class='html1' src="SVGs/bob.svg" >
     </div>
-    <div >
-      <p class='html1' id='aboutMeText'>
-        About Bob  <br><br>
+    <div id='aboutMeText' class='scrollVisable'>
+      <p class='txt1' style='font-size: 25px;' >About Bob</p>
+      <p class='txt1' >
         &nbsp; &nbsp; Airight so this is the world and
                         there are five billion people on
                         it.  When I was a kid there were
@@ -285,24 +303,80 @@
         <br><br>
       </p>
     </div>
-    <div>
-      <img class='html1 morse' id='morBase' class='html1' src="SVGs/morBase.svg" >
-      <img class='html1 morse' id='morUp' class='html1' src="SVGs/morUp.svg" >
-      <img class='html1 morse' id='morDown' class='html1' src="SVGs/morDown.svg" >
-    </div>
-    <div >
-      <p class='html1' id='contactMeText'>
-        CONTACT INFO  <br><br>
-        &nbsp; &nbsp; Yo, You. Tou wanna hit me up. I gotz some tings below that be fo you
-          as I have colloquial emplied directing your inquaries by means of methods provided
-          below. Like how I went hard-core at you in the start, then eased off in a formal manner?
-          Well, that's how I roll! Such individuals, as yourself, may benifit through familiarizing
-          one's self with ambigious formalities. BITCH!
-        </tbody><br><br>
-        Email: bobmain49@gmail.com.<br>
-        Phone: 530 588 8404.<br><br>
+    <div id='contactMeText' class='scrollVisable'>
+      <p class='title' >Contact Info</p>
+      <p class='txt0'>
+      &nbsp; &nbsp; Yo, You. Tou wanna hit me up. I gotz some tings below that be fo you
+        as I have colloquial emplied directing your inquaries by means of methods provided
+        below. Like how I went hard-core at you in the start, then eased off in a formal manner?
+        Well, that's how I roll! Such individuals, as yourself, may benifit through familiarizing
+        one's self with ambigious formalities. BITCH!
       </p>
     </div>
+    <div id='contactData'>
+      <li class='canSelectText'> Email: bobmain49@gmail.com </li>
+      <li > Phone: 530 588 8404 </li>
+    </div>
+
+    <div >
+      <img class='morse noMouse' id='morBase' src="SVGs/morBase.svg" >
+      <img class='morse noMouse' id='morUp' src="SVGs/morUp.svg" >
+      <img class='morse noMouse' id='morDown'  src="SVGs/morDown.svg" >
+    </div>
+
+<!--------------------------------------------------------------------------------------------->
+<!--     INFO TEXT LINKS AND TOOLS     -------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------->
+  <div id='projInfo' class='info scrollVisable'>
+    <p class='txt0' id='projHtml'></p>
+  </div>
+  <p class='txt0' id='htmlSudoku' style='visibility: hidden;'>
+    BEACH SUDOKU  <br><br>
+    &nbsp; &nbsp; A from scratch coded simple Sudoku game with 100 easy, medium, hard and extra-hard
+    puzzels. The puzzels were generated by a python code I wrote to find
+    possible puzzles that wouldn't break the rules of the game. These completed
+    puzzles are then used by randomlly removing numbers. However, when
+    the puzzle is completed, it is checked individually so that room is given
+    to a completion of the puzzle that may not be the same as the original.
+    <br><br> - Challenges &amp; Issues <br><br>
+    &nbsp; &nbsp; One main issue that's yet to be resolve is specifying the difficulty of
+    the puzzle. Simply, the removel of more numbers doesn't always seem to
+    mean it's more difficult.
+    <br><br> - Potential Additions <br><br>
+    &nbsp; &nbsp; If this project is continued in the future, A fun addition would
+    be to impliment a backend to store user information, so that players
+    could see how fast they completed the puzzel compared to other players
+    and how many puzzles they've completed in total.
+    <br><br> - OH SHIT! <br><br>
+    &nbsp; &nbsp; So, I need to write more to see if it scrolls! fancy that!
+    What does fancy that even mean? I don't like it. Has anyone ever been
+    genuenly complimated by someone calling them or something associated with
+    them fancy? can't imagine... I blame the british.
+  </p>
+  <p class='txt0' id='htmlriiple' style='visibility: hidden;'>
+    riiple - A Game Inspired By a Classroom Math Exercize  <br><br>
+    &nbsp; &nbsp; When I was a young wort HOGGGGGGGG!!!!!!
+  </p>
+  <p class='txt0' id='htmlPortfolio' style='visibility: hidden;'>
+    My Portfolio Project  <br><br>
+    &nbsp; &nbsp; Ahhh shit about portfolio!
+  </p>
+
+  <p class='txt0' id='htmlCNC' style='visibility: hidden;'>
+    Homemade CNC Router  <br><br>
+    &nbsp; &nbsp; This project is currenlty in progress and will asymptote to complition!
+  </p>
+
+  <p class='txt0' id='htmlAirbrush Cups' style='visibility: hidden;'>
+    Airbrush Cups  <br><br>
+    &nbsp; &nbsp; Like a fart that really isn't a fart, but a poo...
+  </p>
+
+  <p class='txt0' id='htmlShed' style='visibility: hidden;'>
+    Backyard Built woodshop/shed  <br><br>
+    &nbsp; &nbsp; A great project for when you want to create a perfect nesting place for a skunk!
+  </p>
+
 
   </body>
   <script src="anima.js"></script>
