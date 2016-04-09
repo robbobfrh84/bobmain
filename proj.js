@@ -14,7 +14,7 @@ var web = new Skill('Web Development', [
   'riiple',
   'Portfolio',
   'Tic-tac-toe',
-  'Maps'
+  'Mouse Speed'
 ]);
 var mic = new Skill('Microcontroller & CNC', ['CNC','Controller','Gcode Editor','LCD']);
 var des = new Skill('Design', ['Airbrush Cups','Woodshop','Cogs','hotplate']);
@@ -32,7 +32,7 @@ function projSwap(pos){
 		setTimeout(function(){projTab.style.backgroundColor = 'rgba(102,155,235,0.3)';},500);
 		oldPos = pos; }
 
-
+    
 		var projInfo = document.getElementById('html'+skills[sCnt].projects[pos]).innerHTML;
     document.getElementById('projHtml').innerHTML = projInfo;
 		console.log(skills[sCnt].projects[pos]);

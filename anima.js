@@ -65,6 +65,7 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
     linePulse(l[0],l[1],l[2],l[3],onLine,true,speed1,ramp1,'none');
     box.style.fill = 'rgb(200,200,210)';}
   btn.onmouseleave = function(){
+    $('#myCarousel').carousel('cycle');
     onLine.setAttributeNS(null, 'opacity', 0); offLine.setAttributeNS(null, 'opacity', 1);
     linePulse(l[0],l[1],l[2],l[3],offLine,false,speed2,ramp2,'none');
     box.style.fill = 'url(#grad1)';}
@@ -72,11 +73,15 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
     dropL0.setAttributeNS(null, 'opacity', 0);
     dropL1.setAttributeNS(null, 'opacity', 0);
 
+
+    $('#myCarousel').carousel('pause');
     regElmAnimate(carousel, 'opacity', 0.07, 1, '', 1, 0,'none');
     if(position===0){ leftDrop();
 //0000000!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
       if (typeof slide1VideoElm !== 'undefined'){
         document.getElementById('slide1Div').removeChild(slide1VideoElm);
+
       }
       var slide1 = document.getElementById('slide1Img');
       slide1.style.display = 'initial';
@@ -155,10 +160,7 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       dropL1.setAttributeNS(null, 'x1', 87.5+'%');
       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
       linePulse(87.5,15,95.3,15,dropL1,true,0.5,1.15,'none');}
-    swapProjs(1,true,position);
-    projSwap(0);
-
-  }}
+    swapProjs(1,true,position); projSwap(0);}}
 function leftDrop(){
   dropL.setAttributeNS(null, 'opacity', 1);
   dropR.setAttributeNS(null, 'opacity', 0);
@@ -167,6 +169,10 @@ function rightDrop(){
   dropR.setAttributeNS(null, 'opacity', 1);
   dropL.setAttributeNS(null, 'opacity', 0);
   elmAnimate(dropR,'height',1.001,1.03,'%',0,40,'none');}
+
+
+
+
 
 prevAP.onmouseover = function(){
   if(sCnt===0){var x=skills.length-1}else{var x=sCnt-1;}
@@ -228,9 +234,10 @@ function swapProjs(dir,fade,position){
   mainSVG.appendChild(skillsTxt[sCnt]); mainSVG.appendChild(skillsArr[sCnt]);
   skillsBox[sCnt].style.filter = 'url(#dropShad)';
   skillsBox[sCnt].style.opacity = 0.5;
-  regElmAnimate(projBar,'opacity',0.01, 1.1,'',1,0,reSetProj);
-  regElmAnimate(infotoolsSVG,'opacity',0.03, 1.1,'',1,0,'none');
-  regElmAnimate(projInfo,'opacity',0.03, 1.1,'',1,0,'none');
+
+    regElmAnimate(projBar,'opacity',0.01, 1.1,'',1,0,reSetProj);
+    regElmAnimate(infotoolsSVG,'opacity',0.03, 1.1,'',1,0,'none');
+    regElmAnimate(projInfo,'opacity',0.03, 1.1,'',1,0,'none');
 
   }else{ reSetProj();}}
 
