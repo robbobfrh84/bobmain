@@ -32,9 +32,8 @@ function projSwap(pos){
 		setTimeout(function(){projTab.style.backgroundColor = 'rgba(102,155,235,0.3)';},500);
 		oldPos = pos; }
 
-    
-		var projInfo = document.getElementById('html'+skills[sCnt].projects[pos]).innerHTML;
-    document.getElementById('projHtml').innerHTML = projInfo;
+		var projInfoText = document.getElementById('html'+skills[sCnt].projects[pos]).innerHTML;
+    document.getElementById('projHtml').innerHTML = projInfoText;
 		console.log(skills[sCnt].projects[pos]);
 
 

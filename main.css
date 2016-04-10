@@ -43,10 +43,12 @@ body {
 /*----------------------------------------------------------------------------*/
 /*----------          HTML elements & Bootstrap Carousel        --------------*/
 /*----------------------------------------------------------------------------*/
+#myCarousel {
+  opacity: 0;
+}
 
 .container-fixed {
   margin-top: -87.6%;
-
 }
 
 .carousel-inner > .item > .pic, img, video
@@ -244,12 +246,8 @@ video {
   float: right;
   width: 35%;
   margin-top: -58.3%;
-  opacity: 0.8;
+  opacity: 0;
 }
-/*#all3Morse{
-  visibility: hidden;
-}*/
-
 
 #contactMeText{ position: relative; visibility: hidden; overflow: auto;
   max-width: 520px; max-height: 370px; min-width: 345px; min-height: 246px;
@@ -262,6 +260,10 @@ video {
   width: 48%; margin-top: -29.5%; margin-left: 51%; text-align: left;
 }
 
+#projInfo {
+  opacity: 0;
+  /*visibility: hidden;*/
+}
 #linkIcon {
   float: right;
   width: 4%;
@@ -283,8 +285,9 @@ video {
     ,opacity .25s ease-in-out, width .25s ease-in-out;
 }
 
-#toolsIcon { position: relative; float: left;
-  width: 25%; margin-top: 7.5%; margin-left: 37.5%; opacity: 0.15;}
+#toolsIcon { position: relative; float: left; opacity: 0;
+  width: 25%; margin-top: 7.5%; margin-left: 37.5%;
+}
 
 
 /*----------------------------------------------------------------------------*/

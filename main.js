@@ -8,7 +8,7 @@ drawGrid(40,40,0.25,0.75,1.5,'rgba(102,155,235,0.8)');
 
 //--------------------------------declare main object variables created in HTML--------------------
 var introBlock=[]; var copyBlock=[]; var proBlock=[];
-var uploadDone = false;
+var uploadDone = false; var noAnim = false;
 
 //SEEMS TO BE MORE TROUBLE BOUNCING UP HERE TO GET IDS, prob just move back where they're appended.
 var bobMain = document.getElementById('bobMain');
@@ -55,7 +55,7 @@ setTimeout(function(){fadeIn(bobMainS, 'opacity', 0.02, 0, 0.5);},1000);
 mainSVG.appendChild(bobMainS); mainSVG.appendChild(bobMain);
 
 //------------------------------------------------------------FadeIn DropShadow--------------------
-setTimeout(function(){fadeIn(fullpage, 'box-shadow', 0.03, 0, 1);},2000);
+setTimeout(function(){fadeIn(fullpage, 'box-shadow', 0.03, 0, 1);},3000);
 
 //-------------------------------Create Link buttons & icons with blowup effect--------------------
 createBtn('contact', 'contactCir');
@@ -75,7 +75,7 @@ setTimeout(function(){blowUp(insta,instaCir,2,3,0,100);},1600);
 mainSVG.appendChild(infoBox);
 mainSVG.appendChild(allBoxShadeTop);
 mainSVG.appendChild(allBoxShadeBot);
-setTimeout(function(){fadeIn(infoBox, 'opacity', 0.01, 0, 0.25);},1200);
+setTimeout(function(){fadeIn(infoBox, 'opacity', 0.01, 0, 0.25);},800);
 setTimeout(function(){fadeIn(allBoxShadeTop, 'opacity', 0.001, 0, 0.2);},2000);
 setTimeout(function(){fadeIn(allBoxShadeBot, 'opacity', 0.001, 0, 0.3);},2000);
 
@@ -97,15 +97,15 @@ createBarBtn(2,desWin,[50,12.5,75,12.5],desBox,'r',0.75,1.15,0.75,1.15);
 var wooWin = createRect(75,10,25,2.6,'rgb(220,220,220)',0,'none',0,'wooWin');
 createBarBtn(3,wooWin,[75,12.5,100,12.5],wooBox,'r',0.75,1.15,0.75,1.15);
 var allskills = document.getElementById('allskills');
-setTimeout(function(){fadeIn(allskills, 'opacity', 0.02,0,1);},1600);
+setTimeout(function(){fadeIn(allskills, 'opacity', 0.02,0,1);},1000);
 
 //-------------------------------------------------------------------------------------------------
 //----------         PROJECTS and PROJECT BAR LAYOUT          -------------------------------------
 //-------------------------------------------------------------------------------------------------
 
-var projln = createLine(5,55,95,55,3,'rgba(0,0,0,0.5)','projln',1);
-var leftDot = createCir(5.1,55,0.5,'rgba(120,120,120,1)',0,'rgba(120,120,120,1)',1,'leftDot');
-var rightDot = createCir(95.1,55,0.5,'rgba(120,120,120,1)',0,'rgba(120,120,120,1)',1,'rightDot');
+var projln = createLine(5,55,95,55,3,'rgba(0,0,0,0.5)','projln',0);
+var leftDot = createCir(5.1,55,0.5,'rgba(120,120,120,1)',0,'rgba(120,120,120,1)',0,'leftDot');
+var rightDot = createCir(95.1,55,0.5,'rgba(120,120,120,1)',0,'rgba(120,120,120,1)',0,'rightDot');
 mainSVG.appendChild(projln);
 mainSVG.appendChild(leftDot);
 mainSVG.appendChild(rightDot);
@@ -119,23 +119,29 @@ var dropL0 = createLine(12.5,12.7,12.5,15.1,6,'rgb(220,220,220)','dropL0',0);
 var dropL1 = createLine(12.5,15,5,15,3,'rgb(220,220,220)','dropL1',0);
 
 
+// setTimeout(function(){webWin.onmouseover();},2500);
+setTimeout(function(){webWin.onmousedown(); uploadDone = true; },1800);
+// uploadDone = true;
+
+var hideMorse = true;
+morUpE();
+setTimeout(function(){fadeIn(myCarousel, 'opacity', 0.02,0,1);},2000);
+setTimeout(function(){fadeIn(toolsIcon, 'opacity', 0.02,0,0.15);},2000);
+setTimeout(function(){fadeIn(projln, 'opacity', 0.02,0,1);},1500);
+setTimeout(function(){fadeIn(leftDot, 'opacity', 0.02,0,1);},1500);
+setTimeout(function(){fadeIn(rightDot, 'opacity', 0.02,0,1);},1500);
+
 // setTimeout(function(){webWin.onmouseover();},2800);
 // setTimeout(function(){fadeIn(goldLine, 'opacity', 0.01,0,1);},4000);
-// setTimeout(function(){webWin.onmousedown();},2900);
-
-uploadDone = true;
-var hideMorse = true;
-webWin.onmousedown();
+// webWin.onmousedown();
 // displaySwitch('visible',['projBar','myCarousel','projln','leftDot'
 //   ,'rightDot', 'projInfo']);
 // setTimeout(function(){fadeIn(projBar, 'opacity', 0.02,0,1);},4000);
-// setTimeout(function(){fadeIn(myCarousel, 'opacity', 0.02,0,1);},2000);
 // setTimeout(function(){fadeIn(projln, 'opacity', 0.02,0,1);},3000);
 // setTimeout(function(){fadeIn(leftDot, 'opacity', 0.02,0,1);},2000);
 // setTimeout(function(){fadeIn(rightDot, 'opacity', 0.02,0,1);},2000);
 // setTimeout(function(){fadeIn(projInfo, 'opacity', 0.02,0,1);},3000);
 
-morUpE();
 
 
 // function projDelay(){

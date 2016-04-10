@@ -68,14 +68,16 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
     $('#myCarousel').carousel('cycle');
     onLine.setAttributeNS(null, 'opacity', 0); offLine.setAttributeNS(null, 'opacity', 1);
     linePulse(l[0],l[1],l[2],l[3],offLine,false,speed2,ramp2,'none');
-    box.style.fill = 'url(#grad1)';}
+    console.log(btn.id);
+    if (btn.id === 'webWin' || btn.id === 'desWin' ){ box.style.fill = 'url(#grad1)';
+  } else { box.style.fill = 'url(#grad2)';}}
   btn.onmousedown = function(){ returnMainContent();
     dropL0.setAttributeNS(null, 'opacity', 0);
     dropL1.setAttributeNS(null, 'opacity', 0);
 
-
     $('#myCarousel').carousel('pause');
-    regElmAnimate(carousel, 'opacity', 0.07, 1, '', 1, 0,'none');
+    // if(uploadDone){ regElmAnimate(myCarousel, 'opacity', 0.07, 1, '', 1, 0,'none');}
+
     if(position===0){ leftDrop();
 //0000000!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -187,24 +189,26 @@ nextAP.onmouseleave = function(){
   if(sCnt===skills.length-1){var x=0}else{var x=sCnt+1;}
   regElmAnimate(nextA, 'opacity', 0.05, 1, '', 1, 0.1,'none');}
 
-about.onmousedown = function aboutMe(){
-  displaySwitch('hidden',['myCarousel','projBar','projln','infotoolsSVG'
+about.onmousedown = function aboutMe(){ //noAnim = true; setTimeout(function(){noAnim = false;},1000);
+  projln.style.opacity= 0;
+  displaySwitch('hidden',['myCarousel','projBar','infotoolsSVG','goldLine'+sCnt
   ,'dropL','dropR','dropL0','dropL1','contactMeText','contactData','projInfo']);
-  document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',0);
   if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
   } else { skillsBox[sCnt].style.fill = 'url(#grad2)';}
-  skillsBox[sCnt].style.opacity = 1; skillsBox[sCnt].style.filter = 'none';
+  skillsBox[sCnt].style.opacity = 0.75;
+  skillsBox[sCnt].style.filter = 'none';
   mainSVG.insertBefore(skillsBox[sCnt],vert1);
   displaySwitch('visible',['bobIcon','aboutMeText']); hideMorse = true;
-
 }
-contact.onmousedown = function contactMe(){
-  displaySwitch('hidden',['myCarousel','projBar','projln','infotoolsSVG'
+contact.onmousedown = function contactMe(){ //noAnim = true; setTimeout(function(){noAnim = false;},1000);
+
+  projln.style.opacity= 0;
+  displaySwitch('hidden',['myCarousel','projBar','infotoolsSVG','goldLine'+sCnt
   ,'dropL','dropR','dropL0','dropL1','aboutMeText','bobIcon','projInfo']);
-  document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',0);
   if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
   } else { skillsBox[sCnt].style.fill = 'url(#grad2)';}
-  skillsBox[sCnt].style.opacity = 1; skillsBox[sCnt].style.filter = 'none';
+  skillsBox[sCnt].style.opacity = 0.75;
+  skillsBox[sCnt].style.filter = 'none';
   mainSVG.insertBefore(skillsBox[sCnt],vert1);
   displaySwitch('visible',['morBase','morUp','morDown','contactMeText','contactData']);
   hideMorse = false;
@@ -215,42 +219,68 @@ function displaySwitch(state,elmsId){
     document.getElementById(elmsId[i]).setAttribute('style','visibility: '+state+';');}}
 
 function returnMainContent(){ hideMorse = true;
-  displaySwitch('visible',['myCarousel','projBar','projln','infotoolsSVG'
+  projln.style.opacity= 0.8;
+  // skillsBox[sCnt].setAttributeNS(null, 'visibility','visible');
+  displaySwitch('visible',['myCarousel','projBar','infotoolsSVG','goldLine'+sCnt
   ,'dropL','dropR','dropL0','dropL1','projInfo']);
   displaySwitch('hidden',['bobIcon','aboutMeText','contactMeText','contactData']);
   if (typeof slide1VideoElm !== 'undefined'){
     document.getElementById('slide1Div').removeChild(slide1VideoElm);}}
 
 function swapProjs(dir,fade,position){
-  document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',0);
-  if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
-  } else { skillsBox[sCnt].style.fill = 'url(#grad2)';}
-  skillsBox[sCnt].style.opacity = 1; skillsBox[sCnt].style.filter = 'none';
-  mainSVG.insertBefore(skillsBox[sCnt],vert1);
-  if (position === 'n'){ sCnt+=dir;}else{sCnt=position;}
-  document.getElementById('goldLine'+sCnt).setAttributeNS(null,'opacity',1);
-  if (sCnt >= skills.length){ sCnt=0;} if (sCnt <= -1){ sCnt=skills.length-1;}
-  if (fade) { mainSVG.appendChild(skillsBox[sCnt]);
-  mainSVG.appendChild(skillsTxt[sCnt]); mainSVG.appendChild(skillsArr[sCnt]);
-  skillsBox[sCnt].style.filter = 'url(#dropShad)';
-  skillsBox[sCnt].style.opacity = 0.5;
 
-    regElmAnimate(projBar,'opacity',0.01, 1.1,'',1,0,reSetProj);
-    regElmAnimate(infotoolsSVG,'opacity',0.03, 1.1,'',1,0,'none');
-    regElmAnimate(projInfo,'opacity',0.03, 1.1,'',1,0,'none');
+  if (uploadDone){
+    var goldLine = document.getElementById('goldLine'+sCnt);
+    if (goldLine.getAttribute('opacity') < 1){
+      goldLine.setAttributeNS(null,'opacity','start');
+    } else { console.log('else');
+      goldLine.setAttributeNS(null,'opacity',0);}}
+
+  if (sCnt%2 === 0){
+    skillsBox[sCnt].style.fill = 'url(#grad1)';
+  } else {
+    skillsBox[sCnt].style.fill = 'url(#grad2)';}
+  skillsBox[sCnt].style.filter = 'none';
+  skillsBox[sCnt].style.opacity = 0.75;
+  mainSVG.insertBefore(skillsBox[sCnt],vert1);
+  sCnt=position; // if (position === 'n'){ sCnt+=dir;}else{sCnt=position;}
+  // if (sCnt >= skills.length){ sCnt=0;} if (sCnt <= -1){ sCnt=skills.length-1;}
+  elmAnimate(document.getElementById('goldLine'+sCnt), 'opacity', 0.01, 1,'',0,1,'none');
+
+  if (fade) {
+    mainSVG.appendChild(skillsBox[sCnt]);
+    mainSVG.appendChild(skillsTxt[sCnt]);
+    mainSVG.appendChild(skillsArr[sCnt]);
+
+    skillsBox[sCnt].style.filter = 'url(#dropShad)';
+    elmAnimate(skillsBox[sCnt], 'opacity', 0.01, 1,'',0,0.75,'none');
+
+    if (projBar.getAttribute('opacity') < 1){ console.log('AHHH');
+    if(!noAnim){ reSetProj(); }
+    } else { console.log('prjELSE');
+      if(!noAnim){ regElmAnimate(projBar,'opacity',0.01, 1.1,'',1,0,reSetProj);}
+    }
+
+    if (projInfo.getAttribute('opacity') >= 1){
+      regElmAnimate(projInfo,'opacity',0.03, 1.1,'',1,0,'none')
+    }
+    // regElmAnimate(projInfo,'opacity',0.03, 1.1,'',1,0,'none');
 
   }else{ reSetProj();}}
+
 
 function reSetProj(){
   for(var i = 0; i < 5; i++){ if (typeof skills[sCnt].projects[i] === 'undefined'){
       document.getElementById('proj'+i).style.display = 'none'; } else {
       document.getElementById('proj'+i).style.display = 'inline-block';
       document.getElementById('proj'+i).innerHTML = skills[sCnt].projects[i];}}
-  regElmAnimate(projBar, 'opacity', 0.01, 1.05, '', 0, 1,reCar);}
+      regElmAnimate(projBar, 'opacity', 0.01, 1.05, '', 0, 1,reCar);
+}
 
-function reCar(){regElmAnimate(carousel, 'opacity', 0.05, 1, '', 0, 1,'none');
-  regElmAnimate(infotoolsSVG,'opacity',0.05, 1,'',0,1,'none');
-  regElmAnimate(projInfo,'opacity',0.05, 1,'',0,1,'none');}
+function reCar(){
+  regElmAnimate(myCarousel, 'opacity', 0.05, 1, '', 0, 1,'none');
+  regElmAnimate(projInfo,'opacity',0.05, 1,'',0,1,'none');
+}
 
 
 function manualClick(allSkills){
@@ -264,6 +294,11 @@ function manualClick(allSkills){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 function elmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = start;
   function go(){ speed*=ramp;
+    if (elID.getAttribute(elm) === 'start'){
+      console.log('break to '+elID.getAttribute(elm));
+      elID.setAttributeNS(null, elm, 0);
+      return;
+    }
     if (start < end){ loc+=speed; } else { loc-=speed; }
     elID.setAttributeNS(null, elm, loc+unit);
     if (start < end && loc <= end){ requestAnimationFrame(go); }
@@ -319,14 +354,14 @@ function arreyFade(arrEL, speed, start, end){
     if (start <= end){ requestAnimationFrame(go); }  } go(); }
 
 function morUpE(){
-  if (!hideMorse){
+  if (!hideMorse){ morBase.style.opacity='0.8'
   regElmAnimate(morUp, 'opacity', 0.1, 1.5, '', 0, 0.8,'none');
   regElmAnimate(morDown, 'opacity', 0.1, 1.2, '', 0.8, 0,'none');}
   else{morUp.style.opacity='0';morBase.style.opacity='0';morDown.style.opacity='0';}
   setTimeout(function(){morDownE();},100);}
 
 function morDownE(){
-  if (!hideMorse){
+  if (!hideMorse){ morBase.style.opacity='0.8'
   regElmAnimate(morUp, 'opacity', 0.1, 1.2, '', 0.6, 0,'none');
   regElmAnimate(morDown, 'opacity', 0.1, 1.5, '', 0, 0.6,'none');}
   else{morUp.style.opacity='0';morBase.style.opacity='0';morDown.style.opacity='0';}
