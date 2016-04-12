@@ -83,7 +83,6 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
 
       if (typeof slide1VideoElm !== 'undefined'){
         document.getElementById('slide1Div').removeChild(slide1VideoElm);
-
       }
       var slide1 = document.getElementById('slide1Img');
       slide1.style.display = 'initial';
@@ -127,6 +126,8 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       dropL0.setAttributeNS(null, 'x2', 37.5+'%');
       linePulse(37.5,12.7,37.5,15.1,dropL0,true,0.5,1.15,'none');
       dropL1.setAttributeNS(null, 'x1', 37.5+'%');
+      dropR.setAttributeNS(null, 'opacity', 0);
+      dropL.setAttributeNS(null, 'opacity', 0);
       linePulse(37.5,15,5,15,dropL1,true,0.5,1.15,leftDrop);}
     if(position===2){  manualClick(allSkills);
 //2222222!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -144,6 +145,8 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       linePulse(62.5,12.7,62.5,15.1,dropL0,true,0.5,1.15,'none');
       dropL1.setAttributeNS(null, 'x1', 62.5+'%');
       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
+      dropR.setAttributeNS(null, 'opacity', 0);
+      dropL.setAttributeNS(null, 'opacity', 0);
       linePulse(62.5,15,95.3,15,dropL1,true,0.5,1.15,rightDrop);}
     if(position===3){ rightDrop(); manualClick(allSkills);
 //3333333!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -189,7 +192,7 @@ nextAP.onmouseleave = function(){
   if(sCnt===skills.length-1){var x=0}else{var x=sCnt+1;}
   regElmAnimate(nextA, 'opacity', 0.05, 1, '', 1, 0.1,'none');}
 
-about.onmousedown = function aboutMe(){ //noAnim = true; setTimeout(function(){noAnim = false;},1000);
+about.onmousedown = function aboutMe(){
   projln.style.opacity= 0;
   displaySwitch('hidden',['myCarousel','projBar','infotoolsSVG','goldLine'+sCnt
   ,'dropL','dropR','dropL0','dropL1','contactMeText','contactData','projInfo']);
@@ -200,7 +203,7 @@ about.onmousedown = function aboutMe(){ //noAnim = true; setTimeout(function(){n
   mainSVG.insertBefore(skillsBox[sCnt],vert1);
   displaySwitch('visible',['bobIcon','aboutMeText']); hideMorse = true;
 }
-contact.onmousedown = function contactMe(){ //noAnim = true; setTimeout(function(){noAnim = false;},1000);
+contact.onmousedown = function contactMe(){
 
   projln.style.opacity= 0;
   displaySwitch('hidden',['myCarousel','projBar','infotoolsSVG','goldLine'+sCnt
@@ -262,9 +265,9 @@ function swapProjs(dir,fade,position){
     }
 
     if (projInfo.getAttribute('opacity') >= 1){
-      regElmAnimate(projInfo,'opacity',0.03, 1.1,'',1,0,'none')
+      //regElmAnimate(projInfo,'opacity',0.03, 1.1,'',1,0,'none');
     }
-    // regElmAnimate(projInfo,'opacity',0.03, 1.1,'',1,0,'none');
+    //regElmAnimate(projInfo,'opacity',0.03, 1.1,'',1,0,'none');
 
   }else{ reSetProj();}}
 
@@ -273,7 +276,7 @@ function reSetProj(){
   for(var i = 0; i < 5; i++){ if (typeof skills[sCnt].projects[i] === 'undefined'){
       document.getElementById('proj'+i).style.display = 'none'; } else {
       document.getElementById('proj'+i).style.display = 'inline-block';
-      document.getElementById('proj'+i).innerHTML = skills[sCnt].projects[i];}}
+      document.getElementById('proj'+i).innerHTML = skills[sCnt].projects[i].name;}}
       regElmAnimate(projBar, 'opacity', 0.01, 1.05, '', 0, 1,reCar);
 }
 
@@ -294,28 +297,29 @@ function manualClick(allSkills){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 function elmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = start;
   function go(){ speed*=ramp;
-    if (elID.getAttribute(elm) === 'start'){
-      console.log('break to '+elID.getAttribute(elm));
-      elID.setAttributeNS(null, elm, 0);
-      return;
-    }
+    if (elID.getAttribute(elm) === 'start'){ elID.setAttributeNS(null, elm, 0);
+      return;}
     if (start < end){ loc+=speed; } else { loc-=speed; }
     elID.setAttributeNS(null, elm, loc+unit);
     if (start < end && loc <= end){ requestAnimationFrame(go); }
     else if (start > end && loc >= end){ requestAnimationFrame(go); }
     else { if (func !== 'none') { func(); } elID.setAttributeNS(null, elm, end+unit);
     return; }} go();}
-    //^This function was created late and could be turned into a universal animation function.
 
 function regElmAnimate(elID, elm, speed, ramp, unit, start, end, func){ var loc = start;
-  function go(){ speed*=ramp;
+  function go(){
+    if (elID.style.visibility === 'hidden'){
+      return;}
+    speed*=ramp;
     if (start < end){ loc+=speed; } else { loc-=speed; }
     if (unit[0]+unit[1]+unit[2] === 'rgb'){
     elID.setAttribute('style', elm+': '+unit+loc+');');
     } else { elID.setAttribute('style', elm+': '+loc+unit+';');}
     if (start < end && loc <= end){ requestAnimationFrame(go); }
     else if (start > end && loc >= end){ requestAnimationFrame(go); }
-    else { if (func !== 'none') { func(); } return; }} go();}
+    else { if (func !== 'none') { func(); } return; }}
+
+    go();}
 
 function linePulse(sX,sY,eX,eY,lnID,grow,speed,ramp,func,xx){ var end = false;
   var x = Math.abs(sX-eX); var y = Math.abs(sY-eY); var newX=sX; var newY=sY;
