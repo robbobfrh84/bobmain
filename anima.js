@@ -68,7 +68,6 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
     $('#myCarousel').carousel('cycle');
     onLine.setAttributeNS(null, 'opacity', 0); offLine.setAttributeNS(null, 'opacity', 1);
     linePulse(l[0],l[1],l[2],l[3],offLine,false,speed2,ramp2,'none');
-    console.log(btn.id);
     if (btn.id === 'webWin' || btn.id === 'desWin' ){ box.style.fill = 'url(#grad1)';
   } else { box.style.fill = 'url(#grad2)';}}
   btn.onmousedown = function(){ returnMainContent();

@@ -12,78 +12,89 @@ function Skill(skill, projects, slide){ //using Object Method here mostly for pr
 
 var web = new Skill('Web Development',
   [{ name: 'Sudoku', slide: [
-	  {graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-  	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-  	{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	  {graphic: 'media/sud0.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
+  	{graphic: 'media/sud1.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
+		{graphic: 'media/sudVid0.mov', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
+  	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'PYTHON proccessing games vid here!'}
 	]},
 	{ name: 'riiple', slide: [
 	  {graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
   	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-  	{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+  	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Portfolio', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Tic-tac-toe', slide: [
 	  {graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-  	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-  	{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
+  	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Mouse Speed', slide: [
-	  {graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-  	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-  	{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+  	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]}
 ]);
+
+//-----------------------------------------------------------------------------------------------------------
 var mic = new Skill('Microcontroller & CNC',
 	[{ name: 'CNC', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Gcode Editor', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'C++ Driver', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'LCD Display', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]}
 ]);
+
+//-----------------------------------------------------------------------------------------------------------
 var des = new Skill('Design',
-	[{ name: 'Airbrush Cups', slide: [
+	[{ name: 'Stincils', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Woodshop', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Clock', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 ]);
 
+//-----------------------------------------------------------------------------------------------------------
 var woo = new Skill('Woodworking',
 	[{ name: 'Shed', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
-	{ name: 'Squirrel Guard', slide: [
+	{ name: 'Critter Block', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
@@ -95,11 +106,12 @@ var woo = new Skill('Woodworking',
 	]},
 ]);
 
+
 var skills = [web,mic,des,woo];
 var sCnt = 0; var oldPos=1;
 
 console.log('(new) skill: '+skills[sCnt].skill);
-console.log('New project: '+skills[sCnt].projects[5].name);
+console.log('New project: '+skills[sCnt].projects[0].name);
 console.log('New graphic: '+skills[sCnt].projects[0].slide[0].graphic);
 console.log('New link: '   +skills[sCnt].projects[0].slide[0].link);
 console.log('New caption: '+skills[sCnt].projects[0].slide[0].caption);
@@ -121,6 +133,14 @@ function projSwap(pos){
 		var projInfoText = document.getElementById('html'+skills[sCnt].projects[pos].name).innerHTML;
     setTimeout(function(){document.getElementById('projHtml').innerHTML = projInfoText;},150);
 		console.log(skills[sCnt].projects[pos]);
+
+		for (var i = 0; i < skills[sCnt].projects[pos].slide.length; i++){
+			console.log(skills[sCnt].projects[pos].slide[i].graphic);
+
+
+
+			
+		}
 
 }
 

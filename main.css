@@ -260,29 +260,29 @@ video {
   width: 48%; margin-top: -29.5%; margin-left: 51%; text-align: left;
 }
 
-#projInfo {
+#hiddenInfoHolder{ display: none; }
+
+#projInfo{
   opacity: 0;
-  /*visibility: hidden;*/
 }
+
 #linkIcon {
   float: right;
   width: 4%;
+  margin-right: 11.5%;
   margin-top: -34%;
-  margin-bottom: 0%;
-  margin-right: 12%;
   opacity: 0.7;
-  transition: margin-right .25s ease-in-out, margin-top .25s ease-in-out
-    ,opacity .25s ease-in-out, width .25s ease-in-out;
-
+  transition: margin-right .15s ease-in-out, margin-top .15s ease-in-out
+    ,opacity .15s ease-in-out, width .15s ease-in-out;
 }
 
 #linkIcon:hover{
   width: 5%;
-  margin-right: 11.5%;
+  margin-right: 11%;
   margin-top: -34.5%;
   opacity: 0.99;
-  transition: margin-right .25s ease-in-out, margin-top .25s ease-in-out
-    ,opacity .25s ease-in-out, width .25s ease-in-out;
+  transition: margin-right .15s ease-in-out, margin-top .15s ease-in-out
+    ,opacity .15s ease-in-out, width .15s ease-in-out;
 }
 
 #toolsIcon { position: relative; float: left; opacity: 0;
@@ -316,11 +316,6 @@ video {
   border-radius: 0.5vw;
   background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%
     ,rgba(255,255,255,0.1) 10%, rgba(255,255,255,0.1) 90%, rgba(0,0,0,0.1) 100%);
-  /*background-color: #F07575; fallback color if gradients are not supported
-  background-image: -webkit-linear-gradient(top, hsl(0, 80%, 70%), #bada55); For Chrome 25 and Safari 6, iOS 6.1, Android 4.3
-  background-image:    -moz-linear-gradient(top, hsl(0, 80%, 70%), #bada55);  For Firefox (3.6 to 15)
-  background-image:      -o-linear-gradient(top, hsl(0, 80%, 70%), #bada55); For old Opera (11.1 to 12.0)
-  background-image:         linear-gradient(to bottom, hsl(0, 80%, 70%), #bada55); Standard syntax; must be last */
   height: 35vw;
   text-align: left;
   position: relative;
@@ -331,8 +326,8 @@ video {
   padding: 11%;
   padding-top: 1%;
   overflow: auto;
-  /*visibility: hidden;*/
 }
+
 /*----------------------------NOTES---------------------------------------------
 - to make the lines sharp pixels not anti-alus...
 line {
