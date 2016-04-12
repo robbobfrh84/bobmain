@@ -19,7 +19,7 @@ var web = new Skill('Web Development',
 	]},
 	{ name: 'riiple', slide: [
 	  {graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-  	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
+  	{graphic: 'SVGs/aboutMe.svg', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
   	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Portfolio', slide: [
@@ -48,11 +48,12 @@ var web = new Skill('Web Development',
 var mic = new Skill('Microcontroller & CNC',
 	[{ name: 'CNC', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Gcode Editor', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
@@ -63,6 +64,7 @@ var mic = new Skill('Microcontroller & CNC',
 	]},
 	{ name: 'LCD Display', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]}
@@ -76,12 +78,12 @@ var des = new Skill('Design',
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Woodshop', slide: [
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Clock', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
@@ -92,15 +94,17 @@ var woo = new Skill('Woodworking',
 	[{ name: 'Shed', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Critter Block', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Mugs', slide: [
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
+		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
 		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
 	]},
@@ -132,16 +136,34 @@ function projSwap(pos){
     //Get Info Text and then replace it with the new project.
 		var projInfoText = document.getElementById('html'+skills[sCnt].projects[pos].name).innerHTML;
     setTimeout(function(){document.getElementById('projHtml').innerHTML = projInfoText;},150);
-		console.log(skills[sCnt].projects[pos]);
+
+
+		var carouselCnt = document.getElementById('carouselCnt');
+		while (carouselCnt.firstChild) {
+		  carouselCnt.removeChild(carouselCnt.firstChild);
+		}
 
 		for (var i = 0; i < skills[sCnt].projects[pos].slide.length; i++){
 			console.log(skills[sCnt].projects[pos].slide[i].graphic);
+			var slideDot = document.createElement("LI");
+      slideDot.setAttribute('data-target','#myCarousel');
+			slideDot.setAttribute('data-slide-to',i);
+			if(i===0){ slideDot.setAttribute('class','active');} //else {slideDot.setAttribute('class','');}
+			carouselCnt.appendChild(slideDot);
+			$('#myCarousel').carousel('cycle');
 
 
+			if (typeof slide1VideoElm !== 'undefined'){
+        document.getElementById('slide1Div').removeChild(slide1VideoElm);
+      }
+      document.getElementById('slide1cap').setAttribute('style','display: none;');
+      var slide1 = document.getElementById('slide1Img');
+      slide1.setAttribute('src',skills[sCnt].projects[pos].slide[i].graphic);
+      slide1.className = 'SVG';
+			slide1.style.display = 'initial';
 
-			
 		}
-
+		console.log(skills[sCnt].projects[pos]);
 }
 
 
