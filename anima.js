@@ -74,8 +74,8 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
     dropL0.setAttributeNS(null, 'opacity', 0);
     dropL1.setAttributeNS(null, 'opacity', 0);
 
-    $('#myCarousel').carousel('pause');
-    // if(uploadDone){ regElmAnimate(myCarousel, 'opacity', 0.07, 1, '', 1, 0,'none');}
+    if(uploadDone){setTimeout(function(){ $('#myCarousel').carousel('pause');},50);};
+    //if(uploadDone){ regElmAnimate(myCarousel, 'opacity', 0.07, 1, '', 1, 0,'none');}
 
     if(position===0){ leftDrop();
 //0000000!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -91,12 +91,12 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
 //
 //
 // //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//       if (uploadDone){manualClick(allSkills);}
-//       dropL0.setAttributeNS(null,'x1',12.5+'%');
-//       dropL0.setAttributeNS(null,'x2',12.5+'%');
-//       linePulse(12.5,12.7,12.5,15.1,dropL0,true,0.5,1.15,'none');
-//       dropL1.setAttributeNS(null, 'x1', 12.5+'%');
-//       linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');
+      if (uploadDone){manualClick(allSkills);}
+      dropL0.setAttributeNS(null,'x1',12.5+'%');
+      dropL0.setAttributeNS(null,'x2',12.5+'%');
+      linePulse(12.5,12.7,12.5,15.1,dropL0,true,0.5,1.15,'none');
+      dropL1.setAttributeNS(null, 'x1', 12.5+'%');
+      linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');
 }
      if(position===1){  manualClick(allSkills);
 // 1111111!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -122,13 +122,13 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       // document.getElementById('slide1Img').setAttribute('style','display: none;');
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      // dropL0.setAttributeNS(null, 'x1', 37.5+'%');
-      // dropL0.setAttributeNS(null, 'x2', 37.5+'%');
-      // linePulse(37.5,12.7,37.5,15.1,dropL0,true,0.5,1.15,'none');
-      // dropL1.setAttributeNS(null, 'x1', 37.5+'%');
-      // dropR.setAttributeNS(null, 'opacity', 0);
-      // dropL.setAttributeNS(null, 'opacity', 0);
-      // linePulse(37.5,15,5,15,dropL1,true,0.5,1.15,leftDrop);
+      dropL0.setAttributeNS(null, 'x1', 37.5+'%');
+      dropL0.setAttributeNS(null, 'x2', 37.5+'%');
+      linePulse(37.5,12.7,37.5,15.1,dropL0,true,0.5,1.15,'none');
+      dropL1.setAttributeNS(null, 'x1', 37.5+'%');
+      dropR.setAttributeNS(null, 'opacity', 0);
+      dropL.setAttributeNS(null, 'opacity', 0);
+      linePulse(37.5,15,5,15,dropL1,true,0.5,1.15,leftDrop);
     }
     if(position===2){  manualClick(allSkills);
 //2222222!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -141,14 +141,14 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
 //       slide1.setAttribute('src','SVGs/cog.svg');
 //       slide1.className = 'SVG';
 // //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//       dropL0.setAttributeNS(null, 'x1', 62.5+'%');
-//       dropL0.setAttributeNS(null, 'x2', 62.5+'%');
-//       linePulse(62.5,12.7,62.5,15.1,dropL0,true,0.5,1.15,'none');
-//       dropL1.setAttributeNS(null, 'x1', 62.5+'%');
-//       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
-//       dropR.setAttributeNS(null, 'opacity', 0);
-//       dropL.setAttributeNS(null, 'opacity', 0);
-//       linePulse(62.5,15,95.3,15,dropL1,true,0.5,1.15,rightDrop);
+      dropL0.setAttributeNS(null, 'x1', 62.5+'%');
+      dropL0.setAttributeNS(null, 'x2', 62.5+'%');
+      linePulse(62.5,12.7,62.5,15.1,dropL0,true,0.5,1.15,'none');
+      dropL1.setAttributeNS(null, 'x1', 62.5+'%');
+      dropL1.setAttributeNS(null, 'x2', 95.3+'%');
+      dropR.setAttributeNS(null, 'opacity', 0);
+      dropL.setAttributeNS(null, 'opacity', 0);
+      linePulse(62.5,15,95.3,15,dropL1,true,0.5,1.15,rightDrop);
 }
     if(position===3){ rightDrop(); manualClick(allSkills);
 //3333333!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -161,12 +161,12 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
 //       slide1.setAttribute('src','SVGs/squ.svg');
 //       slide1.className = 'SVG';
 // //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//       dropL0.setAttributeNS(null, 'x1', 87.5+'%');
-//       dropL0.setAttributeNS(null, 'x2', 87.5+'%');
-//       linePulse(87.5,12.7,87.5,15.1,dropL0,true,0.5,1.15,'none');
-//       dropL1.setAttributeNS(null, 'x1', 87.5+'%');
-//       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
-//       linePulse(87.5,15,95.3,15,dropL1,true,0.5,1.15,'none');
+      dropL0.setAttributeNS(null, 'x1', 87.5+'%');
+      dropL0.setAttributeNS(null, 'x2', 87.5+'%');
+      linePulse(87.5,12.7,87.5,15.1,dropL0,true,0.5,1.15,'none');
+      dropL1.setAttributeNS(null, 'x1', 87.5+'%');
+      dropL1.setAttributeNS(null, 'x2', 95.3+'%');
+      linePulse(87.5,15,95.3,15,dropL1,true,0.5,1.15,'none');
 }
     swapProjs(1,true,position); projSwap(0);}}
 function leftDrop(){
@@ -201,7 +201,7 @@ about.onmousedown = function aboutMe(){
   ,'dropL','dropR','dropL0','dropL1','contactMeText','contactData','projInfo']);
   if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
   } else { skillsBox[sCnt].style.fill = 'url(#grad2)';}
-  skillsBox[sCnt].style.opacity = 0.75;
+  //skillsBox[sCnt].style.opacity = 0.75;
   skillsBox[sCnt].style.filter = 'none';
   mainSVG.insertBefore(skillsBox[sCnt],vert1);
   displaySwitch('visible',['bobIcon','aboutMeText']); hideMorse = true;
@@ -213,7 +213,7 @@ contact.onmousedown = function contactMe(){
   ,'dropL','dropR','dropL0','dropL1','aboutMeText','bobIcon','projInfo']);
   if (sCnt%2 === 0){ skillsBox[sCnt].style.fill = 'url(#grad1)';
   } else { skillsBox[sCnt].style.fill = 'url(#grad2)';}
-  skillsBox[sCnt].style.opacity = 0.75;
+  //skillsBox[sCnt].style.opacity = 0.75;
   skillsBox[sCnt].style.filter = 'none';
   mainSVG.insertBefore(skillsBox[sCnt],vert1);
   displaySwitch('visible',['morBase','morUp','morDown','contactMeText','contactData']);
@@ -247,7 +247,7 @@ function swapProjs(dir,fade,position){
   } else {
     skillsBox[sCnt].style.fill = 'url(#grad2)';}
   skillsBox[sCnt].style.filter = 'none';
-  skillsBox[sCnt].style.opacity = 0.75;
+  //skillsBox[sCnt].style.opacity = 0.75;
   mainSVG.insertBefore(skillsBox[sCnt],vert1);
   sCnt=position; // if (position === 'n'){ sCnt+=dir;}else{sCnt=position;}
   // if (sCnt >= skills.length){ sCnt=0;} if (sCnt <= -1){ sCnt=skills.length-1;}
@@ -276,11 +276,18 @@ function swapProjs(dir,fade,position){
 
 
 function reSetProj(){
-  for(var i = 0; i < 5; i++){ if (typeof skills[sCnt].projects[i] === 'undefined'){
-      document.getElementById('proj'+i).style.display = 'none'; } else {
+  var numOfProjs = skills[sCnt].projects.length;
+  console.log(numOfProjs);
+  for(var i = 0; i < 5; i++){
+    if (i >= numOfProjs){
+      console.log(i+' not included');
+      document.getElementById('proj'+i).style.display = 'none';
+    } else {
+      console.log(i+'included');
+
       document.getElementById('proj'+i).style.display = 'inline-block';
       document.getElementById('proj'+i).innerHTML = skills[sCnt].projects[i].name;}}
-      regElmAnimate(projBar, 'opacity', 0.01, 1.05, '', 0, 1,reCar);
+    regElmAnimate(projBar, 'opacity', 0.01, 1.05, '', 0, 1,reCar);
 }
 
 function reCar(){

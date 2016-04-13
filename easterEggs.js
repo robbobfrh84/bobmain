@@ -10,9 +10,9 @@ var wormHead = []; var wormTail=[]; var wormLink=[]; var dir = []; var back = []
 var sx = []; var sy = []; var ex = []; var ey = []; var tx = []; var ty = [];
 
 function egg1(){
-  for (var i = 0; i < 5; i++){
+  for (var i = 0; i < 10; i++){
     var x = wId; wId++; back[x] = 1; dir[x] = 1;
-    var startx = random(0,30)*2.5+12.5; var starty = random(0,10)*2.5+57.5;
+    var startx = random(0,30)*2.5+12.5; var starty = random(0,30)*2.5+12.5;
     sx[x] = startx; sy[x] = starty; ex[x] = startx; ey[x] = starty;
     color = 'rgb('+rgbR()+')'
     wormHead[x] = createLine(startx,starty,startx,starty,3,color,'wormHead'+x,1);
