@@ -96,38 +96,40 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
 //       dropL0.setAttributeNS(null,'x2',12.5+'%');
 //       linePulse(12.5,12.7,12.5,15.1,dropL0,true,0.5,1.15,'none');
 //       dropL1.setAttributeNS(null, 'x1', 12.5+'%');
-//       linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');}
-//     if(position===1){  manualClick(allSkills);
+//       linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');
+}
+     if(position===1){  manualClick(allSkills);
 // 1111111!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
       // document.getElementById('slide1Img').setAttribute('src','');
       // document.getElementById('slide1Img').className = '';
 
-      var video = document.createElement("VIDEO");
-      var source = document.createElement("SOURCE");
-      var slide1Div = document.getElementById('slide1Div')
-      video.id = 'slide1VideoElm';
-      video.className = 'squareVid';
-
-      video.setAttribute('autoplay','');
-      video.setAttribute('loop','');
-      video.setAttribute('muted','true');
-
-      source.id = 'slide1Vid'; source.setAttribute('src','media/cncVid0.mov');
-      slide1Div.insertBefore(video, slide1Div.firstChild);
-      video.insertBefore(source, video.firstChild);
-
-      document.getElementById('slide1cap').setAttribute('style','display: none;');
-      document.getElementById('slide1Img').setAttribute('style','display: none;');
+      // var video = document.createElement("VIDEO");
+      // var source = document.createElement("SOURCE");
+      // var slide1Div = document.getElementById('slide1Div')
+      // video.id = 'slide1VideoElm';
+      // video.className = 'squareVid';
+      //
+      // video.setAttribute('autoplay','');
+      // video.setAttribute('loop','');
+      // video.setAttribute('muted','true');
+      //
+      // source.id = 'slide1Vid'; source.setAttribute('src','media/cncVid0.mov');
+      // slide1Div.insertBefore(video, slide1Div.firstChild);
+      // video.insertBefore(source, video.firstChild);
+      //
+      // document.getElementById('slide1cap').setAttribute('style','display: none;');
+      // document.getElementById('slide1Img').setAttribute('style','display: none;');
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      dropL0.setAttributeNS(null, 'x1', 37.5+'%');
-      dropL0.setAttributeNS(null, 'x2', 37.5+'%');
-      linePulse(37.5,12.7,37.5,15.1,dropL0,true,0.5,1.15,'none');
-      dropL1.setAttributeNS(null, 'x1', 37.5+'%');
-      dropR.setAttributeNS(null, 'opacity', 0);
-      dropL.setAttributeNS(null, 'opacity', 0);
-      linePulse(37.5,15,5,15,dropL1,true,0.5,1.15,leftDrop);}
+      // dropL0.setAttributeNS(null, 'x1', 37.5+'%');
+      // dropL0.setAttributeNS(null, 'x2', 37.5+'%');
+      // linePulse(37.5,12.7,37.5,15.1,dropL0,true,0.5,1.15,'none');
+      // dropL1.setAttributeNS(null, 'x1', 37.5+'%');
+      // dropR.setAttributeNS(null, 'opacity', 0);
+      // dropL.setAttributeNS(null, 'opacity', 0);
+      // linePulse(37.5,15,5,15,dropL1,true,0.5,1.15,leftDrop);
+    }
     if(position===2){  manualClick(allSkills);
 //2222222!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //       if (typeof slide1VideoElm !== 'undefined'){
@@ -146,8 +148,9 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
 //       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
 //       dropR.setAttributeNS(null, 'opacity', 0);
 //       dropL.setAttributeNS(null, 'opacity', 0);
-//       linePulse(62.5,15,95.3,15,dropL1,true,0.5,1.15,rightDrop);}
-//     if(position===3){ rightDrop(); manualClick(allSkills);
+//       linePulse(62.5,15,95.3,15,dropL1,true,0.5,1.15,rightDrop);
+}
+    if(position===3){ rightDrop(); manualClick(allSkills);
 //3333333!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //       if (typeof slide1VideoElm !== 'undefined'){
 //         document.getElementById('slide1Div').removeChild(slide1VideoElm);
@@ -163,7 +166,8 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
 //       linePulse(87.5,12.7,87.5,15.1,dropL0,true,0.5,1.15,'none');
 //       dropL1.setAttributeNS(null, 'x1', 87.5+'%');
 //       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
-//       linePulse(87.5,15,95.3,15,dropL1,true,0.5,1.15,'none');}
+//       linePulse(87.5,15,95.3,15,dropL1,true,0.5,1.15,'none');
+}
     swapProjs(1,true,position); projSwap(0);}}
 function leftDrop(){
   dropL.setAttributeNS(null, 'opacity', 1);

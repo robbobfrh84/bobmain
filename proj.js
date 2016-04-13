@@ -12,94 +12,94 @@ function Skill(skill, projects, slide){ //using Object Method here mostly for pr
 
 var web = new Skill('Web Development',
   [{ name: 'Sudoku', link: 'http.www.espn.com', slide: [
-	  {graphic: 'media/sud0.png', class: 'pic', caption: 'Place caption 1 here....'},
-  	{graphic: 'media/sud1.png', class: 'pic', caption: 'Place caption 2 here....'},
-		{graphic: 'media/sudVid0.mov', class: 'vid', caption: 'Place caption 2 here....'},
-  	{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'PYTHON proccessing games vid here!'}
+	  {graphic: 'media/sud0.png', class: '', caption: 'Place caption 1 here....'},
+  	{graphic: 'media/sud1.png', class: '', caption: 'Place caption 2 here....'},
+		{graphic: 'media/sudVid0.mov', class: 'wideVid', caption: 'Place caption 2 here....'},
+  	{graphic: 'SVGs/tools.svg', class: '', caption: 'PYTHON proccessing games vid here!'}
 	]},
 	{ name: 'riiple', link: 'http.www.espn.com', slide: [
-	  {graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-  	{graphic: 'SVGs/aboutMe.svg', class: 'svg', caption: 'Place caption 2 here....'},
-  	{graphic: 'media/sud2.png', class: 'pic', caption: 'Place caption 2 here....'}
+	  {graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+  	{graphic: 'SVGs/aboutMe.svg', class: '', caption: 'Place caption 2 here....'},
+  	{graphic: 'media/sud2.png', class: '', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Portfolio', link: 'http.www.espn.com', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-  	{graphic: 'SVGs/aboutMe.svg', class: 'svg', caption: 'Place caption 2 here....'},
-  	{graphic: 'media/sud2.png', class: 'pic', caption: 'Place caption 2 here....'}
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+  	{graphic: 'SVGs/aboutMe.svg', class: '', caption: 'Place caption 2 here....'},
+  	{graphic: 'media/sud2.png', class: '', caption: 'Place caption 2 here....'}
 	]},
 	{ name: 'Tic-tac-toe', link: 'http.www.espn.com', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'media/cncVid0.mov', class: 'squareVid', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'}
 	]},
 	{ name: 'Mouse Speed', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'}
 	]}
 ]);
 
 //-----------------------------------------------------------------------------------------------------------
 var mic = new Skill('Microcontroller & CNC',
 	[{ name: 'CNC', link: 'http.www.astronomynow.com', slide: [
-		{graphic: 'media/cncVid0.svg', class: 'wideVid', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'media/cncVid0.mov', class: 'squareVid', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'}
 	]},
 	{ name: 'Gcode Editor', link: 'http.www.astronomynow.com', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'}
 	]},
 	{ name: 'C++ Driver', link: 'http.www.astronomynow.com', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'}
 	]},
 	{ name: 'LCD Display', link: 'http.www.astronomynow.com', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'}
 	]}
 ]);
 
 //-----------------------------------------------------------------------------------------------------------
 var des = new Skill('Design',
 	[{ name: 'Stincils', link: 'http.www.nasa.gov', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'SVGs/cog.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'}
 	]},
 	{ name: 'Woodshop', link: 'http.www.nasa.gov',slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'}
 	]},
 	{ name: 'Clock', link: 'http.www.nasa.gov',slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'}
 	]},
 ]);
 
 //-----------------------------------------------------------------------------------------------------------
 var woo = new Skill('Woodworking',
 	[{ name: 'Shed', link: 'http.www.npr.gov', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'SVGs/squ.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'}
 	]},
 	{ name: 'Critter Block', link: 'http.www.npr.gov', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'}
 	]},
 	{ name: 'Mugs', link: 'http.www.npr.gov', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: '', caption: 'Place caption 1 here....'}
 	]},
 ]);
 
@@ -127,57 +127,65 @@ function projSwap(pos){
 		if(uploadDone){setTimeout(function(){regElmAnimate(projInfo,'opacity',0.03, 1.1,'',0,1,'none');},150);}
 		setTimeout(function(){projTab.style.backgroundColor = 'rgba(102,155,235,0.3)';},300);
 		oldPos = pos; }
-    //Get Info Text and then replace it with the new project.
-		var projInfoText = document.getElementById('html'+skills[sCnt].projects[pos].name).innerHTML;
-    setTimeout(function(){document.getElementById('projHtml').innerHTML = projInfoText;},150);
+  //Get Info Text and then replace it with the new project.
+	var projInfoText = document.getElementById('html'+skills[sCnt].projects[pos].name).innerHTML;
+  setTimeout(function(){document.getElementById('projHtml').innerHTML = projInfoText;},150);
 
 
-		// var carouselCnt = document.getElementById('carouselCnt');
-		while (carouselCnt.firstChild) {
-		  carouselCnt.removeChild(carouselCnt.firstChild);
-		}
+	// var carouselCnt = document.getElementById('carouselCnt');
+	while (carouselCnt.firstChild) {
+	  carouselCnt.removeChild(carouselCnt.firstChild);
+	}
 
-		var carousel = document.getElementById('carousel');
-		var items = carousel.getElementsByClassName('item');
-		console.log('num of children: ', carousel.childNodes.length);
-		while (items[0]) {
-    	items[0].parentNode.removeChild(items[0]);
-			console.log('num with item class: ', items.length);
-		}
-		console.log('num of children: ', carousel.childNodes.length);
+	var carousel = document.getElementById('carousel');
+	var items = carousel.getElementsByClassName('item');
+	console.log('num of children: ', carousel.childNodes.length);
+	while (items[0]) {
+  	items[0].parentNode.removeChild(items[0]);
+		console.log('num with item class: ', items.length);
+	}
+	console.log('num of children: ', carousel.childNodes.length);
 
-		// while (carousel.firstChild) {
-		// 	var items = document.getElementsByClassName('item')
-		//   carousel.removeChildren(carousel.items);
-		// }
+	// while (carousel.firstChild) {
+	// 	var items = document.getElementsByClassName('item')
+	//   carousel.removeChildren(carousel.items);
+	// }
 
-		for (var i = 0; i < skills[sCnt].projects[pos].slide.length; i++){
-			console.log(skills[sCnt].projects[pos].slide[i].graphic);
-			var slideDot = document.createElement("LI");
-      slideDot.setAttribute('data-target','#myCarousel');
-			slideDot.setAttribute('data-slide-to',i);
-			if(i===0){ slideDot.setAttribute('class','active');} //else {slideDot.setAttribute('class','');}
-			carouselCnt.appendChild(slideDot);
-			$('#myCarousel').carousel('cycle');
+	for (var i = 0; i < skills[sCnt].projects[pos].slide.length; i++){
+		console.log(skills[sCnt].projects[pos].slide[i].graphic);
+		var slideDot = document.createElement("LI");
+    slideDot.setAttribute('data-target','#myCarousel');
+		slideDot.setAttribute('data-slide-to',i);
+		if(i===0){ slideDot.setAttribute('class','active');} //else {slideDot.setAttribute('class','');}
+		carouselCnt.appendChild(slideDot);
+		$('#myCarousel').carousel('cycle');
 
 //CHANGE TO INCLUDE THIS VARIABLE IN OJBECT
-			var getFileType = skills[sCnt].projects[pos].slide[i].graphic.split('.').pop();
-			if (getFileType === 'png'){ var fileType = 'pic';}
-			if (getFileType === 'svg'){ var fileType = 'svg';}
-			if (getFileType === 'mov'){ var fileType = 'vid';}
-			console.log(getFileType, fileType);
+		var getFileType = skills[sCnt].projects[pos].slide[i].graphic.split('.').pop();
+		if (getFileType === 'png'){ var fileType = 'pic';}
+		if (getFileType === 'svg'){ var fileType = 'svg';}
+		if (getFileType === 'mov'){ var fileType = 'vid';}
+		console.log(getFileType, fileType);
 
-			var insertMedia = document.createElement('div');
-			if (i===0){ insertMedia.innerHTML = '<div class="item active"><div><img src='
-		  	+skills[sCnt].projects[pos].slide[i].graphic+ ' class='+fileType+' /></div><div class="carousel-caption" ><p class="mediaGraph scrollVisable">Caption goes here...</p></div></div>';
-			} else {
-				insertMedia.innerHTML = '<div class="item"><div><img src='
-		  	+skills[sCnt].projects[pos].slide[i].graphic+' class='+fileType+' /></div><div class="carousel-caption" ><p class="mediaGraph scrollVisable">Caption goes here...</p></div></div>';
-			}
+		var slideState = 'item';
+		if (i===0){ slideState = 'item active';}
+		var insertMedia = document.createElement('div');
 
-      carousel.insertBefore(insertMedia.firstChild, prevAP);
+		if (fileType === 'svg' || fileType === 'pic'){
+			insertMedia.innerHTML = '<div class="'+slideState+'"><div><img src='
+	  	+skills[sCnt].projects[pos].slide[i].graphic+ ' class='+fileType+
+			' /></div><div class="carousel-caption" ><p class="mediaGraph scrollVisable">Caption goes here...</p></div></div>';
 		}
-		console.log(skills[sCnt].projects[pos]);
+		if (fileType === 'vid'){
+			insertMedia.innerHTML = '<div class="'+slideState+'"><video autoplay loop class='
+			+skills[sCnt].projects[pos].slide[i].class+
+			'><source src='
+			+skills[sCnt].projects[pos].slide[i].graphic+
+			'></video><div class="carousel-caption" ><p class="mediaGraph scrollVisable">Caption goes here...</p></div></div>';
+		}
+    carousel.insertBefore(insertMedia.firstChild, prevAP);
+	}
+	console.log(skills[sCnt].projects[pos]);
 }
 
 
