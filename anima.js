@@ -80,24 +80,24 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
     if(position===0){ leftDrop();
 //0000000!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-      if (typeof slide1VideoElm !== 'undefined'){
-        document.getElementById('slide1Div').removeChild(slide1VideoElm);
-      }
-      var slide1 = document.getElementById('slide1Img');
-      slide1.style.display = 'initial';
-      slide1.setAttribute('src','media/sud0.png');
-      slide1.className = 'pic';
-      document.getElementById('slide1cap').setAttribute('style','display: initial;');
-
-
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      if (uploadDone){manualClick(allSkills);}
-      dropL0.setAttributeNS(null,'x1',12.5+'%');
-      dropL0.setAttributeNS(null,'x2',12.5+'%');
-      linePulse(12.5,12.7,12.5,15.1,dropL0,true,0.5,1.15,'none');
-      dropL1.setAttributeNS(null, 'x1', 12.5+'%');
-      linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');}
-    if(position===1){  manualClick(allSkills);
+//       if (typeof slide1VideoElm !== 'undefined'){
+//         document.getElementById('slide1Div').removeChild(slide1VideoElm);
+//       }
+//       var slide1 = document.getElementById('slide1Img');
+//       slide1.style.display = 'initial';
+//       slide1.setAttribute('src','media/sud0.png');
+//       slide1.className = 'pic';
+//       document.getElementById('slide1cap').setAttribute('style','display: initial;');
+//
+//
+// //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//       if (uploadDone){manualClick(allSkills);}
+//       dropL0.setAttributeNS(null,'x1',12.5+'%');
+//       dropL0.setAttributeNS(null,'x2',12.5+'%');
+//       linePulse(12.5,12.7,12.5,15.1,dropL0,true,0.5,1.15,'none');
+//       dropL1.setAttributeNS(null, 'x1', 12.5+'%');
+//       linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');}
+//     if(position===1){  manualClick(allSkills);
 // 1111111!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
       // document.getElementById('slide1Img').setAttribute('src','');
@@ -130,40 +130,40 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       linePulse(37.5,15,5,15,dropL1,true,0.5,1.15,leftDrop);}
     if(position===2){  manualClick(allSkills);
 //2222222!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      if (typeof slide1VideoElm !== 'undefined'){
-        document.getElementById('slide1Div').removeChild(slide1VideoElm);
-      }
-      document.getElementById('slide1cap').setAttribute('style','display: none;');
-      var slide1 = document.getElementById('slide1Img');
-      slide1.style.display = 'initial';
-      slide1.setAttribute('src','SVGs/cog.svg');
-      slide1.className = 'SVG';
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      dropL0.setAttributeNS(null, 'x1', 62.5+'%');
-      dropL0.setAttributeNS(null, 'x2', 62.5+'%');
-      linePulse(62.5,12.7,62.5,15.1,dropL0,true,0.5,1.15,'none');
-      dropL1.setAttributeNS(null, 'x1', 62.5+'%');
-      dropL1.setAttributeNS(null, 'x2', 95.3+'%');
-      dropR.setAttributeNS(null, 'opacity', 0);
-      dropL.setAttributeNS(null, 'opacity', 0);
-      linePulse(62.5,15,95.3,15,dropL1,true,0.5,1.15,rightDrop);}
-    if(position===3){ rightDrop(); manualClick(allSkills);
+//       if (typeof slide1VideoElm !== 'undefined'){
+//         document.getElementById('slide1Div').removeChild(slide1VideoElm);
+//       }
+//       document.getElementById('slide1cap').setAttribute('style','display: none;');
+//       var slide1 = document.getElementById('slide1Img');
+//       slide1.style.display = 'initial';
+//       slide1.setAttribute('src','SVGs/cog.svg');
+//       slide1.className = 'SVG';
+// //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//       dropL0.setAttributeNS(null, 'x1', 62.5+'%');
+//       dropL0.setAttributeNS(null, 'x2', 62.5+'%');
+//       linePulse(62.5,12.7,62.5,15.1,dropL0,true,0.5,1.15,'none');
+//       dropL1.setAttributeNS(null, 'x1', 62.5+'%');
+//       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
+//       dropR.setAttributeNS(null, 'opacity', 0);
+//       dropL.setAttributeNS(null, 'opacity', 0);
+//       linePulse(62.5,15,95.3,15,dropL1,true,0.5,1.15,rightDrop);}
+//     if(position===3){ rightDrop(); manualClick(allSkills);
 //3333333!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      if (typeof slide1VideoElm !== 'undefined'){
-        document.getElementById('slide1Div').removeChild(slide1VideoElm);
-      }
-      document.getElementById('slide1cap').setAttribute('style','display: none;');
-      var slide1 = document.getElementById('slide1Img');
-      slide1.style.display = 'initial';
-      slide1.setAttribute('src','SVGs/squ.svg');
-      slide1.className = 'SVG';
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      dropL0.setAttributeNS(null, 'x1', 87.5+'%');
-      dropL0.setAttributeNS(null, 'x2', 87.5+'%');
-      linePulse(87.5,12.7,87.5,15.1,dropL0,true,0.5,1.15,'none');
-      dropL1.setAttributeNS(null, 'x1', 87.5+'%');
-      dropL1.setAttributeNS(null, 'x2', 95.3+'%');
-      linePulse(87.5,15,95.3,15,dropL1,true,0.5,1.15,'none');}
+//       if (typeof slide1VideoElm !== 'undefined'){
+//         document.getElementById('slide1Div').removeChild(slide1VideoElm);
+//       }
+//       document.getElementById('slide1cap').setAttribute('style','display: none;');
+//       var slide1 = document.getElementById('slide1Img');
+//       slide1.style.display = 'initial';
+//       slide1.setAttribute('src','SVGs/squ.svg');
+//       slide1.className = 'SVG';
+// //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//       dropL0.setAttributeNS(null, 'x1', 87.5+'%');
+//       dropL0.setAttributeNS(null, 'x2', 87.5+'%');
+//       linePulse(87.5,12.7,87.5,15.1,dropL0,true,0.5,1.15,'none');
+//       dropL1.setAttributeNS(null, 'x1', 87.5+'%');
+//       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
+//       linePulse(87.5,15,95.3,15,dropL1,true,0.5,1.15,'none');}
     swapProjs(1,true,position); projSwap(0);}}
 function leftDrop(){
   dropL.setAttributeNS(null, 'opacity', 1);

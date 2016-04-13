@@ -11,102 +11,95 @@ function Skill(skill, projects, slide){ //using Object Method here mostly for pr
 }
 
 var web = new Skill('Web Development',
-  [{ name: 'Sudoku', slide: [
-	  {graphic: 'media/sud0.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-  	{graphic: 'media/sud1.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'media/sudVid0.mov', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-  	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'PYTHON proccessing games vid here!'}
+  [{ name: 'Sudoku', link: 'http.www.espn.com', slide: [
+	  {graphic: 'media/sud0.png', class: 'pic', caption: 'Place caption 1 here....'},
+  	{graphic: 'media/sud1.png', class: 'pic', caption: 'Place caption 2 here....'},
+		{graphic: 'media/sudVid0.mov', class: 'vid', caption: 'Place caption 2 here....'},
+  	{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'PYTHON proccessing games vid here!'}
 	]},
-	{ name: 'riiple', slide: [
-	  {graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-  	{graphic: 'SVGs/aboutMe.svg', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-  	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	{ name: 'riiple', link: 'http.www.espn.com', slide: [
+	  {graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+  	{graphic: 'SVGs/aboutMe.svg', class: 'svg', caption: 'Place caption 2 here....'},
+  	{graphic: 'media/sud2.png', class: 'pic', caption: 'Place caption 2 here....'}
 	]},
-	{ name: 'Portfolio', slide: [
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	{ name: 'Portfolio', link: 'http.www.espn.com', slide: [
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+  	{graphic: 'SVGs/aboutMe.svg', class: 'svg', caption: 'Place caption 2 here....'},
+  	{graphic: 'media/sud2.png', class: 'pic', caption: 'Place caption 2 here....'}
 	]},
-	{ name: 'Tic-tac-toe', slide: [
-	  {graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-  	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	{ name: 'Tic-tac-toe', link: 'http.www.espn.com', slide: [
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]},
 	{ name: 'Mouse Speed', slide: [
-  	{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]}
 ]);
 
 //-----------------------------------------------------------------------------------------------------------
 var mic = new Skill('Microcontroller & CNC',
-	[{ name: 'CNC', slide: [
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	[{ name: 'CNC', link: 'http.www.astronomynow.com', slide: [
+		{graphic: 'media/cncVid0.svg', class: 'wideVid', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]},
-	{ name: 'Gcode Editor', slide: [
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	{ name: 'Gcode Editor', link: 'http.www.astronomynow.com', slide: [
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]},
-	{ name: 'C++ Driver', slide: [
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	{ name: 'C++ Driver', link: 'http.www.astronomynow.com', slide: [
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]},
-	{ name: 'LCD Display', slide: [
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	{ name: 'LCD Display', link: 'http.www.astronomynow.com', slide: [
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]}
 ]);
 
 //-----------------------------------------------------------------------------------------------------------
 var des = new Skill('Design',
-	[{ name: 'Stincils', slide: [
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	[{ name: 'Stincils', link: 'http.www.nasa.gov', slide: [
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]},
-	{ name: 'Woodshop', slide: [
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	{ name: 'Woodshop', link: 'http.www.nasa.gov',slide: [
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]},
-	{ name: 'Clock', slide: [
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	{ name: 'Clock', link: 'http.www.nasa.gov',slide: [
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]},
 ]);
 
 //-----------------------------------------------------------------------------------------------------------
 var woo = new Skill('Woodworking',
-	[{ name: 'Shed', slide: [
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	[{ name: 'Shed', link: 'http.www.npr.gov', slide: [
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]},
-	{ name: 'Critter Block', slide: [
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	{ name: 'Critter Block', link: 'http.www.npr.gov', slide: [
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]},
-	{ name: 'Mugs', slide: [
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 1 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{graphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'},
-		{praphic: 'tools.png', link: 'http.www.espn.com', caption: 'Place caption 2 here....'}
+	{ name: 'Mugs', link: 'http.www.npr.gov', slide: [
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]},
 ]);
 
@@ -116,8 +109,9 @@ var sCnt = 0; var oldPos=1;
 
 console.log('(new) skill: '+skills[sCnt].skill);
 console.log('New project: '+skills[sCnt].projects[0].name);
+console.log('New link: '   +skills[sCnt].projects[0].link);
 console.log('New graphic: '+skills[sCnt].projects[0].slide[0].graphic);
-console.log('New link: '   +skills[sCnt].projects[0].slide[0].link);
+console.log('New class: '+skills[sCnt].projects[0].slide[0].class);
 console.log('New caption: '+skills[sCnt].projects[0].slide[0].caption);
 
 
@@ -138,10 +132,24 @@ function projSwap(pos){
     setTimeout(function(){document.getElementById('projHtml').innerHTML = projInfoText;},150);
 
 
-		var carouselCnt = document.getElementById('carouselCnt');
+		// var carouselCnt = document.getElementById('carouselCnt');
 		while (carouselCnt.firstChild) {
 		  carouselCnt.removeChild(carouselCnt.firstChild);
 		}
+
+		var carousel = document.getElementById('carousel');
+		var items = carousel.getElementsByClassName('item');
+		console.log('num of children: ', carousel.childNodes.length);
+		while (items[0]) {
+    	items[0].parentNode.removeChild(items[0]);
+			console.log('num with item class: ', items.length);
+		}
+		console.log('num of children: ', carousel.childNodes.length);
+
+		// while (carousel.firstChild) {
+		// 	var items = document.getElementsByClassName('item')
+		//   carousel.removeChildren(carousel.items);
+		// }
 
 		for (var i = 0; i < skills[sCnt].projects[pos].slide.length; i++){
 			console.log(skills[sCnt].projects[pos].slide[i].graphic);
@@ -152,16 +160,22 @@ function projSwap(pos){
 			carouselCnt.appendChild(slideDot);
 			$('#myCarousel').carousel('cycle');
 
+//CHANGE TO INCLUDE THIS VARIABLE IN OJBECT
+			var getFileType = skills[sCnt].projects[pos].slide[i].graphic.split('.').pop();
+			if (getFileType === 'png'){ var fileType = 'pic';}
+			if (getFileType === 'svg'){ var fileType = 'svg';}
+			if (getFileType === 'mov'){ var fileType = 'vid';}
+			console.log(getFileType, fileType);
 
-			if (typeof slide1VideoElm !== 'undefined'){
-        document.getElementById('slide1Div').removeChild(slide1VideoElm);
-      }
-      document.getElementById('slide1cap').setAttribute('style','display: none;');
-      var slide1 = document.getElementById('slide1Img');
-      slide1.setAttribute('src',skills[sCnt].projects[pos].slide[i].graphic);
-      slide1.className = 'SVG';
-			slide1.style.display = 'initial';
+			var insertMedia = document.createElement('div');
+			if (i===0){ insertMedia.innerHTML = '<div class="item active"><div><img src='
+		  	+skills[sCnt].projects[pos].slide[i].graphic+ ' class='+fileType+' /></div><div class="carousel-caption" ><p class="mediaGraph scrollVisable">Caption goes here...</p></div></div>';
+			} else {
+				insertMedia.innerHTML = '<div class="item"><div><img src='
+		  	+skills[sCnt].projects[pos].slide[i].graphic+' class='+fileType+' /></div><div class="carousel-caption" ><p class="mediaGraph scrollVisable">Caption goes here...</p></div></div>';
+			}
 
+      carousel.insertBefore(insertMedia.firstChild, prevAP);
 		}
 		console.log(skills[sCnt].projects[pos]);
 }
