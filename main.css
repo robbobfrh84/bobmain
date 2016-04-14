@@ -23,6 +23,7 @@ body {
 /*------------------mainSVG---------------------------------------------------*/
 #mainSVG {
   background-color: rgba(220,220,220,1);
+  /*background-color: rgba(100,100,100,1); Dark background phun!!!!*/
   box-shadow: 0 0 3vw rgb(100,149,237,0) inset;
 }
 
@@ -59,6 +60,7 @@ body {
     margin-top: 3.15%;
     margin-bottom: 4.5%;
     border-radius: 0.4vw;
+
 }
 
 .pic, video {
@@ -74,6 +76,15 @@ body {
   box-shadow: 0 0 2px 2px rgba(0,0,0,0.2);
 }
 
+.customSvg {
+  width: 52.5%;
+  height: 32.6%;
+  margin-top: 2.3%;
+  margin-bottom: 2.4%;
+  opacity: 0.8;
+  border-radius: 1.5vw;
+}
+
 .svg{
   width: 30%;
 }
@@ -82,8 +93,6 @@ video {
   opacity: 0.7;
   object-fit: cover;
 }
-
-
 
 .squareVid {
   height: 30vw;
@@ -99,6 +108,8 @@ video {
   width: 52vw;
   max-height: 347px;
   min-height: 230px;
+  max-width: 601px;
+  min-width: 399px;
   object-fit: cover;
 }
 
@@ -321,7 +332,7 @@ video {
 .canSelectText{ -moz-user-select: -moz-text; -khtml-user-select: text; -webkit-user-select: text;
   -ms-user-select: text; user-select: text; }
 
-/*.scrollVisable::-webkit-scrollbar { -webkit-appearance: none; width: 7px; }*/
+.scrollVisable::-webkit-scrollbar { -webkit-appearance: none; width: 7px; }
 .scrollVisable::-webkit-scrollbar-thumb { border-radius: 4px;
   background-color: rgba(0,0,0,.5); -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5); }
 

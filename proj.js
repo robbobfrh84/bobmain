@@ -12,26 +12,19 @@ function Skill(skill, projects, slide){ //using Object Method here mostly for pr
 
 var web = new Skill('Web Development',
   [{ name: 'riiple', link: 'http://robbobfrh84.github.io/riiple/riipleProto1.html', slide: [
-	  {graphic: 'media/riiPly.m4v', class: 'wideVid', caption: 'update.'},
+	  {graphic: 'media/riiPly.m4v', class: 'wideVid', caption: ''},
   	{graphic: 'media/riiCnr.png', class: 'customPng', caption: ''}
 	]},
 	{ name: 'Sudoku', link: 'http://robbobfrh84.github.io/Sudoku/sudoku', slide: [
+		{graphic: 'media/sudFull.png', class: 'pic', caption: ''},
+		{graphic: 'media/sudPyth.m4v', class: 'wideVidDark', caption: '•	To implement thousands of unique games, I wrote a python program to generate possible games and remove set amounts of random numbers depending on difficulty.'},
 		{graphic: 'media/sudPlay.m4v', class: 'wideVid', caption: ''},
-	  {graphic: 'media/sudFull.png', class: 'pic', caption: ''},
-		{graphic: 'media/sudPyth.m4v', class: 'wideVidDark', caption: '•	To implement thousands of unique games, I wrote a python program to generate possible games and remove random numbers.'},
 		{graphic: 'media/sudCom.png', class: 'pic', caption: ''}
 	]},
-
 	{ name: 'Portfolio', link: 'http://www.bobma.in', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: ''},
-  	{graphic: 'media/sudCom.png', class: 'pic', caption: 'Place caption 2 here....'}
-	]},
-	{ name: 'Tic-tac-toe', link: '', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'My fathers family name being Pirrip, and my Christian name Philip, my infant tongue could make of both names nothing longer or more explicit than Pip. So, I called myself Pip, and came to be called Pip.I give Pirrip as my fathers family name, on the authority of his tombstone and my sister - Mrs. Joe Gargery, who married the blacksmith. As I never saw my father or my mother, and never saw any likeness of either of them '},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: ''}
-	]},
-	{ name: 'Mouse Speed', link: '', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'media/portWireframe.svg', class: 'customSvg', caption: '...'},
+		{graphic: 'media/portCode.png', class: 'pic', caption: ''},
+  	{graphic: 'media/portPlay.m4v', class: 'wideVidDark', caption: ''}
 	]}
 ]);
 

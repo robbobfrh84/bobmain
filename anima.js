@@ -1,13 +1,23 @@
 var svgElement = 'http://www.w3.org/2000/svg';
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////          CREATE SVG ELEMENTS          ///////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////       ///////////////////////////////////////
+/////////      CREATE SVG BACKGOURND GRID       ////////////////////       ///////////////////////////////////////
+////////////////////////////////////////////////////////////////////       ///////////////////////////////////////
 function drawGrid(numVLines,numHLines,thin,fifth,tenth,color){
-  lines = (100/numVLines); hlines = (100/numHLines);
-  for (var i = 1; i < numVLines; i++){ fat = thin;
-    if(i%5===0){fat=fifth;} if(i%10===0||i===0){fat=tenth;}
-    createLine(lines*i,0,lines*i,100,fat,color,'vert'+i); }
+  lines = (100/numVLines);
+  hlines = (100/numHLines);
+  for (var i = 1; i < numVLines; i++) {
+    fat = thin;
+    if(i%5===0){
+      fat=fifth;
+    }
+    if(i%10===0||i===0){
+      fat=tenth;
+    }
+    createLine(lines*i, 0 ,lines * i, 100, fat, color, 'vert'+i);
+}
+
+
+
   for (var i = 1; i < numHLines; i++){ fat = thin;
     if(i%5===0){fat=fifth;} if(i%10===0||i===0){fat=tenth;}
     createLine(0,hlines*i,100,hlines*i,fat,color,'horiz'+i);}}
