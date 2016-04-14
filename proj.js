@@ -16,9 +16,9 @@ var web = new Skill('Web Development',
   	{graphic: 'media/riiCnr.png', class: 'customPng', caption: ''}
 	]},
 	{ name: 'Sudoku', link: 'http://robbobfrh84.github.io/Sudoku/sudoku', slide: [
-		{graphic: 'media/sudPlay.mp4', class: 'wideVid', caption: ''},
+		{graphic: 'media/sudPlay.m4v', class: 'wideVid', caption: ''},
 	  {graphic: 'media/sudFull.png', class: 'pic', caption: ''},
-		{graphic: 'media/sudPy.mov', class: 'wideVid2', caption: '•	To implement thousands of unique games, I wrote a python program to generate possible games and remove random numbers.'},
+		{graphic: 'media/sudPyth.m4v', class: 'wideVidDark', caption: '•	To implement thousands of unique games, I wrote a python program to generate possible games and remove random numbers.'},
 		{graphic: 'media/sudCom.png', class: 'pic', caption: ''}
 	]},
 
@@ -40,7 +40,9 @@ var mic = new Skill('Microcontroller & CNC',
 	[{ name: 'CNC', link: 'https://www.instagram.com/woodcraftersdesign/', slide: [
 		{graphic: 'media/cncLapsePir.m4v', class: 'fullVid', caption: 'Place MCNC caption 1 here....'},
 		{graphic: 'media/cncPro.png', class: 'pic', caption: 'Place MCNC aption 2 here....'},
-		{graphic: 'media/cncPully.mov', class: 'wideVid', caption: 'Place MCNC caption 3 here....'}
+		{graphic: 'media/cncVine.m4v', class: 'wideVid', caption: 'Place MCNC caption 3 here....'},
+		{graphic: 'media/sudPlay.m4v', class: 'wideVid', caption: ''}
+
 	]},
 	{ name: 'Gcode Editor', link: 'http://www.usatoday.com', slide: [
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'gcode caption 1 here....'},
@@ -143,28 +145,22 @@ function projSwap(pos, animationDown,osCnt){
 		carouselCnt.appendChild(slideDot);
 		$('#myCarousel').carousel('cycle');
 
-//NEED IT! COULD BREAK DOWN TO JUST GETFILE TYPE THO........
-		var getFileType = skills[osCnt].projects[pos].slide[i].graphic.split('.').pop();
-		if (getFileType === 'png'){ var fileType = 'pic';}
-		if (getFileType === 'svg'){ var fileType = 'svg';}
-		if (getFileType === 'mov'){ var fileType = 'vid';}
-		console.log(getFileType, fileType);
-
 		var slideState = 'item';
 		if (i===0){ slideState = 'item active';}
 		var insertMedia = document.createElement('div');
 
 		var setCaption ='';
 		if (skills[osCnt].projects[pos].slide[i].caption === ''){
-			var setCaption ='style="visibility: hidden;"';}
+		var setCaption ='style="visibility: hidden;"';}
 
-		if (fileType === 'svg' || fileType === 'pic'){
+		var fileType = skills[osCnt].projects[pos].slide[i].graphic.split('.').pop();
+		if (fileType === 'svg' || fileType === 'png'){
 			insertMedia.innerHTML = '<div class="'+slideState+'"><div><img src='
 	  	+skills[osCnt].projects[pos].slide[i].graphic+ ' class='+skills[osCnt].projects[pos].slide[i].class+
 			' /></div><div class="carousel-caption" ><p class="mediaGraph scrollVisable" '+setCaption+'>'
 				+skills[osCnt].projects[pos].slide[i].caption+'</p></div></div>';
-		} else {
-		// if (fileType === 'vid' ){
+		}
+		if (fileType === 'm4v' || fileType === 'mp4'){
 			insertMedia.innerHTML = '<div class="'+slideState+'">'
 			+'<video autoplay loop muted="true" class='+skills[osCnt].projects[pos].slide[i].class+' >'
 			+'<source src='+skills[osCnt].projects[pos].slide[i].graphic+' type="video/mp4">'
