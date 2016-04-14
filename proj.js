@@ -11,16 +11,17 @@ function Skill(skill, projects, slide){ //using Object Method here mostly for pr
 }
 
 var web = new Skill('Web Development',
-  [{ name: 'Sudoku', link: 'http://robbobfrh84.github.io/Sudoku/sudoku', slide: [
+  [{ name: 'riiple', link: 'http://robbobfrh84.github.io/riiple/riipleProto1.html', slide: [
+	  {graphic: 'media/riiPly.mov', class: 'wideVid', caption: ''},
+  	{graphic: 'media/riiCnr.png', class: 'customPng', caption: 'A Little write-up about riiple...In progress.'}
+	]},
+	{ name: 'Sudoku', link: 'http://robbobfrh84.github.io/Sudoku/sudoku', slide: [
 		{graphic: 'media/sudPlay.mov', class: 'wideVid', caption: ''},
 	  {graphic: 'media/sudFull.png', class: 'pic', caption: ''},
 		{graphic: 'media/sudPy.mov', class: 'wideVid2', caption: '•	To implement thousands of unique games, I wrote a python program to generate possible games and remove random numbers.'},
 		{graphic: 'media/sudCom.png', class: 'pic', caption: ''}
 	]},
-	{ name: 'riiple', link: 'http://robbobfrh84.github.io/riiple/riipleProto1.html', slide: [
-	  {graphic: 'media/riiPly.mov', class: 'wideVid', caption: ''},
-  	{graphic: 'media/riiCnr.png', class: 'customPng', caption: 'A Little write-up about riiple...In progress.'}
-	]},
+
 	{ name: 'Portfolio', link: 'http://www.bobma.in', slide: [
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: ''},
   	{graphic: 'media/sudCom.png', class: 'pic', caption: 'Place caption 2 here....'}
@@ -39,7 +40,6 @@ var mic = new Skill('Microcontroller & CNC',
 	[{ name: 'CNC', link: 'https://www.instagram.com/woodcraftersdesign/', slide: [
 		{graphic: 'media/cncLapsePir.mov', class: 'fullVid', caption: 'Place MCNC caption 1 here....'},
 		{graphic: 'media/cncPro.png', class: 'pic', caption: 'Place MCNC aption 2 here....'},
-		//{graphic: 'media/cncLapseSide.mov', class: 'fullVid', caption: 'Place caption 1 here....'},
 		{graphic: 'media/cncPully.mov', class: 'wideVid', caption: 'Place MCNC caption 3 here....'}
 	]},
 	{ name: 'Gcode Editor', link: 'http://www.usatoday.com', slide: [

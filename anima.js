@@ -75,7 +75,7 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
     dropL1.setAttributeNS(null, 'opacity', 0);
 
     // if(uploadDone){setTimeout(function(){ $('#myCarousel').carousel('pause');},50);};
-    
+
     //if(uploadDone){ regElmAnimate(myCarousel, 'opacity', 0.07, 1, '', 1, 0,'none');}
 
     if(position===0){ leftDrop();
@@ -186,13 +186,13 @@ prevAP.onmouseover = function(){
   regElmAnimate(prevA, 'opacity', 0.05, 1, '', 0.1, 1,'none');}
 prevAP.onmouseleave = function(){
   if(sCnt===0){var x=skills.length-1}else{var x=sCnt-1;}
-  regElmAnimate(prevA, 'opacity', 0.05, 1, '', 1, 0.1,'none');}
+  regElmAnimate(prevA, 'opacity', 0.05, 1, '', 1, 0.4,'none');}
 nextAP.onmouseover = function(){
   if(sCnt===skills.length-1){var x=0}else{var x=sCnt+1;}
   regElmAnimate(nextA, 'opacity', 0.05, 1, '', 0.1, 1,'none');}
 nextAP.onmouseleave = function(){
   if(sCnt===skills.length-1){var x=0}else{var x=sCnt+1;}
-  regElmAnimate(nextA, 'opacity', 0.05, 1, '', 1, 0.1,'none');}
+  regElmAnimate(nextA, 'opacity', 0.05, 1, '', 1, 0.4,'none');}
 
 about.onmousedown = function aboutMe(){
   projln.style.opacity= 0;
