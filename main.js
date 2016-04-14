@@ -1,10 +1,26 @@
+// Opera 8.0+
+var browser = 'unknown';
+if ((!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0){
+  browser = "Opera";}
+if (typeof InstallTrigger !== 'undefined'){
+  browser = 'Firefox';}
+if (Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0){
+  browser = 'Safari';}
+if (/*@cc_on!@*/false || !!document.documentMode){
+  browser = 'Internet Explorer';}
+if(!!window.chrome && !!window.chrome.webstore){
+  browser = 'Crome';}
+
+console.log('Browser: '+browser);
+
 var fullpage = document.getElementById('mainSVG');
 
 //-------------------------------------------------------Fadein main background--------------------
 fadeIn(fullpage, 'opacity', 0.05,0,1);
 
 //--------------------------------------------------------Place background grid--------------------
-drawGrid(40,40,0.25,0.75,1.5,'rgba(102,155,235,0.8)');
+if (browser !== 'Safari'){drawGrid(40,40,0.25,0.75,1.5,'rgba(102,155,235,0.8)');
+}else{drawGrid(40,40,2,2,2,'rgba(102,155,235,0.2)');}
 
 //--------------------------------declare main object variables created in HTML--------------------
 var introBlock=[]; var copyBlock=[]; var proBlock=[];
@@ -120,12 +136,12 @@ var dropL1 = createLine(12.5,15,5,15,3,'rgb(220,220,220)','dropL1',0);
 
 
 // setTimeout(function(){webWin.onmouseover();},2500);
-setTimeout(function(){webWin.onmousedown(); uploadDone = true; },2800);
+setTimeout(function(){webWin.onmousedown(); uploadDone = true; },1800);
 // uploadDone = true;
 
 var hideMorse = true;
 morUpE();
-setTimeout(function(){fadeIn(myCarousel, 'opacity', 0.02,0,1);},3000);
+setTimeout(function(){fadeIn(myCarousel, 'opacity', 0.02,0,1);},2000);
 // setTimeout(function(){fadeIn(projln, 'opacity', 0.02,0,1);},1500);
 // setTimeout(function(){fadeIn(leftDot, 'opacity', 0.02,0,1);},1500);
 // setTimeout(function(){fadeIn(rightDot, 'opacity', 0.02,0,1);},1500);

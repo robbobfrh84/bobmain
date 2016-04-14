@@ -12,7 +12,7 @@ function Skill(skill, projects, slide){ //using Object Method here mostly for pr
 
 var web = new Skill('Web Development',
   [{ name: 'riiple', link: 'http://robbobfrh84.github.io/riiple/riipleProto1.html', slide: [
-	  {graphic: 'media/riiPly3.mp4', class: 'wideVid', caption: ''},
+	  {graphic: 'media/riiPly.m4v', class: 'wideVid', caption: 'update.'},
   	{graphic: 'media/riiCnr.png', class: 'customPng', caption: ''}
 	]},
 	{ name: 'Sudoku', link: 'http://robbobfrh84.github.io/Sudoku/sudoku', slide: [
@@ -38,7 +38,7 @@ var web = new Skill('Web Development',
 //-----------------------------------------------------------------------------------------------------------
 var mic = new Skill('Microcontroller & CNC',
 	[{ name: 'CNC', link: 'https://www.instagram.com/woodcraftersdesign/', slide: [
-		{graphic: 'media/cncLapsePir3.m4v', class: 'fullVid', caption: 'Place MCNC caption 1 here....'},
+		{graphic: 'media/cncLapsePir.m4v', class: 'fullVid', caption: 'Place MCNC caption 1 here....'},
 		{graphic: 'media/cncPro.png', class: 'pic', caption: 'Place MCNC aption 2 here....'},
 		{graphic: 'media/cncPully.mov', class: 'wideVid', caption: 'Place MCNC caption 3 here....'}
 	]},
