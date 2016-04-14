@@ -120,16 +120,17 @@ var dropL1 = createLine(12.5,15,5,15,3,'rgb(220,220,220)','dropL1',0);
 
 
 // setTimeout(function(){webWin.onmouseover();},2500);
-setTimeout(function(){webWin.onmousedown(); uploadDone = true; },1800);
+setTimeout(function(){webWin.onmousedown(); uploadDone = true; },2800);
 // uploadDone = true;
 
 var hideMorse = true;
 morUpE();
-setTimeout(function(){fadeIn(myCarousel, 'opacity', 0.02,0,1);},2000);
-setTimeout(function(){fadeIn(toolsIcon, 'opacity', 0.02,0,0.15);},2000);
-setTimeout(function(){fadeIn(projln, 'opacity', 0.02,0,1);},1500);
-setTimeout(function(){fadeIn(leftDot, 'opacity', 0.02,0,1);},1500);
-setTimeout(function(){fadeIn(rightDot, 'opacity', 0.02,0,1);},1500);
+setTimeout(function(){fadeIn(myCarousel, 'opacity', 0.02,0,1);},3000);
+// setTimeout(function(){fadeIn(projln, 'opacity', 0.02,0,1);},1500);
+// setTimeout(function(){fadeIn(leftDot, 'opacity', 0.02,0,1);},1500);
+// setTimeout(function(){fadeIn(rightDot, 'opacity', 0.02,0,1);},1500);
+setTimeout(function(){fadeIn(toolsIcon, 'opacity', 0.02,0,0.15);},1000);
+
 
 // setTimeout(function(){webWin.onmouseover();},2800);
 // setTimeout(function(){fadeIn(goldLine, 'opacity', 0.01,0,1);},4000);
