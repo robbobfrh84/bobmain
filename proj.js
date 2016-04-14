@@ -12,11 +12,11 @@ function Skill(skill, projects, slide){ //using Object Method here mostly for pr
 
 var web = new Skill('Web Development',
   [{ name: 'riiple', link: 'http://robbobfrh84.github.io/riiple/riipleProto1.html', slide: [
-	  {graphic: 'media/riiPly.mov', class: 'wideVid', caption: ''},
+	  {graphic: 'media/riiPly3.mp4', class: 'wideVid', caption: ''},
   	{graphic: 'media/riiCnr.png', class: 'customPng', caption: ''}
 	]},
 	{ name: 'Sudoku', link: 'http://robbobfrh84.github.io/Sudoku/sudoku', slide: [
-		{graphic: 'media/sudPlay.mov', class: 'wideVid', caption: ''},
+		{graphic: 'media/sudPlay.mp4', class: 'wideVid', caption: ''},
 	  {graphic: 'media/sudFull.png', class: 'pic', caption: ''},
 		{graphic: 'media/sudPy.mov', class: 'wideVid2', caption: '•	To implement thousands of unique games, I wrote a python program to generate possible games and remove random numbers.'},
 		{graphic: 'media/sudCom.png', class: 'pic', caption: ''}
@@ -38,7 +38,7 @@ var web = new Skill('Web Development',
 //-----------------------------------------------------------------------------------------------------------
 var mic = new Skill('Microcontroller & CNC',
 	[{ name: 'CNC', link: 'https://www.instagram.com/woodcraftersdesign/', slide: [
-		{graphic: 'media/cncLapsePir.mov', class: 'fullVid', caption: 'Place MCNC caption 1 here....'},
+		{graphic: 'media/cncLapsePir3.m4v', class: 'fullVid', caption: 'Place MCNC caption 1 here....'},
 		{graphic: 'media/cncPro.png', class: 'pic', caption: 'Place MCNC aption 2 here....'},
 		{graphic: 'media/cncPully.mov', class: 'wideVid', caption: 'Place MCNC caption 3 here....'}
 	]},
@@ -163,11 +163,11 @@ function projSwap(pos, animationDown,osCnt){
 	  	+skills[osCnt].projects[pos].slide[i].graphic+ ' class='+skills[osCnt].projects[pos].slide[i].class+
 			' /></div><div class="carousel-caption" ><p class="mediaGraph scrollVisable" '+setCaption+'>'
 				+skills[osCnt].projects[pos].slide[i].caption+'</p></div></div>';
-		}
-		if (fileType === 'vid'){
+		} else {
+		// if (fileType === 'vid' ){
 			insertMedia.innerHTML = '<div class="'+slideState+'">'
-			+'<video autoplay loop muted="true" class='+skills[osCnt].projects[pos].slide[i].class+'>'
-			+'<source src='+skills[osCnt].projects[pos].slide[i].graphic+'>'
+			+'<video autoplay loop muted="true" class='+skills[osCnt].projects[pos].slide[i].class+' >'
+			+'<source src='+skills[osCnt].projects[pos].slide[i].graphic+' type="video/mp4">'
 			+'</video><div class="carousel-caption"><p class="mediaGraph scrollVisable"  '+setCaption+'>'
 			+skills[osCnt].projects[pos].slide[i].caption+'</p></div></div>';
 		}
