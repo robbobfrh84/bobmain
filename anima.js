@@ -74,7 +74,8 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
     dropL0.setAttributeNS(null, 'opacity', 0);
     dropL1.setAttributeNS(null, 'opacity', 0);
 
-    if(uploadDone){setTimeout(function(){ $('#myCarousel').carousel('pause');},50);};
+    // if(uploadDone){setTimeout(function(){ $('#myCarousel').carousel('pause');},50);};
+    
     //if(uploadDone){ regElmAnimate(myCarousel, 'opacity', 0.07, 1, '', 1, 0,'none');}
 
     if(position===0){ leftDrop();
@@ -168,7 +169,9 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
       linePulse(87.5,15,95.3,15,dropL1,true,0.5,1.15,'none');
 }
-    swapProjs(1,true,position); projSwap(0);}}
+    projSwap(0,false,position);
+
+    swapProjs(1,true,position); }}
 function leftDrop(){
   dropL.setAttributeNS(null, 'opacity', 1);
   dropR.setAttributeNS(null, 'opacity', 0);
@@ -177,10 +180,6 @@ function rightDrop(){
   dropR.setAttributeNS(null, 'opacity', 1);
   dropL.setAttributeNS(null, 'opacity', 0);
   elmAnimate(dropR,'height',1.001,1.03,'%',0,40,'none');}
-
-
-
-
 
 prevAP.onmouseover = function(){
   if(sCnt===0){var x=skills.length-1}else{var x=sCnt-1;}
@@ -263,7 +262,7 @@ function swapProjs(dir,fade,position){
 
     if (projBar.getAttribute('opacity') < 1){ console.log('AHHH');
     if(!noAnim){ reSetProj(); }
-    } else { console.log('prjELSE');
+    } else {
       if(!noAnim){ regElmAnimate(projBar,'opacity',0.01, 1.1,'',1,0,reSetProj);}
     }
 
@@ -277,14 +276,10 @@ function swapProjs(dir,fade,position){
 
 function reSetProj(){
   var numOfProjs = skills[sCnt].projects.length;
-  console.log(numOfProjs);
   for(var i = 0; i < 5; i++){
     if (i >= numOfProjs){
-      console.log(i+' not included');
       document.getElementById('proj'+i).style.display = 'none';
     } else {
-      console.log(i+'included');
-
       document.getElementById('proj'+i).style.display = 'inline-block';
       document.getElementById('proj'+i).innerHTML = skills[sCnt].projects[i].name;}}
     regElmAnimate(projBar, 'opacity', 0.01, 1.05, '', 0, 1,reCar);
