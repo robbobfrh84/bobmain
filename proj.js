@@ -13,7 +13,7 @@ function Skill(skill, projects, slide){ //using Object Method here mostly for pr
 var web = new Skill('Web Development',
   [{ name: 'riiple', link: 'http://robbobfrh84.github.io/riiple/riipleProto1.html', slide: [
 	  {graphic: 'media/riiPly.mov', class: 'wideVid', caption: ''},
-  	{graphic: 'media/riiCnr.png', class: 'customPng', caption: 'A Little write-up about riiple...In progress.'}
+  	{graphic: 'media/riiCnr.png', class: 'customPng', caption: 'updated vid source at top of html...'}
 	]},
 	{ name: 'Sudoku', link: 'http://robbobfrh84.github.io/Sudoku/sudoku', slide: [
 		{graphic: 'media/sudPlay.mov', class: 'wideVid', caption: ''},
