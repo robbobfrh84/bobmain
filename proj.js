@@ -38,14 +38,14 @@ var mic = new Skill('Microcontroller & CNC',
 
 	]},
 	{ name: 'Gcode Editor', link: 'http://www.usatoday.com', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'gcode caption 1 here....'},
+		{graphic: 'media/pyIcons.svg', class: '', caption: 'gcode caption 1 here....'},
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'gcode caption 2 here....'}
 	]},
-	{ name: 'C++ Driver', link: 'http.www.astronomynow.com', slide: [
+	{ name: 'LCD Display', link: 'http.www.astronomynow.com', slide: [
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]},
-	{ name: 'LCD Display', link: 'http.www.astronomynow.com', slide: [
+	{ name: 'C++ Driver', link: 'http.www.astronomynow.com', slide: [
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]}
