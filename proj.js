@@ -22,7 +22,7 @@ var web = new Skill('Web Development',
 		{graphic: 'media/sudCom.png', class: 'pic', caption: ''}
 	]},
 	{ name: 'Portfolio', link: 'http://www.bobma.in', slide: [
-		{graphic: 'media/portWireframe.svg', class: 'customSvg', caption: '...'},
+		{graphic: 'media/portWireframe.svg', class: 'customSvg', caption: ''},
 		{graphic: 'media/portCode.png', class: 'pic', caption: ''},
   	{graphic: 'media/portPlay.m4v', class: 'wideVidDark', caption: ''}
 	]}
@@ -31,23 +31,29 @@ var web = new Skill('Web Development',
 //-----------------------------------------------------------------------------------------------------------
 var mic = new Skill('Microcontroller & CNC',
 	[{ name: 'CNC', link: 'https://www.instagram.com/woodcraftersdesign/', slide: [
-		{graphic: 'media/cnc/cncLapseCog.m4v', class: 'fullVid', caption: 'Place MCNC caption 1 here....'},
-		{graphic: 'media/cnc/cncLapsePir.m4v', class: 'fullVid', caption: 'Place MCNC caption 1 here....'},
-		{graphic: 'media/cnc/cncPro.png', class: 'pic', caption: '...'},
+		{graphic: 'media/cnc/cncLapseCog.m4v', class: 'fullVid', caption: ''},
+		{graphic: 'media/cnc/cncSnesCogLcd.png', class: 'pic', caption: ''},
+		{graphic: 'media/cnc/cncSoundBox.png', class: 'pic', caption: '...Insert Sound-Box caption here...'},
+		{graphic: 'media/cnc/cncSnes.m4v', class: 'wideVid', caption: 'An old Super Nintendo controller came in handy as a fun hack for XYZ free-flow routing.'},
+		{graphic: 'media/cnc/cnc2d.png', class: 'pic', caption: '...Insert 2d CNC caption here...'},
+		{graphic: 'media/cnc/cncBuildZ.png', class: 'pic', caption: ''},
+		{graphic: 'media/cnc/cncLapsePir.m4v', class: 'fullVid', caption: ''},
+		{graphic: 'media/cnc/cncLapseSide.m4v', class: 'wideVid', caption: '...Insert B&T info caption here...'},
+		{graphic: 'media/cnc/cncPro.png', class: 'pic', caption: ''},
 		{graphic: 'media/cnc/cncBlkTkl.png', class: 'pic', caption: ''},
-		{graphic: 'media/cnc/cncPully.m4v', class: 'wideVid', caption: ''},
-		{graphic: 'media/cnc/cncSnes.m4v', class: 'wideVid', caption: 'Old Super Nintendo controller came in handy as a fun hack for XYZ free-flow routing.'}
+		{graphic: 'media/cnc/cncPully.m4v', class: 'wideVid', caption: ''}
+	]},
+	{ name: 'Gcode Editor', link: '', slide: [
+		{graphic: 'media/gcoIcons.svg', class: '', caption: "Using the Serial-port, we're able to Communicate messages and directions from python to Arduino and back."},
+		{graphic: 'media/gcoScreen.png', class: 'pic', caption: ''},
+		{graphic: 'media/gcoVine.m4v', class: 'wideVid', caption: ''}
 
 	]},
-	{ name: 'Gcode Editor', link: 'http://www.usatoday.com', slide: [
-		{graphic: 'media/pyIcons.svg', class: '', caption: 'gcode caption 1 here....'},
-		{graphic: 'media/cnc/cncVine.m4v', class: 'wideVid', caption: 'Place MCNC caption 3 here....'}
-	]},
-	{ name: 'LCD Display', link: 'http.www.astronomynow.com', slide: [
+	{ name: 'LCD Display', link: '', slide: [
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]},
-	{ name: 'C++ Driver', link: 'http.www.astronomynow.com', slide: [
+	{ name: 'C++ Driver', link: '', slide: [
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
 	]}
@@ -55,15 +61,15 @@ var mic = new Skill('Microcontroller & CNC',
 
 //-----------------------------------------------------------------------------------------------------------
 var des = new Skill('Design',
-	[{ name: 'Stincils', link: 'http.www.nasa.gov', slide: [
+	[{ name: 'Stincils', link: '', slide: [
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'stin caption 1 here....'},
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'stin caption 2 here....'}
 	]},
-	{ name: 'Woodshop', link: 'http.www.nasa.gov',slide: [
+	{ name: 'Woodshop', link: '',slide: [
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'woo caption 1 here....'},
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'woo caption 2 here....'}
 	]},
-	{ name: 'Clock', link: 'http.www.nasa.gov',slide: [
+	{ name: 'Clock', link: '',slide: [
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'clockcaption 1 here....'},
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'clocke caption 2 here....'}
 	]},
@@ -71,18 +77,18 @@ var des = new Skill('Design',
 
 //-----------------------------------------------------------------------------------------------------------
 var woo = new Skill('Woodworking',
-	[{ name: 'Shed', link: 'http.www.npr.gov', slide: [
-		{graphic: 'SVGs/squ.svg', class: 'svg', caption: 'shed caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'shede caption 2 here....'}
-	]},
-	{ name: 'Critter Block', link: 'http.www.npr.gov', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'cr caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'cr caption 2 here....'}
-	]},
-	{ name: 'Mugs', link: 'http.www.npr.gov', slide: [
+	{ name: 'Mugs', link: 'https://www.instagram.com/woodcraftersdesign/', slide: [
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'mug caption 1 here....'},
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'mug caption 2 here....'}
 	]},
+	[{ name: 'Shed', link: '', slide: [
+		{graphic: 'SVGs/squ.svg', class: 'svg', caption: 'shed caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'shede caption 2 here....'}
+	]},
+	{ name: 'Critter Block', link: '', slide: [
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'cr caption 1 here....'},
+		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'cr caption 2 here....'}
+	]}
 ]);
 
 
@@ -116,9 +122,9 @@ function projSwap(pos, animationDown,osCnt){
   setTimeout(function(){document.getElementById('projHtml').innerHTML = projInfoText;},150);
 
 	if(skills[osCnt].projects[pos].link !== ''){
-		linkIcon.style.opacity = '0.7';
+		linkIcon.style.display = 'initial';
 		document.getElementById('linkHolder').setAttribute('href',skills[osCnt].projects[pos].link)
-	} else { linkIcon.style.opacity = '0'; }
+	} else { linkIcon.style.display = 'none'; }
 
 
 	while (carouselCnt.firstChild) {
