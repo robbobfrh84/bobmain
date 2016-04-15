@@ -31,15 +31,17 @@ var web = new Skill('Web Development',
 //-----------------------------------------------------------------------------------------------------------
 var mic = new Skill('Microcontroller & CNC',
 	[{ name: 'CNC', link: 'https://www.instagram.com/woodcraftersdesign/', slide: [
-		{graphic: 'media/cncLapsePir.m4v', class: 'fullVid', caption: 'Place MCNC caption 1 here....'},
-		{graphic: 'media/cncPro.png', class: 'pic', caption: 'Place MCNC aption 2 here....'},
-		{graphic: 'media/cncVine.m4v', class: 'wideVid', caption: 'Place MCNC caption 3 here....'},
-		{graphic: 'media/sudPlay.m4v', class: 'wideVid', caption: ''}
+		{graphic: 'media/cnc/cncLapseCog.m4v', class: 'fullVid', caption: 'Place MCNC caption 1 here....'},
+		{graphic: 'media/cnc/cncLapsePir.m4v', class: 'fullVid', caption: 'Place MCNC caption 1 here....'},
+		{graphic: 'media/cnc/cncPro.png', class: 'pic', caption: '...'},
+		{graphic: 'media/cnc/cncBlkTkl.png', class: 'pic', caption: ''},
+		{graphic: 'media/cnc/cncPully.m4v', class: 'wideVid', caption: ''},
+		{graphic: 'media/cnc/cncSnes.m4v', class: 'wideVid', caption: 'Old Super Nintendo controller came in handy as a fun hack for XYZ free-flow routing.'}
 
 	]},
 	{ name: 'Gcode Editor', link: 'http://www.usatoday.com', slide: [
 		{graphic: 'media/pyIcons.svg', class: '', caption: 'gcode caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'gcode caption 2 here....'}
+		{graphic: 'media/cnc/cncVine.m4v', class: 'wideVid', caption: 'Place MCNC caption 3 here....'}
 	]},
 	{ name: 'LCD Display', link: 'http.www.astronomynow.com', slide: [
 		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
