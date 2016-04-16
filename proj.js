@@ -65,7 +65,7 @@ var mic = new Skill('Microcontroller & CNC',
 //-----------------------------------------------------------------------------------------------------------
 var des = new Skill('Design',
 	[{ name: 'Clock', link: '',slide: [
-		{graphic: 'media/clkCog.svg', class: 'svg', caption: ''},
+		{graphic: 'SVGs/cog.svg', class: 'svg', caption: ''},
 		{graphic: 'media/clkSnes.png', class: 'pic', caption: ''},
 		{graphic: 'media/clkParts2.png', class: 'customPngFull', caption: "Many of the Wooden clock pieces for this project were inspired by Brian's Law wooden Clocks at www.woodenClocks.co.uk"}
 	]},
