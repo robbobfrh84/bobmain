@@ -33,9 +33,9 @@ var mic = new Skill('Microcontroller & CNC',
 	[{ name: 'CNC', link: 'https://www.instagram.com/woodcraftersdesign/', slide: [
 		{graphic: 'media/cnc/cncLapseCog.m4v', class: 'fullVid', caption: ''},
 		{graphic: 'media/cnc/cncSnesCogLcd.png', class: 'pic', caption: ''},
-		{graphic: 'media/cnc/cncSoundBox.png', class: 'pic', caption: '...Insert Sound-Box caption here...'},
+		{graphic: 'media/cnc/cncSoundBox.png', class: 'pic', caption: '•	After some calibration and testing. I realized I was going to need to build a sound box before starting any major projects. Luckily, had some redwood tongue and groove lying around.'},
 		{graphic: 'media/cnc/cncSnes.m4v', class: 'wideVid', caption: 'An old Super Nintendo controller came in handy as a fun hack for XYZ free-flow routing.'},
-		{graphic: 'media/cnc/cnc2d.png', class: 'pic', caption: '...Insert 2d CNC caption here...'},
+		{graphic: 'media/cnc/cnc2d.png', class: 'pic', caption: 'XY-axis set up for basic Gcode conversion and testing with Python & Arduino. Kudos to good ‘ol Pythagoras for the math help.'},
 		{graphic: 'media/cnc/cncBuildZ.png', class: 'pic', caption: ''},
 		{graphic: 'media/cnc/cncLapsePir.m4v', class: 'fullVid', caption: ''},
 		{graphic: 'media/cnc/cncLapseSide.m4v', class: 'wideVid', caption: '...Insert B&T info caption here...'},
@@ -72,7 +72,6 @@ var des = new Skill('Design',
 	{ name: 'Woodshop', link: '',slide: [
 		{graphic: 'media/skuComp.png', class: 'pic', caption: ''},
 		{graphic: 'media/skuBoard.png', class: 'opacity75', caption: ''},
-		{graphic: 'media/skuSkell.png', class: 'pix', caption: 'Majority of the Shed was built with used wood. Which made it cheap, but presented design challenges. Like old 2x4s that are literally 2x4 inches.'},
 		{graphic: 'media/skuShed.png', class: 'opacity75', caption: ''}
 	]},
 	{ name: 'Stincils', link: '', slide: [
@@ -86,17 +85,24 @@ var des = new Skill('Design',
 
 //-----------------------------------------------------------------------------------------------------------
 var woo = new Skill('Woodworking',
-	{ name: 'Mugs', link: 'https://www.instagram.com/woodcraftersdesign/', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'mug caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'mug caption 2 here....'}
-	]},
 	[{ name: 'Shed', link: '', slide: [
-		{graphic: 'SVGs/squ.svg', class: 'svg', caption: 'shed caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'shede caption 2 here....'}
+		{graphic: 'media/shdBobShd.png', class: 'fullpic', caption: ''},
+		{graphic: 'media/skuSkell.png', class: 'pix', caption: 'Majority of the Shed was built with used wood. Which made it cheap, but presented design challenges. Like old 2x4s that are literally 2x4 inches.'},
+		{graphic: 'media/shdInside.png', class: 'pic', caption: ''},
+		{graphic: 'media/shdHalf.png', class: 'pic', caption: '•	No shed is complete without a rooftop garden! Compliments to the succulents - they don’t need much water or soil, which keeps the roof from caving in. '},
+		{graphic: 'media/shdEmily.png', class: 'pic', caption: ''},
+		{graphic: 'media/shdDone.png', class: 'pic', caption: ''},
+		{graphic: 'media/shdOops.png', class: 'pic', caption: "Oops... Well, Always make sure and check You have got relief space before you go skill sawin' willy-nilly. '"},
 	]},
 	{ name: 'Critter Block', link: '', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'cr caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'cr caption 2 here....'}
+		{graphic: 'media/criSqu.png', class: 'pic', caption: ''},
+		{graphic: 'media/criSaw.png', class: 'squarePic', caption: ''},
+		{graphic: 'media/criAll5.png', class: 'squarePic', caption: ''}
+	]},
+	{ name: 'Mugs', link: 'https://www.instagram.com/woodcraftersdesign/', slide: [
+		{graphic: 'media/mugLathe.m4v', class: 'wideVid', caption: ''},
+		{graphic: 'media/mugStand.png', class: 'pic', caption: ''},
+		{graphic: 'media/mugMug.png', class: 'squarePic', caption: ''}
 	]}
 ]);
 
