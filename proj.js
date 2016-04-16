@@ -50,29 +50,38 @@ var mic = new Skill('Microcontroller & CNC',
 
 	]},
 	{ name: 'LCD Display', link: '', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'media/lcdDisplay.png', class: 'pic', caption: ''},
+		{graphic: 'media/lcdSnes.m4v', class: 'wideVid', caption: ''},
+		{graphic: 'media/lcdSnes.png', class: 'pic', caption: ''}
 	]},
 	{ name: 'C++ Driver', link: '', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'Place caption 1 here....'}
+		{graphic: 'media/ardard.png', class: '', caption: 'The Arduino Uno, my gateway drug to Computer Programing, microcontrollers and more...'},
+		{graphic: 'media/ardDriver.png', class: 'pic', caption: ''},
+		{graphic: 'media/ardXYZ.png', class: 'pic', caption: ''},
+		{graphic: 'media/ardboard.png', class: 'pic', caption: '•	Each Stepper Motor with four coils is represented by a LED - Phun and fashionable, yes. But also, a nice way to track and set single, double, triple step firing actions.'}
 	]}
 ]);
 
 //-----------------------------------------------------------------------------------------------------------
 var des = new Skill('Design',
-	[{ name: 'Stincils', link: '', slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'stin caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'stin caption 2 here....'}
+	[{ name: 'Clock', link: '',slide: [
+		{graphic: 'media/clkCog.svg', class: 'svg', caption: ''},
+		{graphic: 'media/clkSnes.png', class: 'pic', caption: ''},
+		{graphic: 'media/clkParts2.png', class: 'customPngFull', caption: "Many of the Wooden clock pieces for this project were inspired by Brian's Law wooden Clocks at www.woodenClocks.co.uk"}
 	]},
 	{ name: 'Woodshop', link: '',slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'woo caption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'woo caption 2 here....'}
+		{graphic: 'media/skuComp.png', class: 'pic', caption: ''},
+		{graphic: 'media/skuBoard.png', class: 'opacity75', caption: ''},
+		{graphic: 'media/skuSkell.png', class: 'pix', caption: 'Majority of the Shed was built with used wood. Which made it cheap, but presented design challenges. Like old 2x4s that are literally 2x4 inches.'},
+		{graphic: 'media/skuShed.png', class: 'opacity75', caption: ''}
 	]},
-	{ name: 'Clock', link: '',slide: [
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'clockcaption 1 here....'},
-		{graphic: 'SVGs/tools.svg', class: 'svg', caption: 'clocke caption 2 here....'}
-	]},
+	{ name: 'Stincils', link: '', slide: [
+		{graphic: 'media/stiSkyPic.png', class: 'pic', caption: ''},
+		{graphic: 'media/stiSkySti.png', class: 'customPngFull2', caption: ''},
+		{graphic: 'media/stiSpoon.png', class: 'pic', caption: ''},
+		{graphic: 'media/stiBay.png', class: 'customPngFull2', caption: ''},
+		{graphic: 'media/stiMug.png', class: '', caption: ''}
+	]}
 ]);
 
 //-----------------------------------------------------------------------------------------------------------

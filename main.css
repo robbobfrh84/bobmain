@@ -75,6 +75,29 @@ body {
   box-shadow: 0 0 2px 2px rgba(0,0,0,0.2);
 }
 
+.customPngFull {
+  width: 60vw;
+  height: 35vw;
+  max-width: 694px;
+  max-height: 405px;
+  min-width: 461px;
+  min-height: 269px;
+  margin-top: 1.5%;
+  margin-bottom: 1.2%;
+}
+
+.customPngFull2 {
+  width: 60vw;
+  height: 32vw;
+  max-width: 694px;
+  max-height: 370px;
+  min-width: 461px;
+  min-height: 245px;
+  opacity: 0.75;
+  margin-top: 2.8%;
+  margin-bottom: 2.8%;
+}
+
 .customSvg {
   width: 51%;
   height: 30%;
@@ -130,6 +153,9 @@ video {
 
 .noBoxShaddow {
   box-shadow: 0 0 20px 20px rgba(0,200,0,0.9);
+}
+.opacity75 {
+  opacity: 0.75;
 }
 
  /* -----------------       info text styles    ------------------------------*/
