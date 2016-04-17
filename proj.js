@@ -16,14 +16,14 @@ var web = new Skill('Web Development',
   	{graphic: 'media/riiCnr.png', class: 'customPng', caption: ''}
 	]},
 	{ name: 'Sudoku', link: 'http://robbobfrh84.github.io/Sudoku/sudoku', slide: [
-		{graphic: 'media/sudFull.png', class: 'pic', caption: ''},
+		{graphic: 'media/sudFull.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/sudPyth.m4v', class: 'wideVidDark', caption: '•	To implement thousands of unique games, I wrote a python program to generate possible games and remove set amounts of random numbers depending on difficulty.'},
 		{graphic: 'media/sudPlay.m4v', class: 'wideVid', caption: ''},
-		{graphic: 'media/sudCom.png', class: 'pic', caption: ''}
+		{graphic: 'media/sudCom.jpg', class: 'pic', caption: ''}
 	]},
 	{ name: 'Portfolio', link: 'http://www.bobma.in', slide: [
-		{graphic: 'media/portWireframe.svg', class: 'customSvg', caption: ''},
-		{graphic: 'media/portCode.png', class: 'pic', caption: ''},
+		{graphic: 'media/portWireframe.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/portCode.jpg', class: 'pic', caption: ''},
   	{graphic: 'media/portPlay.m4v', class: 'wideVidDark', caption: ''}
 	]}
 ]);
@@ -32,33 +32,33 @@ var web = new Skill('Web Development',
 var mic = new Skill('Microcontroller & CNC',
 	[{ name: 'CNC', link: 'https://www.instagram.com/woodcraftersdesign/', slide: [
 		{graphic: 'media/cnc/cncLapseCog.m4v', class: 'fullVid', caption: ''},
-		{graphic: 'media/cnc/cncSnesCogLcd.png', class: 'pic', caption: ''},
-		{graphic: 'media/cnc/cncSoundBox.png', class: 'pic', caption: '•	After some calibration and testing. I realized I was going to need to build a sound box before starting any major projects. Luckily, had some redwood tongue and groove lying around.'},
+		{graphic: 'media/cnc/cncSnesCogLcd.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/cnc/cncSoundBox.jpg', class: 'pic', caption: '•	After some calibration and testing, I realized I was going to need to build a sound box before starting any major projects. Luckily, had some redwood tongue and groove lying around.'},
 		{graphic: 'media/cnc/cncSnes.m4v', class: 'wideVid', caption: 'An old Super Nintendo controller came in handy as a fun hack for XYZ free-flow routing.'},
-		{graphic: 'media/cnc/cnc2d.png', class: 'pic', caption: 'XY-axis set up for basic Gcode conversion and testing with Python & Arduino. Kudos to good ‘ol Pythagoras for the math help.'},
-		{graphic: 'media/cnc/cncBuildZ.png', class: 'pic', caption: ''},
+		{graphic: 'media/cnc/cnc2d.jpg', class: 'pic', caption: 'XY-axis set up for basic Gcode conversion and testing with Python & Arduino. Kudos to good ‘ol Pythagoras for the math help.'},
+		{graphic: 'media/cnc/cncBuildZ.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/cnc/cncLapsePir.m4v', class: 'fullVid', caption: ''},
-		{graphic: 'media/cnc/cncLapseSide.m4v', class: 'wideVid', caption: '...Insert B&T info caption here...'},
-		{graphic: 'media/cnc/cncPro.png', class: 'pic', caption: ''},
-		{graphic: 'media/cnc/cncBlkTkl.png', class: 'pic', caption: ''},
+		{graphic: 'media/cnc/cncLapseSide.m4v', class: 'wideVid', caption: '•	First moderate CNC project: Building a Block and Tackle necessary Pirate Hoisting.'},
+		{graphic: 'media/cnc/cncPro.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/cnc/cncBlkTkl.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/cnc/cncPully.m4v', class: 'wideVid', caption: ''}
 	]},
 	{ name: 'Gcode Editor', link: '', slide: [
-		{graphic: 'media/gcoIcons.svg', class: '', caption: "Using the Serial-port, we're able to Communicate messages and directions from python to Arduino and back."},
-		{graphic: 'media/gcoScreen.png', class: 'pic', caption: ''},
+		{graphic: 'media/gcoIcons.png', class: '', caption: "Using the Serial-port, we're able to Communicate messages and directions from python to Arduino and back."},
+		{graphic: 'media/gcoScreen.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/gcoVine.m4v', class: 'wideVid', caption: ''}
 
 	]},
 	{ name: 'LCD Display', link: '', slide: [
-		{graphic: 'media/lcdDisplay.png', class: 'pic', caption: ''},
+		{graphic: 'media/lcdDisplay.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/lcdSnes.m4v', class: 'wideVid', caption: ''},
-		{graphic: 'media/lcdSnes.png', class: 'pic', caption: ''}
+		{graphic: 'media/lcdSnes.jpg', class: 'pic', caption: ''}
 	]},
 	{ name: 'C++ Driver', link: '', slide: [
-		{graphic: 'media/ardard.png', class: '', caption: 'The Arduino Uno, my gateway drug to Computer Programing, microcontrollers and more...'},
-		{graphic: 'media/ardDriver.png', class: 'pic', caption: ''},
-		{graphic: 'media/ardXYZ.png', class: 'pic', caption: ''},
-		{graphic: 'media/ardboard.png', class: 'pic', caption: '•	Each Stepper Motor with four coils is represented by a LED - Phun and fashionable, yes. But also, a nice way to track and set single, double, triple step firing actions.'}
+		{graphic: 'media/ardArd.png', class: '', caption: 'The Arduino Uno, my gateway drug to Computer Programing, microcontrollers and more...'},
+		{graphic: 'media/ardDriver.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/ardXYZ.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/ardboard.jpg', class: 'pic', caption: '•	Each Stepper Motor with four coils is represented by a LED - Phun and fashionable, yes. But also, a nice way to track and set single, double, triple step firing actions.'}
 	]}
 ]);
 
@@ -66,18 +66,18 @@ var mic = new Skill('Microcontroller & CNC',
 var des = new Skill('Design',
 	[{ name: 'Clock', link: '',slide: [
 		{graphic: 'SVGs/cog.svg', class: 'svg', caption: ''},
-		{graphic: 'media/clkSnes.png', class: 'pic', caption: ''},
+		{graphic: 'media/clkSnes.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/clkParts2.png', class: 'customPngFull', caption: "Many of the Wooden clock pieces for this project were inspired by Brian's Law wooden Clocks at www.woodenClocks.co.uk"}
 	]},
 	{ name: 'Woodshop', link: '',slide: [
-		{graphic: 'media/skuComp.png', class: 'pic', caption: ''},
+		{graphic: 'media/skuComp.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/skuBoard.png', class: 'opacity75', caption: ''},
 		{graphic: 'media/skuShed.png', class: 'opacity75', caption: ''}
 	]},
 	{ name: 'Stincils', link: '', slide: [
-		{graphic: 'media/stiSkyPic.png', class: 'pic', caption: ''},
+		{graphic: 'media/stiSkyPic.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/stiSkySti.png', class: 'customPngFull2', caption: ''},
-		{graphic: 'media/stiSpoon.png', class: 'pic', caption: ''},
+		{graphic: 'media/stiSpoon.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/stiBay.png', class: 'customPngFull2', caption: ''},
 		{graphic: 'media/stiMug.png', class: '', caption: ''}
 	]}
@@ -87,22 +87,22 @@ var des = new Skill('Design',
 var woo = new Skill('Woodworking',
 	[{ name: 'Shed', link: '', slide: [
 		{graphic: 'media/shdBobShd.png', class: 'fullpic', caption: ''},
-		{graphic: 'media/skuSkell.png', class: 'pix', caption: 'Majority of the Shed was built with used wood. Which made it cheap, but presented design challenges. Like old 2x4s that are literally 2x4 inches.'},
-		{graphic: 'media/shdInside.png', class: 'pic', caption: ''},
-		{graphic: 'media/shdHalf.png', class: 'pic', caption: '•	No shed is complete without a rooftop garden! Compliments to the succulents - they don’t need much water or soil, which keeps the roof from caving in. '},
-		{graphic: 'media/shdEmily.png', class: 'pic', caption: ''},
-		{graphic: 'media/shdDone.png', class: 'pic', caption: ''},
-		{graphic: 'media/shdOops.png', class: 'pic', caption: "Oops... Well, Always make sure and check You have got relief space before you go skill sawin' willy-nilly. '"},
+		{graphic: 'media/skuSkell.jpg', class: 'pic', caption: 'Majority of the Shed was built with used wood. Which made it cheap, but presented design challenges. Like old 2x4s that are literally 2x4 inches.'},
+		{graphic: 'media/shdInside.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/shdHalf.jpg', class: 'pic', caption: '•	No shed is complete without a rooftop garden! Compliments to the succulents - they don’t need much water or soil, which keeps the roof from caving in. '},
+		{graphic: 'media/shdEmily.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/shdDone.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/shdOops.jpg', class: 'pic', caption: "Oops... Well, Always make sure and check You have got relief space before you go skill sawin' willy-nilly. '"},
 	]},
 	{ name: 'Critter Block', link: '', slide: [
-		{graphic: 'media/criSqu.png', class: 'pic', caption: ''},
-		{graphic: 'media/criSaw.png', class: 'squarePic', caption: ''},
-		{graphic: 'media/criAll5.png', class: 'squarePic', caption: ''}
+		{graphic: 'media/criSqu.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/criSaw.jpg', class: 'squarePic', caption: ''},
+		{graphic: 'media/criAll5.jpg', class: 'squarePic', caption: ''}
 	]},
 	{ name: 'Mugs', link: 'https://www.instagram.com/woodcraftersdesign/', slide: [
 		{graphic: 'media/mugLathe.m4v', class: 'wideVid', caption: ''},
-		{graphic: 'media/mugStand.png', class: 'pic', caption: ''},
-		{graphic: 'media/mugMug.png', class: 'squarePic', caption: ''}
+		{graphic: 'media/mugStand.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/mugMug.jpg', class: 'squarePic', caption: ''}
 	]}
 ]);
 
@@ -170,7 +170,7 @@ function projSwap(pos, animationDown,osCnt){
 		var setCaption ='style="visibility: hidden;"';}
 
 		var fileType = skills[osCnt].projects[pos].slide[i].graphic.split('.').pop();
-		if (fileType === 'svg' || fileType === 'png'){
+		if (fileType === 'svg' || fileType === 'png' || fileType === 'jpg'){
 			insertMedia.innerHTML = '<div class="'+slideState+'"><div><img src='
 	  	+skills[osCnt].projects[pos].slide[i].graphic+ ' class='+skills[osCnt].projects[pos].slide[i].class+
 			' /></div><div class="carousel-caption" ><p class="mediaGraph scrollVisable" '+setCaption+'>'
