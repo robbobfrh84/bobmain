@@ -57,7 +57,7 @@ body {
 .carousel-inner > .item > a > .pic, img, video {
     width: 45%;
     height: 30%;
-    /*min-height: 230px;*/
+    min-height: 230px;
     margin: auto;
     margin-top: 3.15%;
     margin-bottom: 4.5%;
