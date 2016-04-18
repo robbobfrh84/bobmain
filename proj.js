@@ -22,7 +22,7 @@ var web = new Skill('Web Development',
 		{graphic: 'media/sudCom.jpg', class: 'pic', caption: ''}
 	]},
 	{ name: 'Portfolio', link: 'http://www.bobma.in', slide: [
-		{graphic: 'media/portWireframe.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/portWireFrame.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/portCode.jpg', class: 'pic', caption: ''},
   	{graphic: 'media/portPlay.m4v', class: 'wideVidDark', caption: ''}
 	]}
@@ -74,12 +74,12 @@ var des = new Skill('Design',
 		{graphic: 'media/skuBoard.png', class: 'opacity75', caption: ''},
 		{graphic: 'media/skuShed.png', class: 'opacity75', caption: ''}
 	]},
-	{ name: 'Stincils', link: '', slide: [
-		{graphic: 'media/stiSkyPic.jpg', class: 'pic', caption: ''},
-		{graphic: 'media/stiSkySti.png', class: 'customPngFull2', caption: ''},
-		{graphic: 'media/stiSpoon.jpg', class: 'pic', caption: ''},
-		{graphic: 'media/stiBay.png', class: 'customPngFull2', caption: ''},
-		{graphic: 'media/stiMug.png', class: '', caption: ''}
+	{ name: 'Stencils', link: '', slide: [
+		{graphic: 'media/steSkyPic.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/steSkySti.png', class: 'customPngFull2', caption: ''},
+		{graphic: 'media/steSpoon.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/steBay.png', class: 'customPngFull2', caption: ''},
+		{graphic: 'media/steMug.png', class: '', caption: ''}
 	]}
 ]);
 
@@ -127,7 +127,8 @@ function projSwap(pos, animationDown,osCnt){
 		if(animationDown){regElmAnimate(deSelect, 'height', 0.1, 1.05, 'vw', 4.5, 2.8,'none');
 		} else { deSelect.setAttribute('style','height: 2.8;');}
 		regElmAnimate(projTab, 'height', 0.1, 1.05, 'vw', 3.5, 4.5,'none');
-		if(uploadDone){regElmAnimate(projInfo,'opacity',0.2, 1,'',1,0,'none');}
+		//if(uploadDone){regElmAnimate(projInfo,'opacity',0.2, 1,'',1,0,'none');}
+		projInfo.style.opacity = 0;
 		if(uploadDone){setTimeout(function(){regElmAnimate(projInfo,'opacity',0.03, 1.1,'',0,1,'none');},150);}
 		setTimeout(function(){projTab.style.backgroundColor = 'rgba(102,155,235,0.3)';},300);
 		oldPos = pos; }
@@ -141,19 +142,20 @@ function projSwap(pos, animationDown,osCnt){
 		document.getElementById('linkHolder').setAttribute('href',skills[osCnt].projects[pos].link)
 	} else { linkIcon.style.display = 'none'; }
 
-
-	while (carouselCnt.firstChild) {
-	  carouselCnt.removeChild(carouselCnt.firstChild);
-	}
-	//var carousel = document.getElementById('carousel');
+  var previousFamily = carouselCnt.childNodes.length;
+	console.log('Previous Family: ',previousFamily);
+	// need to use items[0] like below to isolate pervioius family and remove after new family placed.
 	var items = carousel.getElementsByClassName('item');
-
 	while (items[0]) {
   	items[0].parentNode.removeChild(items[0]);
 	}
 
+	while (carouselCnt.firstChild) {
+		carouselCnt.removeChild(carouselCnt.firstChild);
+	}
+
 	for (var i = 0; i < skills[osCnt].projects[pos].slide.length; i++){
-		console.log(skills[osCnt].projects[pos].slide[i].graphic);
+		// console.log(skills[osCnt].projects[pos].slide[i].graphic);
 		var slideDot = document.createElement("LI");
     slideDot.setAttribute('data-target','#myCarousel');
 		slideDot.setAttribute('data-slide-to',i);
@@ -172,7 +174,7 @@ function projSwap(pos, animationDown,osCnt){
 		var fileType = skills[osCnt].projects[pos].slide[i].graphic.split('.').pop();
 		if (fileType === 'svg' || fileType === 'png' || fileType === 'jpg'){
 			insertMedia.innerHTML = '<div class="'+slideState+'"><div><img src='
-	  	+skills[osCnt].projects[pos].slide[i].graphic+ ' class='+skills[osCnt].projects[pos].slide[i].class+
+	  	+skills[osCnt].projects[pos].slide[i].graphic+' class='+skills[osCnt].projects[pos].slide[i].class+
 			' /></div><div class="carousel-caption" ><p class="mediaGraph scrollVisable" '+setCaption+'>'
 				+skills[osCnt].projects[pos].slide[i].caption+'</p></div></div>';
 		}
@@ -185,7 +187,8 @@ function projSwap(pos, animationDown,osCnt){
 		}
     carousel.insertBefore(insertMedia.firstChild, prevAP);
 	}
-	console.log(skills[osCnt].projects[pos]);
+	var items = carousel.getElementsByClassName('item');
+	console.log('New Family: ', items);
 }
 
 
