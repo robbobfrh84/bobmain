@@ -38,7 +38,7 @@ var mic = new Skill('Microcontroller & CNC',
 		{graphic: 'media/cnc/cnc2d.jpg', class: 'pic', caption: 'XY-axis set up for basic Gcode conversion and testing with Python & Arduino. Kudos to good ‘ol Pythagoras for the math help.'},
 		{graphic: 'media/cnc/cncBuildZ.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/cnc/cncLapsePir.m4v', class: 'fullVid', caption: ''},
-		{graphic: 'media/cnc/cncLapseSide.m4v', class: 'wideVid', caption: '•	First moderate CNC project: Building a Block and Tackle necessary Pirate Hoisting.'},
+		{graphic: 'media/cnc/cncLapseSide.m4v', class: 'wideVid', caption: '•	First moderate CNC project: Building a Block and Tackle, necessary for Pirate Hoisting.'},
 		{graphic: 'media/cnc/cncPro.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/cnc/cncBlkTkl.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/cnc/cncPully.m4v', class: 'wideVid', caption: ''}

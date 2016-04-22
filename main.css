@@ -219,6 +219,9 @@ video {
   height: 6.5vw; /* need to change maths for max/min if changed*/
   margin: auto;
   margin-bottom: 1%;
+  /*width: 80%;
+  height: 6.5%;
+  margin-bottom: -6%;*/
   padding-top: 0.5%;
   border-radius: 1%;
   box-shadow: 0 0 2px 2px rgba(0,0,0,0.2);
@@ -375,7 +378,7 @@ video {
 .canSelectText{ -moz-user-select: -moz-text; -khtml-user-select: text; -webkit-user-select: text;
   -ms-user-select: text; user-select: text; }
 
-.scrollVisable::-webkit-scrollbar { -webkit-appearance: none; width: 7px; }
+/*.scrollVisable::-webkit-scrollbar { -webkit-appearance: none; width: 7px; }*/
 .scrollVisable::-webkit-scrollbar-thumb { border-radius: 4px;
   background-color: rgba(0,0,0,.5); -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5); }
 
@@ -404,6 +407,11 @@ video {
   padding: 11%;
   padding-top: 1%;
   overflow: auto;
+}
+
+.writeUps{
+  position: absolute;
+  visibility: hidden;
 }
 
 /*----------------------------NOTES---------------------------------------------
