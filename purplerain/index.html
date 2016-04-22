@@ -33,9 +33,7 @@
             var blk = document.createElement('div');
             blk.className = blkClass; blk.id = 'blk'+i;
             blk.style.backgroundColor = bgColor;
-            blk.setAttribute('onmousemove', 'draw(blk'+i+')');
-            blk.setAttribute('onmousedown', 'mouseState(true, blk'+i+')');
-            blk.setAttribute('onmouseup', 'mouseState(false)');
+            blk.setAttribute('onmousemove', 'newDrop(100,'+i+')');
             ayteHouse.appendChild(blk);
           }
 
@@ -43,13 +41,17 @@
         function purpleRain(){
           if (purpleRainGo) { purpleRainGo = false; clearInterval(rain);
           } else { purpleRainGo = true;
-          rain = setInterval(function(){ newDrop(random(50,300)); }, 200);
+          rain = setInterval(function(){ newDrop(random(20,300)); }, 200);
           }
         }
 
-        function newDrop(speed){
+        function newDrop(speed, hover){
           var loc = [0,-1,-2,-3,-4];
           var col = Math.floor(Math.random()*rows);
+          if(hover){
+            col = hover%rows; row = (hover-col)/rows;
+            loc = [row, row-1, row-2, row-3, row-4];
+          }
           var drop = setInterval(function(){
             loc = updateDrop(col, loc);
             if (loc[2] >= rows+1){ clearInterval(drop);}
@@ -62,25 +64,20 @@
           var drpR = Math.ceil(hexR/6);
           var drpB = Math.ceil(hexB/6);
           var hex = '#'+hexR.toString(16)+hexG+hexB.toString(16);
-
           for (var i = 0; i < 5; i++){
             var hRB = moveDrop(i,col,loc[i],hexR,hexG,hexB,drpR,drpB); hexR = hRB[0]; hexB = hRB[1];
           }
-          loc[0] += 1; loc[1] += 1; loc[2] += 1; loc[3] += 1; loc[4] += 1;
-          return loc;
+          loc[0] += 1; loc[1] += 1; loc[2] += 1; loc[3] += 1; loc[4] += 1; return loc;
         }
 
         function moveDrop(size,col,loc,hexR,hexG,hexB,drpR,drpB){
           hexR -= drpR;
           hexB -= drpB;
           var hex = '#'+hexR.toString(16)+hexG+hexB.toString(16);
-          if(loc >= 0 && loc <= rows-1){ var blk = document.getElementById('blk'+(col+(rows*loc)));
+          if(loc >= 0 && loc <= rows-1){
+            var blk = document.getElementById('blk'+(col+(rows*loc)));
             blk.style.backgroundColor = hex;
-            blk.style.width = 16-size+'px';
-            blk.style.height = 16-size+'px';
-            blk.style.margin = '-1px';
           }
-
           return [hexR,hexB];
         }
 
@@ -88,8 +85,6 @@
           return Math.floor(Math.random() * (max - min + 1) + min);
         }
         purpleRain();
-
-
       </script>
   </body>
 </html>
