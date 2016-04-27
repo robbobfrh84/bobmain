@@ -158,8 +158,12 @@ video {
   /*padding-bottom: 15%;*/
   margin-bottom: -18.8%;
   object-fit: cover;
+}
 
-
+.fullVidDark{ opacity: 0.8;
+  width: 100%;
+  margin-top: 0.25%;
+  margin-bottom: -18.8%;
 }
 
 .noBoxShaddow {
@@ -215,19 +219,19 @@ video {
   max-width: 485px; max-height: 75px;
   min-width: 322px; min-height: 42px;
   font-size: 14px;
-  width: 42vw; /* need to change maths for max/min if changed*/
-  height: 6.5vw; /* need to change maths for max/min if changed*/
+  width: 70%;
+  height: 10%;
   margin: auto;
-  margin-bottom: 1%;
-  /*width: 80%;
-  height: 6.5%;
-  margin-bottom: -6%;*/
-  padding-top: 0.5%;
+  margin-bottom: -7%;
+  padding: 0.5%;
   border-radius: 1%;
   box-shadow: 0 0 2px 2px rgba(0,0,0,0.2);
   background: rgba(0,0,0,0.5);
   overflow: auto;
 }
+.mediaGraph::-webkit-scrollbar { -webkit-appearance: none; width: 7px; }
+.mediaGraph::-webkit-scrollbar-thumb { border-radius: 4px;
+  background-color: rgba(0,0,0,.5); -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5); }
 
 .carousel-control.left, .carousel-control.right {
   background-image: none;
@@ -378,7 +382,7 @@ video {
 .canSelectText{ -moz-user-select: -moz-text; -khtml-user-select: text; -webkit-user-select: text;
   -ms-user-select: text; user-select: text; }
 
-/*.scrollVisable::-webkit-scrollbar { -webkit-appearance: none; width: 7px; }*/
+.scrollVisable::-webkit-scrollbar { -webkit-appearance: none; width: 7px; }
 .scrollVisable::-webkit-scrollbar-thumb { border-radius: 4px;
   background-color: rgba(0,0,0,.5); -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5); }
 

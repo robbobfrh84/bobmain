@@ -11,7 +11,7 @@ function Skill(skill, projects, slide){ //using Object Method here mostly for pr
 }
 
 var web = new Skill('Web Development',
-  [{ name: 'riiple', link: 'http://robbobfrh84.github.io/riiple/riipleProto1.html', slide: [
+	[{ name: 'riiple', link: 'http://robbobfrh84.github.io/riiple/riipleProto1.html', slide: [
 	  {graphic: 'media/riiPly.m4v', class: 'wideVid', caption: ''},
   	{graphic: 'media/riiCnr.png', class: 'customPng', caption: ''}
 	]},
@@ -25,6 +25,9 @@ var web = new Skill('Web Development',
 		{graphic: 'media/portWireFrame.jpg', class: 'pic', caption: ''},
 		{graphic: 'media/portCode.jpg', class: 'pic', caption: ''},
   	{graphic: 'media/portPlay.m4v', class: 'wideVidDark', caption: ''}
+	]},
+	{ name: 'Purple Rain', link: 'http://www.bobma.in/purplerain', slide: [
+		{graphic: 'media/prPlay.m4v', class: 'fullVidDark', caption: ''}
 	]}
 ]);
 
