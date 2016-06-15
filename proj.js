@@ -11,7 +11,20 @@ function Skill(skill, projects, slide){ //using Object Method here mostly for pr
 }
 
 var web = new Skill('Web Development',
-	[{ name: 'riiple', link: 'http://robbobfrh84.github.io/riiple/riipleProto1.html', slide: [
+	[{ name: 'Ayte-by8', link: 'http://www.bobma.in/ayte', slide: [
+		{graphic: 'media/ayteVidPart1b.m4v', class: 'wideVid', caption: ''},
+		{graphic: 'media/ayteGal.jpg', class: 'pic', caption: 'Ayte-by8 is an in-progress P2P social network project for pixel artists and animators!'},
+		{graphic: 'media/aytePubNub.png', class: '', caption: "Programmed with data streeming from PubNub, multiple artists can work on the same grid. In what's call a Pixel Chat!"},
+		{graphic: 'media/ayteVidPart2.m4v', class: 'wideVid', caption: ''},
+		{graphic: 'media/ayteLed.jpg', class: 'pic', caption: 'I created my large pixel display using LED strips and the new MKR1000 Arduino wifi microcontroller to display live art and animations!'},
+		{graphic: 'media/ayteLedStrip.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/ayteCncStart.jpg', class: 'pic', caption: 'To get a nice box-effect from the LEDs, I programmed the CNC router I built to mill square pockets into plywood that would distribute the light.'},
+		{graphic: 'media/ayteCutout.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/ayteVinyl.jpg', class: 'pic', caption: ''},
+		{graphic: 'media/ayteAll.jpg', class: 'pic', caption: 'Also, i used reflective tap as a backing to get as much out the glow as possible'},
+  	{graphic: 'media/ayteBrowser.jpg', class: 'pic', caption: ''}
+	]},
+	{ name: 'riiple', link: 'http://robbobfrh84.github.io/riiple/riipleProto1.html', slide: [
 	  {graphic: 'media/riiPly.m4v', class: 'wideVid', caption: ''},
   	{graphic: 'media/riiCnr.png', class: 'customPng', caption: ''}
 	]},
