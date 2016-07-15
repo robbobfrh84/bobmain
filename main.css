@@ -47,10 +47,25 @@ body {
 
 #myCarousel {
   opacity: 0;
+  height: 37.5vw;
+  max-height: 434px;
+  min-height: 288px
 }
+
+/*#caroBrace{
+  margin-top: -87.6%;
+  float: left;
+  display: inline-block;
+  font-size: 20px;
+  height: 37.5%;
+  min-height: 37.5;
+  min-width: 5px;
+  background-color: red;
+}*/
 
 .container-fixed {
   margin-top: -87.6%;
+  /*min-height: 37.5vw;*/
 }
 
 .carousel-inner > .item > .pic, img, video
