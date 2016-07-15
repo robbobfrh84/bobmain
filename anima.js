@@ -14,10 +14,7 @@ function drawGrid(numVLines,numHLines,thin,fifth,tenth,color){
       fat=tenth;
     }
     createLine(lines*i, 0 ,lines * i, 100, fat, color, 'vert'+i);
-}
-
-
-
+  }
   for (var i = 1; i < numHLines; i++){ fat = thin;
     if(i%5===0){fat=fifth;} if(i%10===0||i===0){fat=tenth;}
     createLine(0,hlines*i,100,hlines*i,fat,color,'horiz'+i);}}
@@ -83,56 +80,16 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
   btn.onmousedown = function(){ returnMainContent();
     dropL0.setAttributeNS(null, 'opacity', 0);
     dropL1.setAttributeNS(null, 'opacity', 0);
-
-    // if(uploadDone){setTimeout(function(){ $('#myCarousel').carousel('pause');},50);};
-
-    //if(uploadDone){ regElmAnimate(myCarousel, 'opacity', 0.07, 1, '', 1, 0,'none');}
-
     if(position===0){ leftDrop();
-//0000000!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-//       if (typeof slide1VideoElm !== 'undefined'){
-//         document.getElementById('slide1Div').removeChild(slide1VideoElm);
-//       }
-//       var slide1 = document.getElementById('slide1Img');
-//       slide1.style.display = 'initial';
-//       slide1.setAttribute('src','media/sud0.png');
-//       slide1.className = 'pic';
-//       document.getElementById('slide1cap').setAttribute('style','display: initial;');
-//
-//
-// //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       if (uploadDone){manualClick(allSkills);}
       dropL0.setAttributeNS(null,'x1',12.5+'%');
       dropL0.setAttributeNS(null,'x2',12.5+'%');
       linePulse(12.5,12.7,12.5,15.1,dropL0,true,0.5,1.15,'none');
       dropL1.setAttributeNS(null, 'x1', 12.5+'%');
       linePulse(12.5,15,5,15,dropL1,true,0.5,1.15,'none');
-}
-     if(position===1){  manualClick(allSkills);
-// 1111111!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-      // document.getElementById('slide1Img').setAttribute('src','');
-      // document.getElementById('slide1Img').className = '';
-
-      // var video = document.createElement("VIDEO");
-      // var source = document.createElement("SOURCE");
-      // var slide1Div = document.getElementById('slide1Div')
-      // video.id = 'slide1VideoElm';
-      // video.className = 'squareVid';
-      //
-      // video.setAttribute('autoplay','');
-      // video.setAttribute('loop','');
-      // video.setAttribute('muted','true');
-      //
-      // source.id = 'slide1Vid'; source.setAttribute('src','media/cncVid0.mov');
-      // slide1Div.insertBefore(video, slide1Div.firstChild);
-      // video.insertBefore(source, video.firstChild);
-      //
-      // document.getElementById('slide1cap').setAttribute('style','display: none;');
-      // document.getElementById('slide1Img').setAttribute('style','display: none;');
-
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    }
+    if(position===1){
+      if (uploadDone){manualClick(allSkills);}
       dropL0.setAttributeNS(null, 'x1', 37.5+'%');
       dropL0.setAttributeNS(null, 'x2', 37.5+'%');
       linePulse(37.5,12.7,37.5,15.1,dropL0,true,0.5,1.15,'none');
@@ -141,17 +98,8 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       dropL.setAttributeNS(null, 'opacity', 0);
       linePulse(37.5,15,5,15,dropL1,true,0.5,1.15,leftDrop);
     }
-    if(position===2){  manualClick(allSkills);
-//2222222!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//       if (typeof slide1VideoElm !== 'undefined'){
-//         document.getElementById('slide1Div').removeChild(slide1VideoElm);
-//       }
-//       document.getElementById('slide1cap').setAttribute('style','display: none;');
-//       var slide1 = document.getElementById('slide1Img');
-//       slide1.style.display = 'initial';
-//       slide1.setAttribute('src','SVGs/cog.svg');
-//       slide1.className = 'SVG';
-// //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    if(position===2){
+      if (uploadDone){manualClick(allSkills);}
       dropL0.setAttributeNS(null, 'x1', 62.5+'%');
       dropL0.setAttributeNS(null, 'x2', 62.5+'%');
       linePulse(62.5,12.7,62.5,15.1,dropL0,true,0.5,1.15,'none');
@@ -160,28 +108,26 @@ function createBarBtn(position,btn,l,box,drop,speed1,ramp1,speed2,ramp2){
       dropR.setAttributeNS(null, 'opacity', 0);
       dropL.setAttributeNS(null, 'opacity', 0);
       linePulse(62.5,15,95.3,15,dropL1,true,0.5,1.15,rightDrop);
-}
-    if(position===3){ rightDrop(); manualClick(allSkills);
-//3333333!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//       if (typeof slide1VideoElm !== 'undefined'){
-//         document.getElementById('slide1Div').removeChild(slide1VideoElm);
-//       }
-//       document.getElementById('slide1cap').setAttribute('style','display: none;');
-//       var slide1 = document.getElementById('slide1Img');
-//       slide1.style.display = 'initial';
-//       slide1.setAttribute('src','SVGs/squ.svg');
-//       slide1.className = 'SVG';
-// //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    }
+    if(position===3){ rightDrop();
+      if (uploadDone){manualClick(allSkills);}
       dropL0.setAttributeNS(null, 'x1', 87.5+'%');
       dropL0.setAttributeNS(null, 'x2', 87.5+'%');
       linePulse(87.5,12.7,87.5,15.1,dropL0,true,0.5,1.15,'none');
       dropL1.setAttributeNS(null, 'x1', 87.5+'%');
       dropL1.setAttributeNS(null, 'x2', 95.3+'%');
       linePulse(87.5,15,95.3,15,dropL1,true,0.5,1.15,'none');
+    }
+    if (uploadDone){
+      projSwap(0,false,position);
+      swapProjs(1,true,position);
+    } else {
+      projSwap(landProj,false,position);
+      swapProjs(1,true,landSkill);
+    }
+  }
 }
-    projSwap(0,false,position);
 
-    swapProjs(1,true,position); }}
 function leftDrop(){
   dropL.setAttributeNS(null, 'opacity', 1);
   dropR.setAttributeNS(null, 'opacity', 0);
@@ -243,14 +189,13 @@ function returnMainContent(){ hideMorse = true;
     document.getElementById('slide1Div').removeChild(slide1VideoElm);}}
 
 function swapProjs(dir,fade,position){
-
+  console.log("anima.js: ",dir,fade,position);
   if (uploadDone){
     var goldLine = document.getElementById('goldLine'+sCnt);
     if (goldLine.getAttribute('opacity') < 1){
       goldLine.setAttributeNS(null,'opacity','start');
     } else { console.log('else');
       goldLine.setAttributeNS(null,'opacity',0);}}
-
   if (sCnt%2 === 0){
     skillsBox[sCnt].style.fill = 'url(#grad1)';
   } else {
@@ -258,31 +203,26 @@ function swapProjs(dir,fade,position){
   skillsBox[sCnt].style.filter = 'none';
   //skillsBox[sCnt].style.opacity = 0.75;
   mainSVG.insertBefore(skillsBox[sCnt],vert1);
-  sCnt=position; // if (position === 'n'){ sCnt+=dir;}else{sCnt=position;}
+  sCnt=position;
+  // if (position === 'n'){ sCnt+=dir;}else{sCnt=position;}
   // if (sCnt >= skills.length){ sCnt=0;} if (sCnt <= -1){ sCnt=skills.length-1;}
   elmAnimate(document.getElementById('goldLine'+sCnt), 'opacity', 0.01, 1,'',0,1,'none');
-
   if (fade) {
     mainSVG.appendChild(skillsBox[sCnt]);
     mainSVG.appendChild(skillsTxt[sCnt]);
     mainSVG.appendChild(skillsArr[sCnt]);
-
     skillsBox[sCnt].style.filter = 'url(#dropShad)';
     elmAnimate(skillsBox[sCnt], 'opacity', 0.01, 1,'',0,0.75,'none');
-
-    if (projBar.getAttribute('opacity') < 1){ console.log('AHHH');
+    if (projBar.getAttribute('opacity') < 1){
     if(!noAnim){ reSetProj(); }
     } else {
       if(!noAnim){ regElmAnimate(projBar,'opacity',0.01, 1.1,'',1,0,reSetProj);}
     }
-
     if (projInfo.getAttribute('opacity') >= 1){
       //regElmAnimate(projInfo,'opacity',0.03, 1.1,'',1,0,'none');
     }
     //regElmAnimate(projInfo,'opacity',0.03, 1.1,'',1,0,'none');
-
   }else{ reSetProj();}}
-
 
 function reSetProj(){
   var numOfProjs = skills[sCnt].projects.length;
@@ -299,7 +239,6 @@ function reCar(){
   regElmAnimate(myCarousel, 'opacity', 0.05, 1, '', 0, 1,'none');
   regElmAnimate(projInfo,'opacity',0.05, 1,'',0,1,'none');
 }
-
 
 function manualClick(allSkills){
     var evt = document.createEvent("MouseEvents");
@@ -389,7 +328,7 @@ function morDownE(){
   setTimeout(function(){morUpE();},delay);}
 
 ////////////////////////////////////////////////////////////////////////////////
-//////////          Random Functions         ///////////////////////////////////
+//////////          Basic  Functions         ///////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 function rgbR(){
   return [random(0,255), random(0,255), random(0,255)];
@@ -399,3 +338,11 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 //example: lnID.setAttributeNS(null, 'stroke', 'rgb('+rgbR()+')');
+function wordInArrayCheck(word, array){
+	for (var i = 0; i < array.length; i++){
+		if (word === array[i]){
+			return true;
+		}
+	}
+	return false;
+}

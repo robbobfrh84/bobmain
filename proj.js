@@ -81,9 +81,9 @@ var mic = new Skill('Microcontroller & CNC',
 //-----------------------------------------------------------------------------------------------------------
 var des = new Skill('Design',
 	[{ name: 'Clock', link: '',slide: [
+		{graphic: 'media/clkParts2.png', class: 'customPngFull', caption: ''},
 		{graphic: 'SVGs/cog.svg', class: 'svg', caption: ''},
-		{graphic: 'media/clkSnes.jpg', class: 'pic', caption: ''},
-		{graphic: 'media/clkParts2.png', class: 'customPngFull', caption: "Many of the Wooden clock pieces for this project were inspired by Brian's Law wooden Clocks at www.woodenClocks.co.uk"}
+		{graphic: 'media/clkSnes.jpg', class: 'pic', caption: ''}
 	]},
 	{ name: 'Woodshop', link: '',slide: [
 		{graphic: 'media/skuComp.jpg', class: 'pic', caption: ''},
@@ -124,17 +124,11 @@ var woo = new Skill('Woodworking',
 
 
 var skills = [web,mic,des,woo];
-var sCnt = 0; var oldPos=1;
+// var sCnt = 1; var oldPos = 0;
 
-console.log('(new) skill: '+skills[sCnt].skill);
-console.log('New project: '+skills[sCnt].projects[0].name);
-console.log('New link: '   +skills[sCnt].projects[0].link);
-console.log('New graphic: '+skills[sCnt].projects[0].slide[0].graphic);
-console.log('New class: '+skills[sCnt].projects[0].slide[0].class);
-console.log('New caption: '+skills[sCnt].projects[0].slide[0].caption);
-
-
+// console.log('example to find elements in project objects: '+skills[sCnt].projects[0].slide[0].caption);
 function projSwap(pos, animationDown,osCnt){
+	console.log("proj.js: ",pos, animationDown,osCnt);
   if(typeof osCnt === 'undefined'){osCnt = sCnt;}
   if (pos !== oldPos){
 		//Transition effects: Drop, Pop, Fadeout, FadeIn, Color. AND, position update.

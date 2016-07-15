@@ -1,4 +1,3 @@
-// Opera 8.0+
 var browser = 'unknown';
 if ((!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0){
   browser = "Opera";}
@@ -10,8 +9,7 @@ if (/*@cc_on!@*/false || !!document.documentMode){
   browser = 'Internet Explorer';}
 if(!!window.chrome && !!window.chrome.webstore){
   browser = 'Crome';}
-
-console.log('Browser: '+browser);
+//console.log('Browser: '+browser);
 
 var fullpage = document.getElementById('mainSVG');
 
@@ -116,7 +114,7 @@ var allskills = document.getElementById('allskills');
 setTimeout(function(){fadeIn(allskills, 'opacity', 0.02,0,1);},1000);
 
 //-------------------------------------------------------------------------------------------------
-//----------         PROJECTS and PROJECT BAR LAYOUT          -------------------------------------
+//----------         PROJECTS, PROJECT BAR LAYOUT & LANDING PAGE QUERY       ----------------------
 //-------------------------------------------------------------------------------------------------
 
 var projln = createLine(5,55,95,55,3,'rgba(0,0,0,0.5)','projln',0);
@@ -134,53 +132,40 @@ var dropR = createRect(95,15,0.3,40,'url(#linGrad)',0,'none',0,'dropR');
 var dropL0 = createLine(12.5,12.7,12.5,15.1,6,'rgb(220,220,220)','dropL0',0);
 var dropL1 = createLine(12.5,15,5,15,3,'rgb(220,220,220)','dropL1',0);
 
+var queryString = window.location.href.split('?')[1];
+console.log("Query String", queryString);
+if (queryString){
+  queryString = queryString.split('%20');
+  queryString = queryString.join(' ');
+}
 
-// setTimeout(function(){webWin.onmouseover();},2500);
-setTimeout(function(){webWin.onmousedown(); uploadDone = true; },1800);
-// uploadDone = true;
+var landSkill = 0;
+var landProj = 0;
+for (var i = 0; i < skills.length; i++){
+  for (var j = 0; j < skills[i].projects.length; j++){
+    if (queryString === skills[i].projects[j].name){
+      console.log("Skill@: "+i+"Proj@: "+j);
+      landSkill = i;
+      landProj = j;
+    }
+  }
+}
 
+var oldPos;
+var sCnt = landSkill;
+landProj === 0 ? oldPos = 1 : oldPos = 0;
+var landDir = document.getElementById(skillsArr[landSkill].id)
+setTimeout(function(){landDir.onmousedown(); uploadDone = true; },1800);
+//...vvv OLD generic open @Skill 0 Project 0; Can delete after rigarous testing.....
+//setTimeout(function(){webWin.onmousedown(); uploadDone = true; },1800);
 var hideMorse = true;
 morUpE();
 setTimeout(function(){fadeIn(myCarousel, 'opacity', 0.02,0,1);},2000);
-// setTimeout(function(){fadeIn(projln, 'opacity', 0.02,0,1);},1500);
-// setTimeout(function(){fadeIn(leftDot, 'opacity', 0.02,0,1);},1500);
-// setTimeout(function(){fadeIn(rightDot, 'opacity', 0.02,0,1);},1500);
 setTimeout(function(){fadeIn(toolsIcon, 'opacity', 0.02,0,0.15);},1000);
 
-
-// setTimeout(function(){webWin.onmouseover();},2800);
-// setTimeout(function(){fadeIn(goldLine, 'opacity', 0.01,0,1);},4000);
-// webWin.onmousedown();
-// displaySwitch('visible',['projBar','myCarousel','projln','leftDot'
-//   ,'rightDot', 'projInfo']);
-// setTimeout(function(){fadeIn(projBar, 'opacity', 0.02,0,1);},4000);
-// setTimeout(function(){fadeIn(projln, 'opacity', 0.02,0,1);},3000);
-// setTimeout(function(){fadeIn(leftDot, 'opacity', 0.02,0,1);},2000);
-// setTimeout(function(){fadeIn(rightDot, 'opacity', 0.02,0,1);},2000);
-// setTimeout(function(){fadeIn(projInfo, 'opacity', 0.02,0,1);},3000);
-
-
-
-// function projDelay(){
+// --------- NOTES ---------
+// - Fade offset left-to-right in the box dispaly intro.
+// - I LIKE THE Idea of the solid color with drop shaddow for main stuff...
+// - underline balls on ends?
+// - already visited links change button's fill color.
 //
-// }
-// projDelay();
-
-// mainSVG.appendChild(moreBaseT);
-////// do class name for info contact shit
-// var projBar = document.getElementById('projBar')
-// mainSVG.appendChild(infotoolsSVG);
-// setTimeout(function(){mainSVG.appendChild(projBar);},5000);
-
-//check to see if you can delete document.getElmentByID with proj+i^^^
-
-/*////////// CHECKLIST NOTES ///////////////////////////////////////////////////
--
--
--
---------- NOTES ---------
-- Fade offset left-to-right in the box dispaly intro.
-- I LIKE THE Idea of the solid color with drop shaddow for main stuff...
-- underline balls on ends?
-- already visited links change button's fill color.
-*/
