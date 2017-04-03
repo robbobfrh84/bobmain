@@ -72,18 +72,24 @@ mainSVG.appendChild(bobMainS); mainSVG.appendChild(bobMain);
 setTimeout(function(){fadeIn(fullpage, 'box-shadow', 0.03, 0, 1);},3000);
 
 //-------------------------------Create Link buttons & icons with blowup effect--------------------
-createBtn('contact', 'contactCir');
-createBtn('about', 'aboutCir');
-createBtn('twit', 'twitCir');
-createBtn('git', 'gitCir');
-createBtn('insta', 'instaCir');
 createBtn('angel', 'angelCir');
-setTimeout(function(){blowUp(contact,contactCir,2,3,0,100);},1700);
-setTimeout(function(){blowUp(about,aboutCir,2,3,0,100);},1200);
-setTimeout(function(){blowUp(twit,twitCir,2,3,0,100);},1300);
-setTimeout(function(){blowUp(angel,angelCir,2,3,0,100);},1500);
-setTimeout(function(){blowUp(git,gitCir,2,2,0,100);},1400);
-setTimeout(function(){blowUp(insta,instaCir,2,3,0,100);},1600);
+createBtn('about', 'aboutCir');
+createBtn('contact', 'contactCir');
+createBtn('linkedin', 'linkedinCir');
+createBtn('codepen', 'codepenCir');
+createBtn('insta', 'instaCir');
+createBtn('git', 'gitCir');
+createBtn('twit', 'twitCir');
+setTimeout(function(){blowUp(angel,angelCir,2,3,0,100);},2250);
+setTimeout(function(){blowUp(about,aboutCir,2,3,0,100);},2500);
+setTimeout(function(){blowUp(contact,contactCir,2,3,0,100);},2750);
+setTimeout(function(){blowUp(linkedin,linkedinCir,2,3,0,100);},3000);
+setTimeout(function(){blowUp(codepen,codepenCir,2,3,0,100);},3000);
+setTimeout(function(){blowUp(insta,instaCir,2,3,0,100);},2750);
+setTimeout(function(){blowUp(git,gitCir,2,2,0,100);},2500);
+setTimeout(function(){blowUp(twit,twitCir,2,3,0,100);},2250);
+
+
 
 //----------------------------------Create background areas for rolling content--------------------
 mainSVG.appendChild(infoBox);
