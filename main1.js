@@ -39,10 +39,14 @@ var allBoxShadeBot = document.getElementById('allBoxShadeBot');
 function placetextBoxes(x,y,size,text,block){
   for (var i = 0; i < text.length; i++){
     block[i] = createBlockText((i*x)+0.6,y,size,0,'rgba(0,0,0,0.5)'
-    ,'inBk'+i, 'allIntro', text[i]); }
-  setTimeout(function(){arreyFade(block, 0.02, 0, 1);},500);}
+    ,'inBk'+i, 'allIntro', text[i]);
+  }
+  setTimeout(function(){arreyFade(block, 0.02, 0, 1);},500);
+}
+const year = new Date().getFullYear()
+console.log(year)
 placetextBoxes(2.5,1.8,16,'  A Journal & Presentation of Projects  ',introBlock);
-placetextBoxes(2.505,96.8,12,'            © 2016 Bob Main',copyBlock);
+placetextBoxes(2.505,96.8,12,'            © '+year+' Bob Main',copyBlock);
 
 //--------------------------------------------------------Draw intro underline--------------------
 var introL=createLine(50,2.5,2.5,2.5,2,'rgb(150,150,150)','introL',0);
